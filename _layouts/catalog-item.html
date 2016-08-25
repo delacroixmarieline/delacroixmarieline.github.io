@@ -2,11 +2,12 @@
 layout: default
 ---
 
-<a href="{{ site.baseurl }}/chapeaux">Chapeaux</a> &gt; {{ page.title | capitalize }}
+{% assign itemCategory = page.url | split: "/" %}
+<h2>Catalogue : <a href="{{ site.baseurl }}/{{ itemCategory[1] }}">{{ itemCategory[1] | capitalize }}</a> &gt; {{ page.title | capitalize }}</h2>
 
 {% assign pathElements = page.path | split:"/" %}
 {% assign imgPath = "" | split:"/" %}
-{% assign imgPath = imgPath | push: "img" | push: pathElements[1] | push: pathElements[2] %}
+{% assign imgPath = imgPath | push: "img/catalogue" | push: pathElements[1] %}
 
 <div class="row">
 {% for i in page.images %}

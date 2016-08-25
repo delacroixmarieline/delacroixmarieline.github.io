@@ -1,5 +1,22 @@
 ---
 layout: default
 ---
+{% assign pathName = page.url | remove: "/" %}
+<h1>{{ pathName | capitalize }}</h1>
 
-category page : path = {{page.path}}
+{{ content }}
+
+{% comment %}++++++++++++ DEBUG +++++++++++++{% endcomment %}
+{% assign doDebug = false %}
+
+{% if doDebug == true %}<h3>pathName = {{ pathName|inspect }}</h3>{% endif %}
+
+<div class="row catalog-list">
+{% for c in site.catalog %}
+{% assign itemCategory = c.url | split: "/" %}
+{% if doDebug == true %}<h3>itemCategory[1] = {{ itemCategory[1] | inspect }}</h3>{% endif %}
+{% if itemCategory[1] == pathName %}
+{% include catalog-list-item.html item=c %}
+{% endif %}
+{% endfor %}
+</div>
