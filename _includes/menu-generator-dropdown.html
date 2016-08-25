@@ -1,0 +1,167 @@
+{% comment %} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The Automatic nested navigation for collection
+This include can auto generate nested navigation.
+
+Prerequisites :
+
+  - "permalink: pretty" at least for files in the target folder
+
+  - page must have a title to be shown
+
+  - set an index file at the root of each folder
+
+    documentation/
+    ├── introduction/
+    │   └── index.html    documentation/introduction/index.html
+    ├── chapter1/
+    │   ├── index.html    documentation/chapter1/index.html
+    │   ├── part1.html    documentation/chapter1/part1.html
+    │   └── part2.html    documentation/chapter1/part2.html
+    ├── chapter2/
+    |   ├── index.html    documentation/chapter2/index.html
+    |   └── part1.html    documentation/chapter2/part1.html
+    ├── annexes.html      documentation/annexes/index.html
+    ├── conclusion.html   documentation/conclusion/index.html
+    └── index.html        documentation/index.html
+
+Calling :
+    From anywhere, you can include like this, to generate a menu for "documentation" folder
+    {% include nav/menu-generator.html dir="documentation" %}
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {% endcomment %}
+
+{% comment %}>>>>> DEBUG : doDebug true/false <<<<<<{% endcomment %}
+{% assign doDebug = false %}
+
+{% assign parentDir = include.dir %}
+
+{% if parentDir == nil or parentDir == "" or parentDir == "/" %}
+  <h1 class="alert">You can only generate this navbar for a folder (eg: /documentation), not from root.</h1>
+{% endif %}
+
+{% comment %} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Looking in a specific folder
+Need to receive "/folder", "/folder1/folder2" pattern
+ 1 - "folder" and "folder/" are NOT correct and are transformed to "/folder"
+ 2 - "folder1/folder2" and "/folder1/folder2/" are NOT correct
+     and are transformed to "/folder1/folder2"
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {% endcomment %}
+{% comment %} >>>>>>> 1 - Remove any trailing slash >>>>>>>>>{% endcomment %}
+{% assign splitted = parentDir | split: "/" %}
+{% assign parentDir = splitted | join: "/" %}
+{% comment %} >>>>>>> 2 - Ensure path is beginning with a slash >>>> {% endcomment %}
+{% if splitted[0] != "" %}{% assign parentDir = parentDir | prepend: "/" %}{% endif %}
+
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>parentDir : {{ parentDir }}</p>{% endif %}
+
+{% comment %} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Grabbing pages, with a title, from given hierarchy
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {% endcomment %}
+{% assign allDocs = "" | split: "/" %}{% comment %} Creating an empty array {% endcomment %}
+
+{% for p in site.pages %}
+  {% if p.title %}{% comment %}>>>>>>> only page with a title >>>>>>>>>{% endcomment %}
+    {% comment %} >>>>>>>>>>>>> Guessing if page is in our hierarchy >>>>>>>>>>>>>>>>>>
+    Splitting current page path with parentDir
+    A page.dir that is in the parentDir path will be splitted like
+    [ "", "rest/of/page/path" ]
+    or
+    [] empty array for a doc at the root of parentDir
+    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {% endcomment %}
+
+    {% assign dirSplit = p.dir | split: parentDir %}
+    {% assign dirSplitLength = dirSplit | size %}
+
+    {% comment %}
+    If page is in our hierarchy, add it to "allDocs" array
+    {% endcomment %}
+    {% if dirSplit.first == "" or dirSplitLength == 0 %}
+      {% assign allDocs = allDocs | push: p %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+
+{% assign allDocs = allDocs | sort: "weight" %}
+
+{% comment %} Get level passed by inclusion or guess level for "parenDir"{% endcomment %}
+{% assign currentLevel = include.level %}
+
+{% if currentLevel == nil %}
+  {% assign currentLevel = parentDir | remove_first: "/" | split:"/" | size %}
+{% endif %}
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>currentLevel : {{ currentLevel }}</p>{% endif %}
+
+{% comment %}+++++++++++++++++++++++++++++++++++++++++++++++++
+Assign the root level
++++++++++++++++++++++++++++++++++++++++++++++++++{% endcomment %}
+{% if rootLevel == nil %}
+    {% assign rootLevel = currentLevel %}
+    {% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>rootLevel : {{ rootLevel }}</p>{% endif %}
+{% endif %}
+
+{% comment %} Maximum levels for the menu {% endcomment %}
+{% assign maxLevel = 100 %}
+{% assign nextLevel = currentLevel | plus : 1 %}
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>nextLevel : {{ nextLevel }}</p>{% endif %}
+{% comment %}+++++++++++++++++++++++++++++++++++++++++++++++++
+Grabbing all pages in this path with the same level (siblings)
+to work on them. This avoid to deep recursion and error like :
+__ Liquid Exception: Nesting too deep __
++++++++++++++++++++++++++++++++++++++++++++++++++{% endcomment %}
+
+{% assign siblings = "" | split: "/" %}
+{% for s in allDocs %}
+  {% assign sPageLevel = s.dir | remove_first: "/" | split:"/" | size %}
+  {% if sPageLevel == currentLevel %}
+    {% assign siblings = siblings | push: s %}
+  {% endif %}
+{% endfor %}
+
+{% assign siblingsLength = siblings | size %}
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>siblingsLength : {{ siblingsLength }}
+</p>{% endif %}
+{% comment %} Build the menu {% endcomment %}
+{% if siblingsLength > 0 %}
+
+  {% if currentLevel == rootLevel %}
+  <ul class="nav navbar-nav navbar-right">
+  {% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>First ul</p>{% endif %}
+  {% else %}
+  <ul class="dropdown-menu">
+  {% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>Child ul</p>{% endif %}
+  {% endif %}
+
+  {% for p in siblings %}
+    <li>
+      <a href="{{site.baseurl}}{{p.url}}"{%if p.url == page.url%} class="active"{%endif%}>{{ p.title }}</a>
+      {% if nextLevel <= maxLevel %}
+      {% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>Including again</p>{% endif %}
+
+{% capture subMenu %}
+{% include nav/menu-generator.html dir=p.dir docs=allDocs level=nextLevel %}
+{% endcapture %}
+
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>subMenu : {{ subMenu | debug }}</p>{% endif %}
+
+{% assign newline = site.newline | remove: ":" %}
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>newline : {{ newline | debug }}</p>{% endif %}
+
+{% assign cleanSubmenu = subMenu | replace: newline, '' %}
+{% comment %}DEBUG{% endcomment %}{% if doDebug == true %}<p>cleanSubmenu : {{ cleanSubmenu | debug }}</p>{% endif %}
+
+{{ cleanSubmenu }}
+
+      {% endif %}
+    </li>
+  {% endfor %}
+
+  </ul>
+{% endif %}
+
+{% comment %}+++++++++++++++++++++++++++++++++++++++++++++++++
+Because all variables are globales (all includes have the same scope)
+we restore level and nextLevel variables to parent values
++++++++++++++++++++++++++++++++++++++++++++++++++{% endcomment %}
+{% assign currentLevel = currentLevel | minus : 1 %}
+{% assign nextLevel = nextLevel | minus : 1 %}

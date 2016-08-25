@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<a href="{{ site.baseurl }}/chapeaux">Chapeaux</a> &gt; {{ page.title | capitalize }}
+
+{% assign pathElements = page.path | split:"/" %}
+{% assign imgPath = "" | split:"/" %}
+{% assign imgPath = imgPath | push: "img" | push: pathElements[1] | push: pathElements[2] %}
+
+<div class="row">
+{% for i in page.images %}
+  <div class="col-xs-6 col-md-3">
+    <li><img src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg" alt="{{ page.title }}" class="img-responsive"></li>
+  </div>
+{% endfor %}
+</div>
+
+<h3>{{ page.title | capitalize }}</h3>
+
+<dl class="dl-horizontal">
+<dt>Collection&nbsp;:&nbsp;</dt><dd>{{ site.data.saisons[page.saison] }}</dd>
+<dt>Matières&nbsp;:&nbsp;</dt><dd>{{ page.matieres | join:", " }}</dd>
+<dt>Taille&nbsp;:&nbsp;</dt><dd>{{ page.taille }}</dd>
+<dt>Prix&nbsp;:&nbsp;</dt><dd>{{ page.prix }}</dd>
+</dl>
+
+{{ page.content }}

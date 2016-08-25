@@ -1,0 +1,21 @@
+{
+  "name": "jekyll-twitter-bootstrap-sass",
+  "homepage": "https://github.com/djacquel/jekyllBootstrapSass",
+  "authors": [
+    "djacquel <github@pygmeeweb.com>"
+  ],
+  "description": "Using Twitter bootstrap with Jekyll",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}

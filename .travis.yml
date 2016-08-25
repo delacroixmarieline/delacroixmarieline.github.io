@@ -1,0 +1,25 @@
+language: ruby
+rvm:
+- 2.1.8
+branches:
+  only:
+  - sources
+
+addons:
+  ssh_known_hosts: github.com
+
+install:
+- bundle install
+- npm install -g bower
+- bower install
+
+script:
+- bundle exec jekyll build
+
+after_success: "./scripts/publish.sh"
+
+env:
+  global:
+  - secure: UYJb+kSi00zdgCQTT7s91yu/zB0Vz1JtAf9QAwLjYAoYyhOxj/YeaU5lDu39KKMJcd6qgUzluA17QfQ3kwqGBCJaHpVNL5LthV53EWknt/I1l8zFJ14O8l8LUQIfUkKLGyHhn6MgL1koYHaoRMYCAsuOQjj3hwiFbaTzCuB6c4qnjrosmoFlR0QjLWV8rqweUyqDUraFzsSJOkaVHCy1FOPbxPYX8mRo0TCBQAhXJDPq9vUNbgbOIlBRthc2lZuoUjP9PV2LtDyWxL3VQBvMRpDVWOTShBlPb3GzuHAcTjdkaCQT9Dpbo9ElYciBw2i+NXM+bZ76ITrf231RT3jLIzu1hu1fDP4rW/bUQbw0KZJKenRh4evwLY5v+ZILezDdR4/U6koefIlCZZbHcXgDwabCBHBR5FBtGQ8hSaDZVq1J5qKh2mNZybf64aLNz9zCciDXKD4v2M9BDEtS+7y/0GSsrKPzOeloUeGCHAFZBLA6sUU30Z+vpQhnXXbO28YcJhsrLFbZ91gfBrWkj2Qig7+V483+ryj8yP5anrWyO1AdodT4U1I2UKTrNiymhotOjpdId/8MdFiH9oo8RGgfxZSbGkTEfl1zOz3ngrEefDDn806kmAus8nsMq611jy5V8D186jOyP6DTzE/2cG4uCjT26pc0cb02Zl8OgyOD04E=
+  - secure: DtX5a7f82qOWeAG2v4IPAW/08OXkojsBfsHWSdSKfZMVYR8HYOHOijxXlS68a+I64NcVT3Jube9HBm4VY7D/dj0TbzTxvNKZ1BiRvG1BJgl3AnfiaUFaneUtoPVgJ4BTbo1tRMvAjiyJGfl6kslJzk5DybUbfpX7p+JOSQGX+rmtWKe/kYwB6zlmFVvt53kQ+bwM0EhG6w7QERbzyBynNrX26Y/jCfw/DYdyURo3ixVWIaQnCfM7nQyunDZkWhqz5mv9Caay2X1Vk/hBms794ifaUnULkYaPp7jbgn++g8qf5Y91X68BqzwEDGE3jTKyuIbF5eTEplmGhfqApTNCsaUGgRbmUh1hYmo9Af5xaOW8V2IohpI1TAs6TeJ1Pj0ZXODmgEaiu6Yk9WSPd5qwIBe1u3d7WMgy+dB+l7gFA3NFZdmGsdElnYghI8rUu1UrP6L6PlwsOlLWK3kkgqol1P+Suy9HgUnenzXkodci5krARk23iEGaxqRqzvbIqSoBjlaO+Co2on7+Qt42j3MH8J6rO1c9vDBWEupOxhyKIJ1TdVi2XG+CuWPcalpeTEVT2CAiwh5dVYf2trOKlf9sFowwvhQweB/B8/GKiKyP57sa1d4R6QhGx/Q3IvJd/8LNRcyiWZvMCIex8zDnwUwpo6HODnGk4GTyPly8iQNpWGI=
+  - PUB_BRANCH: gh-pages

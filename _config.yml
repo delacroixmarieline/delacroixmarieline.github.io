@@ -1,0 +1,67 @@
+# Site settings
+title: "Marie-Line Delacroix"
+description: "Modiste - Créatrice de chapeaux couture"
+
+email: ml-delacroix@gmail.com
+
+baseurl: ""
+url: "http://ml-delacroix.fr"
+
+collections:
+
+  catalog:
+    output: true
+  values:
+    layout: item
+
+defaults:
+  -
+    scope:
+      type: pages
+      path: "pages"
+    values:
+      permalink: /:basename/
+
+  -
+    scope:
+      type: pages
+      path: "pages/catalog-indexes"
+    values:
+      layout: catalog-category
+
+  -
+    scope:
+      type: catalog
+    values:
+      layout: "catalog-item"
+      permalink: /:path/
+  -
+    scope:
+      path: "_catalog/chapeaux"
+    values:
+      type: "chapeau"
+  -
+    scope:
+      path: "_catalog/accessoires"
+    values:
+      type: "accessoire"
+
+sass:
+
+  # loading path from site root
+  # default to _sass
+  sass_dir: bower_components/bootstrap-sass/assets/stylesheets
+
+  # style : nested (default), compact, compressed, expanded
+  #         :nested, :compact, :compressed, :expanded also works
+  style: nested
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - .travis.yml
+  - scripts/*
+  - bower.json
+  - Readme.md
+  - publish-key.enc

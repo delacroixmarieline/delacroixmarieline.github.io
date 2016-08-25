@@ -1,0 +1,16 @@
+    <footer class="footer row">
+      <div class="col-sm-6">
+        {% assign footerPages = site.pages | where: "menu", "footer" %}
+        <ul class="list-inline">
+        {% for p in footerPages %}
+          <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <p class="text-muted">&copy; {{site.title}} 2016-present</p>
+      </div>
+    </footer>
+
+    <script src="{{site.baseurl}}/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
