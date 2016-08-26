@@ -20,7 +20,7 @@ Pages are sorted by "weight"
         <span>Menu</span>
       </button>
       <div class="site-title">
-        <h1><a class="" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+        <h1><a class="" href="{{ site.baseurl }}/">{{ site.title }}</a><small></small></h1>
         <h2><a class="" href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
       </div>
     </div>
@@ -38,7 +38,7 @@ Pages are sorted by "weight"
 {% endcomment %}
 {% assign doDebug = false %}
 
-{% assign dd = site.data.main-menu.items | sort: "weight" %}
+{% assign dd = site.main-menu-dropdowns | sort: "weight" %}
 {% assign ddIndex = dd.size %}
 {% assign ddCurrent = 0 %}
 {% assign nextInsertWeight = dd[ddCurrent].weight %}

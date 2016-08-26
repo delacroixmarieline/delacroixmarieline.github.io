@@ -13,7 +13,7 @@
     <h3>{{ item.title | capitalize }}</h3>
 
     <dl class="dl-horizontal">
-{% if item.saison != nil %}<dt>Collection&nbsp;:&nbsp;</dt><dd>{{ site.data.saisons[item.saison] }}</dd>{% endif %}
+{% if item.saison != nil %}<dt>Saison&nbsp;:&nbsp;</dt><dd>{{ site.saisons[item.saison] }}</dd>{% endif %}
 {% if item.matieres != nil %}<dt>Matières&nbsp;:&nbsp;</dt><dd>{{ item.matieres | join:", " }}</dd>{% endif %}
 {% if item.taille != nil %}<dt>Taille&nbsp;:&nbsp;</dt><dd>{{ item.taille }}</dd>{% endif %}
 {% if item.prix != nil %}<dt>Prix&nbsp;:&nbsp;</dt><dd>{{ item.prix }}</dd>{% endif %}

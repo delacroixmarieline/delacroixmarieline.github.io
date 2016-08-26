@@ -936,9 +936,13 @@ a{
   border-left: none;
   border-right: none;
 
-  a:hover{
-    text-decoration: none;
-    color: #710c34;
+  a{
+    border: none;
+    &:hover{
+      text-decoration: none;
+      color: #710c34;
+      border: none;
+    }
   }
 }
 
@@ -986,15 +990,46 @@ a{
 
 }
 
-.catalog-list .dl-horizontal {
-  @media (min-width: $dl-horizontal-breakpoint) {
-    dt {
-      width: 100px;
-    }
-    dd {
-      margin-left: 100px;
+.catalog-list{
+
+  & > div{
+    padding: 0;
+  }
+
+  .rot0{
+    transform: rotate(2deg);
+  }
+  .rot1{
+    transform: rotate(-6deg);
+  }
+  .rot2{
+    transform: rotate(6deg);
+  }
+  .rot3{
+
+  }
+
+  h3{
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+
+    a, &:hover{
+      border: none;
     }
   }
+
+  .dl-horizontal {
+    @media (min-width: $dl-horizontal-breakpoint) {
+      dt {
+        width: 100px;
+      }
+      dd {
+        margin-left: 100px;
+      }
+    }
+  }
+
 }
 
 

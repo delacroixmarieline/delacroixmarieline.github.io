@@ -4,21 +4,30 @@
 {% assign imgPath = imgPath | push: "img/catalogue" | push: pathElements[1] %}
 {% assign firstImg = item.images | first %}
 {% assign imgPath = imgPath | join:'/' | append: "/" | append: firstImg | append:".jpg" %}
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
+
+{% assign index = include.index %}
+{% assign additionalClass = "" %}
+
+{% if index != "" and index != nil %}
+  {% assign classesNum = site.rotation-classes | size %}
+  {% assign random = classesNum | modulo: index %}
+  {% assign classes = site.rotation-classes %}
+  {% assign additionalClass = classes[random] | prepend: " " %}
+{% endif %}
+
+
+  <div class="col-xs-6 col-sm-4 col-md-3">
+    <figure class="thumbnail{{additionalClass}}">
       <a href="{{ site.baseurl }}{{ item.url }}">
         <img src="{{ site.baseurl }}/{{ imgPath }}" alt="{{ item.title }}">
       </a>
       <div class="caption">
-        <a href="{{ site.baseurl }}{{ item.url }}">
-          <h3>{{ item.title | capitalize }}</h3>
-        </a>
-        <dl class="dl-horizontal">
-{% if item.saison != nil %}<dt>Collection&nbsp;:&nbsp;</dt><dd>{{ site.data.saisons[item.saison] }}</dd>{% endif %}
-{% if item.matieres != nil %}<dt>Matières&nbsp;:&nbsp;</dt><dd>{{ item.matieres | join:", " }}</dd>{% endif %}
-{% if item.taille != nil %}<dt>Taille&nbsp;:&nbsp;</dt><dd>{{ item.taille }}</dd>{% endif %}
-{% if item.prix != nil %}<dt>Prix&nbsp;:&nbsp;</dt><dd>{{ item.prix }}</dd>{% endif %}
-        </dl>
+        <h3>
+          <a href="{{ site.baseurl }}{{ item.url }}">
+          {{ item.title | capitalize }}
+          - additionalClass = {{ additionalClass }}
+          </a>
+        </h3>
       </div>
-    </div>
+    </figure>
   </div>
