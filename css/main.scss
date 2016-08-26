@@ -5,6 +5,10 @@
 
 /**
   Define your custom variables here
+**/
+$headerCrunch: "500px";
+
+/**
   This will override variables from
   /bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
 **/
@@ -41,7 +45,7 @@ $body-bg:               #fff !default;
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            darken($brand-warning, 20%)  !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
@@ -121,9 +125,9 @@ $border-radius-large:       3px !default;
 $border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
-$component-active-color:    #fff !default;
+$component-active-color:    $gray-lighter !default; // #fff !default;
 //** Global background color for active items (e.g., navs or dropdowns).
-$component-active-bg:       $brand-primary !default;
+$component-active-bg:       lighten($brand-danger, 13.5%) !default; // $brand-primary !default;
 
 //** Width of the `border` for generating carets that indicator dropdowns.
 $caret-width-base:          4px !default;
@@ -384,10 +388,10 @@ $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color:                #333 !default;
-$navbar-default-link-hover-color:          #9ed38b !default;
-$navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         #fff !default;
-$navbar-default-link-active-bg:            #710c34;
+$navbar-default-link-hover-color:          $gray-lighter !default;
+$navbar-default-link-hover-bg:             lighten($brand-danger, 25%) !default; // transparent !default;
+$navbar-default-link-active-color:         $navbar-default-link-hover-color;
+$navbar-default-link-active-bg:            lighten($brand-danger, 13.5%) !default; // #710c34;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
@@ -892,7 +896,17 @@ $icon-font-path: "{{site.baseurl}}/bower_components/bootstrap-sass/assets/fonts/
   Set your custom scss rules here
 **/
 
-.home-jumbo{
+a{
+    border-bottom: 1px dotted $brand-warning;
+  &:hover{
+    text-decoration: none;
+    border-bottom: 1px dotted darken($brand-warning, 20%);
+  }
+}
+
+
+
+.container .home-jumbo{
   @media (max-width: $screen-xs-max) {
     display: none !important;
   }
@@ -900,11 +914,21 @@ $icon-font-path: "{{site.baseurl}}/bower_components/bootstrap-sass/assets/fonts/
   background: url({{ site.baseurl }}/img/rouleaux-gros-grain-home.jpg);
   // text-align: center;
   margin-bottom: 0;
+  padding: 20px 10px;
   h1, h2{
     background: rgba(255, 255, 255, 0.9);
     display: inline-block;
     padding: 15px 10px 0px;
+    white-space: nowrap;
   }
+  a{
+    border-bottom: none;
+  &:hover{
+    text-decoration: none;
+    border-bottom: none;
+  }
+}
+
 }
 
 .navbar-default{
@@ -929,14 +953,23 @@ $icon-font-path: "{{site.baseurl}}/bower_components/bootstrap-sass/assets/fonts/
   }
 
   h1{
-    font-size: 38px;
-    margin-top: 10px;
-    padding: 10px 12px 5px;
+    font-size: 28px;
+    margin: 5px 0 0;
+    padding: 5px 0 5px;
+    @media (min-width: $headerCrunch) {
+      font-size: 38px;
+      margin-top: 10px;
+      padding: 10px 12px 5px;
+    }
   }
 
   h2{
-    font-size: 24px;
-    margin-top: 10px;
+    font-size: 16px;
+    margin: 0;
+    @media (min-width: $headerCrunch) {
+      font-size: 24px;
+      margin-top: 5px;
+    }
   }
 
   @media (min-width: $screen-sm-min) {
@@ -950,7 +983,6 @@ $icon-font-path: "{{site.baseurl}}/bower_components/bootstrap-sass/assets/fonts/
       float: right;
     }
   }
-
 
 }
 

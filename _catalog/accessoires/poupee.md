@@ -1,9 +1,10 @@
 ---
 title: Poupée
 
-
 # p = printemps, e = été, a = automne, h = hiver
-collection:
+collection: pe
+
+date : 2016/08/22
 
 matieres:
  - laine

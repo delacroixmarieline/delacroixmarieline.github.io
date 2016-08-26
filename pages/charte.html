@@ -5,13 +5,16 @@ menu: footer
 weight: 100
 ---
 
-{% include charte-home-typos.html typo="typec" %}
-
-<div class="row catalog-list">
+<div class="page-header"><h1>Categorie de produits</h1></div>
+<div class="row">
 {% for c in site.catalog %}
 {% include catalog-list-item.html item=c %}
 {% endfor %}
 </div>
+<div class="page-header"><h1>Fiche produit</h1></div>
+
+{% assign item = site.catalog | first %}
+{% include catalog-item.html item=item %}
 
   <div class="page-header">
     <h1>Buttons</h1>

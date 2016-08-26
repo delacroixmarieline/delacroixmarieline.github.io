@@ -2,7 +2,8 @@
 title: "Marie-Line Delacroix"
 description: "Modiste - Créatrice de chapeaux couture"
 
-email: ml-delacroix@gmail.com
+# email: ml-delacroix@gmail.com
+email: david.jacquel@gmail.com
 
 baseurl: ""
 url: "http://ml-delacroix.fr"
@@ -21,6 +22,7 @@ defaults:
       path: "pages"
     values:
       permalink: /:basename/
+      layout: default
 
   -
     scope:
