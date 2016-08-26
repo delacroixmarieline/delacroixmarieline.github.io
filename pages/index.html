@@ -4,9 +4,13 @@ menu: main
 weight: 10
 permalink: /
 ---
+
 <div class="row">
   <div class="col-md-4">
     <img src="{{ site.baseurl }}/img/fleurs-nb-et-couleur.jpg" alt="{{ site.title }}" class="img-responsive">
+    <div class="picto-text">
+      <h3><a href="{{ site.baseurl }}/catalogue/"></a>Découvrez le catalogue</h3>
+    </div>
   </div>
   <div class="col-md-4">
     <img src="{{ site.baseurl }}/img/pancarte-1-ronde.png" alt="{{ site.title }}" class="img-responsive">
@@ -17,12 +21,13 @@ permalink: /
 </div>
 
 <div class="row">
-  <div class="col-md-12"><h2>Dernières créations</h2></div>
   <div class="col-md-12">
-  {% for c in site.catalogue %}
-  {% include catalog-list-item.html item=c %}
-  {% endfor %}
+    <h2>Dernières créations</h2>
+    {% for c in site.catalog limit:4 %}
+    {% include catalog-list-item.html item=c %}
+    {% endfor %}
   </div>
   <p>Retrouvez tous les modèles dans <a href="#">le catalogue</a>.</p>
-  </div>
 </div>
+
+{% include catalog-categories-list.html %}

@@ -1,3 +1,11 @@
+{% comment %} ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+List item
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
+
+{% comment %} =========================================================
+Adding a rotation class
+see config : site.rotation-classes
+========================================================= {% endcomment %}
 {% assign item = include.item %}
 {% assign pathElements = item.path | split:"/" %}
 {% assign imgPath = "" | split:"/" %}
@@ -5,6 +13,10 @@
 {% assign firstImg = item.images | first %}
 {% assign imgPath = imgPath | join:'/' | append: "/" | append: firstImg | append:".jpg" %}
 
+{% comment %} =========================================================
+Adding a rotation class
+see config : site.rotation-classes
+========================================================= {% endcomment %}
 {% assign index = include.index %}
 {% assign additionalClass = "" %}
 
@@ -15,7 +27,6 @@
   {% assign additionalClass = classes[random] | prepend: " " %}
 {% endif %}
 
-
   <div class="col-xs-6 col-sm-4 col-md-3">
     <figure class="thumbnail{{additionalClass}}">
       <a href="{{ site.baseurl }}{{ item.url }}">
@@ -25,7 +36,6 @@
         <h3>
           <a href="{{ site.baseurl }}{{ item.url }}">
           {{ item.title | capitalize }}
-          - additionalClass = {{ additionalClass }}
           </a>
         </h3>
       </div>

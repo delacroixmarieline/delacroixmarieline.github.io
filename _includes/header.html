@@ -53,25 +53,25 @@ Pages are sorted by "weight"
       {% comment %}+++++++++++++++ insert a dropdown ++++++++++{% endcomment %}
     {% if doDebug == true %}<h3>insert a dropdown for {{ dd[ddCurrent] }}</h3>{% endif %}
 
-{% assign items = dd[ddCurrent].order %}
+{% assign items = site.catalog-categories %}
 {% if doDebug == true %}<h3>items = {{ items|inspect }}</h3>{% endif %}
 
 {% assign pathName = page.url | remove: "/" %}
 {% if doDebug == true %}<h3>pathName = {{ pathName|inspect }}</h3>{% endif %}
 
 {% assign catalogAcitve = false %}
+{% for item in items %}
+  {% if item.name == pathName %}{% assign catalogAcitve = true %}{% endif %}
+{% endfor %}
 
-{% if items contains pathName %}
-  {% assign catalogAcitve = true %}
-{% endif %}
 {% if doDebug == true %}<h3>catalogAcitve = {{ catalogAcitve | inspect }}</h3>{% endif %}
 
     <li class="dropdown{% if catalogAcitve == true %} active{% endif %}">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catalogue <span class="caret"></span></a>
       <ul class="dropdown-menu">
 {% for item in items %}
-{% capture url %}{{ site.baseurl }}/{{ item }}/{% endcapture %}
-<li{% if url == page.url %} class="active"{% endif %}><a href={{ url }}>{{ item }}</a></li>
+{% capture url %}{{ site.baseurl }}/{{ item.name }}/{% endcapture %}
+<li{% if url == page.url %} class="active"{% endif %}><a href={{ url }}>{{ item.name }}</a></li>
 {% endfor %}
       </ul>
     </li>

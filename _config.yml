@@ -74,6 +74,16 @@ exclude:
 # saisons used in items front matter
 saisons : { "p": "Printemps", "e": "Eté", "a": "Automne", "h": "Hiver" }
 
+# Categories du catalogue
+# utilisé pour générer les menus
+catalog-categories:
+  -
+    name: casquettes
+    color: "#f00"
+  -
+    name: accessoires
+    color: "#00f"
+
 # used to create a menu hierarchy for a type (pages, collection, ...)
 # depending on a starting folder (eg : _mycollection/folder1)
 # see _includes/header.html
@@ -82,18 +92,15 @@ main-menu-dropdowns:
   -
     label: catalog
     weight: 32
-    order:
-      - casquettes
-      - accessoires
 
 rotation-classes:
   - rot0
-  - rot3
+  - rot4
   - rot2
   - rot1
   - rot3
   - rot2
-  - rot0
+  - rot4
   - rot0
   - rot2
   - tor3

@@ -35,6 +35,10 @@ $brand-warning:         #f9b049 !default; // vieil orange
 $brand-danger:          #710c34 !default; // casis clair
 
 
+
+
+
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -375,7 +379,7 @@ $container-lg:                 $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-$navbar-height:                    50px !default;
+$navbar-height:                    30px !default;
 $navbar-margin-bottom:             0 !default; // $line-height-computed !default;
 $navbar-border-radius:             $border-radius-base !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
@@ -1000,13 +1004,16 @@ a{
     transform: rotate(2deg);
   }
   .rot1{
-    transform: rotate(-6deg);
+    transform: rotate(-2deg);
   }
   .rot2{
-    transform: rotate(6deg);
+    transform: rotate(4deg);
   }
   .rot3{
-
+    transform: rotate(-4deg);
+  }
+  .rot4{
+    // transform: rotate(0);
   }
 
   h3{
@@ -1036,3 +1043,30 @@ a{
 .typea{font-family: 'Dancing Script', cursive;}
 .typeb{font-family: 'Coming Soon', cursive;}
 .typec{font-family: 'La Belle Aurore', cursive;}
+
+
+
+.category-box{
+  text-align: center;
+  h3{
+    width: 100%;
+    margin: 5px auto;
+    a{
+      color: black;
+      border-color: black;
+      &:hover{
+        border-color: $brand-warning;
+        color: $brand-warning;
+      }
+    }
+  }
+}
+
+
+
+.casquettes{
+  background: darken($brand-success, 13.5%);
+}
+.accessoires{
+  background: darken($brand-info, 13.5%);
+}

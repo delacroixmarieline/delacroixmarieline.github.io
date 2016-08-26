@@ -12,12 +12,12 @@
   <div class="col-md-6">
     <h3>{{ item.title | capitalize }}</h3>
 
-    <dl class="dl-horizontal">
-{% if item.saison != nil %}<dt>Saison&nbsp;:&nbsp;</dt><dd>{{ site.saisons[item.saison] }}</dd>{% endif %}
-{% if item.matieres != nil %}<dt>Matières&nbsp;:&nbsp;</dt><dd>{{ item.matieres | join:", " }}</dd>{% endif %}
-{% if item.taille != nil %}<dt>Taille&nbsp;:&nbsp;</dt><dd>{{ item.taille }}</dd>{% endif %}
-{% if item.prix != nil %}<dt>Prix&nbsp;:&nbsp;</dt><dd>{{ item.prix }}</dd>{% endif %}
-    </dl>
+    <ul class="list-unstyled">
+{% if item.saison != nil %}<li><strong>Saison</strong>&nbsp;:&nbsp;{{ site.saisons[item.saison] }}</li>{% endif %}
+{% if item.matieres != nil %}<li><strong>Matières</strong>&nbsp;:&nbsp;{{ item.matieres | join:", " }}</li>{% endif %}
+{% if item.taille != nil %}<li><strong>Taille</strong>&nbsp;:&nbsp;{{ item.taille }}</li>{% endif %}
+{% if item.prix != nil %}<li><strong>Prix</strong>&nbsp;:&nbsp;{{ item.prix }}</li>{% endif %}
+    </ul>
 
     {{ item.content }}
 
