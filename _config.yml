@@ -124,23 +124,48 @@ admin:
 
     pages:
       displayProps:
-        - permalink
-        - layout
+        - url
         - title
         - menu
         - weight
+        - permalink
+        - layout
         - dir
         - name
         - path
-        - url
       noDisplayProps:
         - content
 
-    collections:
+    catalog:
+      displayProps:
+       - path
+       - id
+       - url
+       - collection
+       - type
+       - title
+       - date
+       - matieres
+       - taille
+       - prix
+       - images
+       - slug
+       - ext
+       - tags
 
-    datas:
+      noDisplayProps:
+       - output
+       - content
+       - excerpt
+       - previous
+       - next
+       - draft
+       - categories
+       - layout
+       - relative_path
+       - permalink
 
-    static-files:
+
 
 
 

@@ -3,7 +3,6 @@
 {% comment %} +++++ Verifies that 'objectType' is a valid type +++++ {% endcomment %}
 {% comment %} +++++ Get available content types from config +++++ {% endcomment %}
 {% assign types = site.admin.content-types %}
-{% if site.admin.doDebug == true %}<h1>types = {{ types }}</h1>{% endif %}
 
 {% comment %}Create an empty array{% endcomment %}
 {% assign allowedTypes = "" | split: "/" %}
@@ -17,6 +16,7 @@ Passed : {{ objectType | inspect }}<br>
 Allowed : {{ types | join: " - " }}</p>
 </div>
 {% endunless %}
+
 {% comment %} +++++ Get config for current object type +++++ {% endcomment %}
 {% assign typeConfig = site.admin.content-types[objectType] %}
 {% comment %}Get config for non displayable props in listings{% endcomment %}
@@ -24,30 +24,38 @@ Allowed : {{ types | join: " - " }}</p>
 {% comment %}Get config for displayable props in listings{% endcomment %}
 {% assign displayProps = typeConfig.displayProps %}
 
-{% if site.admin.doDebug == true %}<h1>typeConfig = {{ typeConfig }}</h1>{% endif %}
-{% if site.admin.doDebug == true %}<h1>noDisplayProps = {{ noDisplayProps }}</h1>{% endif %}
-{% if site.admin.doDebug == true %}<h1>displayProps = {{ displayProps | inspect }}</h1>{% endif %}
+{% if  objectType == "pages" %}
+  {% assign documents = site.pages %}
+{% elsif objectType == "catalog" %}
+  {% assign documents = site.catalog %}
+{% endif %}
 
+<h3>{{ objectType | capitalize }} (count = {{ documents.size }})</h3>
 
-
-<h3>Pages (count = {{ site.pages.size }})</h3>
-
-    {% for p in site.pages %}
-    <h4>page = {{ p.path }}</h4>
-
-<ul>
-{% for prop in p %}
-{% if site.doDebug == true %}<h1>prop[0] = {{ prop[0] }}</h1>{% endif %}
-
-{% unless noDisplay contains prop[0] %}
-<li>{{ prop[0] }}</li>
-{% endunless %}
+<table class="table">
+<thead><tr>
+{% for prop in displayProps %}
+  <th>{{ prop }}</th>
 {% endfor %}
-</ul>
+</tr></thead>
+<tbody>
+{% if  objectType == "pages" %}
+  {% for doc in documents %}
+  <tr>
+  {% for prop in displayProps %}
+  <td>{{ doc[prop] }}</td>
+  {% endfor %}
+  </tr>
+  {% endfor %}
+{% elsif objectType == "catalog" %}
+  {% for doc in documents %}
+  <tr>
+  {% for prop in displayProps %}
+  <td>{{ doc[prop] }}</td>
+  {% endfor %}
+  </tr>
+  {% endfor %}
+{% endif %}
 
-
-
-
-
-
-    {% endfor %}
+</tbody>
+</table>
