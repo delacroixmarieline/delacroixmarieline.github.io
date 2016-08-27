@@ -12,7 +12,8 @@ C'est dans mon atelier, niché à l’abri des arbres de La Ferme des Quartiers,
 
 J'ai toujours eu la passion des tissus, des matières, des couleurs. Elle guide toujours mon inspiration.
 
-Après, quelques années passées dans le monde du vêtement, j'ai basculé, en 1996, dans le monde magique du Chapeau.
+Après, quelques années passées dans le monde du vêtement, je créais mon atelier : __Atelier 7__ en 1992.
+Et c'est en 1996, que j'ai basculé dans le monde magique du chapeau.
 
 > J'aime mettre de la couleur à la rue.
 
