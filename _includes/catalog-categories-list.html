@@ -1,6 +1,6 @@
 
 <div class="row catalog-categories">
-  <h3>Catalogue</h3>
+  <h2>Catalogue</h2>
   {% for category in site.catalog-categories %}
     {% capture url %}{{ site.baseurl }}/{{ category.name }}/{% endcapture %}
     <div class="col-xs-3 category-box {{ category.name }}">

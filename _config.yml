@@ -58,6 +58,14 @@ sass:
   #         :nested, :compact, :compressed, :expanded also works
   style: nested
 
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: true
+  # parse markdown inside block-level HTML tag
+  parse_block_html: true
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -104,3 +112,45 @@ rotation-classes:
   - rot0
   - rot2
   - tor3
+
+# ++++++++++++++++++++++ admin view page setup +++++++++++++++++++++++
+
+
+admin:
+
+  doDebug : true
+
+  content-types:
+
+    pages:
+      displayProps:
+        - permalink
+        - layout
+        - title
+        - menu
+        - weight
+        - dir
+        - name
+        - path
+        - url
+      noDisplayProps:
+        - content
+
+    collections:
+
+    datas:
+
+    static-files:
+
+
+
+
+
+
+
+
+
+
+
+
+
