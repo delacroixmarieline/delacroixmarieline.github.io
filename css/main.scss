@@ -908,6 +908,23 @@ a{
   }
 }
 
+figure{
+  &.rot0{
+    transform: rotate(2deg);
+  }
+  &.rot1{
+    transform: rotate(-2deg);
+  }
+  &.rot2{
+    transform: rotate(4deg);
+  }
+  &.rot3{
+    transform: rotate(-4deg);
+  }
+  &.rot4{
+    // transform: rotate(0);
+  }
+}
 
 
 .container .home-jumbo{
@@ -939,7 +956,7 @@ a{
   border-top: none;
   border-left: none;
   border-right: none;
-
+  margin-bottom: 15px;
   a{
     border: none;
     &:hover{
@@ -1000,22 +1017,6 @@ a{
     padding: 0;
   }
 
-  .rot0{
-    transform: rotate(2deg);
-  }
-  .rot1{
-    transform: rotate(-2deg);
-  }
-  .rot2{
-    transform: rotate(4deg);
-  }
-  .rot3{
-    transform: rotate(-4deg);
-  }
-  .rot4{
-    // transform: rotate(0);
-  }
-
   h3{
     font-size: 18px;
     text-align: center;
@@ -1036,14 +1037,7 @@ a{
       }
     }
   }
-
 }
-
-
-.typea{font-family: 'Dancing Script', cursive;}
-.typeb{font-family: 'Coming Soon', cursive;}
-.typec{font-family: 'La Belle Aurore', cursive;}
-
 
 
 .category-box{
@@ -1061,8 +1055,6 @@ a{
     }
   }
 }
-
-
 
 .casquettes{
   background: darken($brand-success, 13.5%);
