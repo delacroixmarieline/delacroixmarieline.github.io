@@ -76,8 +76,8 @@ exclude:
   - Readme.md
   - publish-key.enc
 
-# Marie-Line Delacroix
-# Specific setup
+# ++++++++++++++++++++++++++++++++++++ Marie-Line Delacroix +++++++++++++++++++++++++++++++++++++++
+#                                      Specific setup
 
 # saisons used in items front matter
 saisons : { "p": "Printemps", "e": "Eté", "a": "Automne", "h": "Hiver" }
@@ -87,10 +87,12 @@ saisons : { "p": "Printemps", "e": "Eté", "a": "Automne", "h": "Hiver" }
 catalog-categories:
   -
     name: casquettes
-    color: "#f00"
+  -
+    name: le-saharien
+    display: Le Saharien
   -
     name: accessoires
-    color: "#00f"
+
 
 # used to create a menu hierarchy for a type (pages, collection, ...)
 # depending on a starting folder (eg : _mycollection/folder1)
@@ -164,18 +166,3 @@ admin:
        - layout
        - relative_path
        - permalink
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,21 +1,20 @@
 ---
-title: Poupée
+title: Saharien 23
 
 # p = printemps, e = été, a = automne, h = hiver
-collection: pe
-
-date : 2016/08/22
+saison: p
 
 matieres:
- - laine
+ - coton
 
-taille:
+taille: 52
 
-prix: 20€
-
+prix: 75€
 
 images:
-  - poupee-desat
+  - sah1-1
+  - sah1-2
+  - sah1-3
 
 ---
 

@@ -5,13 +5,10 @@ weight: 40
 ---
 <div class="row">
 <div class="col-md-9">
-### Commander
+Vous souhaitez :
 
-Vous souhaitez
-
-commander un chapeau vu sur ce site
-commander un chapeau sur mesure
-
+ - commander un chapeau vu sur ce site
+ - commander un chapeau sur mesure
 
 Envoyez moi un mail ou téléphonez moi via la <a href="{{ site.baseurl }}/contact/">page de contact.</a>
 

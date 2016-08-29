@@ -5,6 +5,15 @@ menu: footer
 weight: 100
 ---
 
+<div class="page-header"><h2>Couleurs</h2></div>
+<div class="row swatches">
+<div class="col-xs-3 swatch color-primary">$color-primary</div>
+<div class="col-xs-3 swatch color-secondary-1">$color-secondary-1</div>
+<div class="col-xs-3 swatch color-secondary-2">$color-secondary-2</div>
+<div class="col-xs-3 swatch color-complement">$color-complement</div>
+</div>
+
+
 <div class="page-header"><h1>Categorie de produits</h1></div>
 <div class="row">
 {% for c in site.catalog %}
@@ -16,9 +25,7 @@ weight: 100
 {% assign item = site.catalog | first %}
 {% include catalog-item.html item=item %}
 
-  <div class="page-header">
-    <h1>Buttons</h1>
-  </div>
+  <h1>Buttons</h1>
   <p>
     <button type="button" class="btn btn-lg btn-default">Default</button>
     <button type="button" class="btn btn-lg btn-primary">Primary</button>

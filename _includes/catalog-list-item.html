@@ -27,7 +27,7 @@ see config : site.rotation-classes
   {% assign additionalClass = classes[random] | prepend: " " %}
 {% endif %}
 
-  <div class="col-xs-6 col-sm-4 col-md-3">
+  <div class="col-md-3 col-sm-3 col-xs-6">
     <figure class="thumbnail{{additionalClass}}">
       <a href="{{ site.baseurl }}{{ item.url }}">
         <img src="{{ site.baseurl }}/{{ imgPath }}" alt="{{ item.title }}">

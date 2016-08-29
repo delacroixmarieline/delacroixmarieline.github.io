@@ -2,11 +2,24 @@
 <html>
   {% include head.html %}
   <body role="document">
-    <div class="container" role="main">
     {% include header.html %}
     {% comment %}{% include utils/responsive-classes.html %}{% endcomment %}
+    <div class="container" role="main">
+
+{% assign pathItems = page.url | split: "/" %}
+{% assign categories = site.catalog-categories %}
+{% assign catalogPath = false %}
+{% for cat in categories %}
+  {% if cat.name == pathItems[1] %}{% assign catalogPath = true %}{% endif %}
+{% endfor %}
+
+
+    {% if page.title != "Accueil" and catalogPath == false %}<div class="row">
+      <div class="col-sm-10 col-sm-offset-1"><h1 class="page-title">{{ page.title }}</h1></div>
+    </div>{% endif %}
+
     {{ content }}
-    {% include footer.html %}
     </div>
+    {% include footer.html %}
   </body>
 </html>

@@ -1,3 +1,4 @@
+<div class="container">
 <div class="jumbotron home-jumbo">
   <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
   <h2><a href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
@@ -60,8 +61,9 @@ Pages are sorted by "weight"
 {% if doDebug == true %}<h3>pathName = {{ pathName|inspect }}</h3>{% endif %}
 
 {% assign catalogAcitve = false %}
+{% assign pathItems = page.url | split: "/" %}
 {% for item in items %}
-  {% if item.name == pathName %}{% assign catalogAcitve = true %}{% endif %}
+  {% if item.name == pathItems[1] %}{% assign catalogAcitve = true %}{% endif %}
 {% endfor %}
 
 {% if doDebug == true %}<h3>catalogAcitve = {{ catalogAcitve | inspect }}</h3>{% endif %}
@@ -71,7 +73,7 @@ Pages are sorted by "weight"
       <ul class="dropdown-menu">
 {% for item in items %}
 {% capture url %}{{ site.baseurl }}/{{ item.name }}/{% endcapture %}
-<li{% if url == page.url %} class="active"{% endif %}><a href={{ url }}>{{ item.name }}</a></li>
+<li{% if url == page.url %} class="active"{% endif %}><a href={{ url }}>{% if item.display %}{{ item.display }}{% else %}{{ item.name | capitalize }}{% endif %}</a></li>
 {% endfor %}
       </ul>
     </li>
@@ -89,3 +91,4 @@ Pages are sorted by "weight"
 </ul>
     </div>
 </nav>
+</div>
