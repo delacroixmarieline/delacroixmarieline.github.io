@@ -6,7 +6,7 @@ weight: 30
 <div class="row">
 
 <div class="col-md-3">
-  <img src="{{ site.baseurl }}/img/manequin-marie-line.svg" alt="" class="img-responsive">
+  <img src="{{ site.baseurl }}/img/logo-atelier-7-marie-line-delacroix-bw-plain.svg" alt="" class="img-responsive">
 </div>
 
 <div class="col-md-6">
@@ -18,10 +18,6 @@ Il ont chacun leur boite. Mais ne venez pas lorsque ce n'est pas rangé. D'aille
 #### L'acte de création
 
 Galerie photo d'une fabrication.
-</div>
-
-<div class="col-md-3">
-  <img src="{{ site.baseurl }}/img/manequin-marie-line-bw-optimized.svg" alt="" class="img-responsive">
 </div>
 
 </div>
