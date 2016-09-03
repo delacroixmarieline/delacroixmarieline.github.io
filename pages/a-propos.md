@@ -16,9 +16,16 @@ weight: 20
 
 <div class="col-sm-5">
 
+> Riaucourt since 1992
+
 C'est dans mon atelier, niché à l’abri des arbres de La Ferme des Quartiers, que je créé mes chapeaux.
 
 J'ai toujours eu la passion des tissus, des matières, des couleurs. Elle guide toujours mon inspiration.
+
+REFERENCE MAITRE DE STAGE ???
+Dominique Pilliard ???
+
+A seize ans, je créais mon premier vêtement, une magnifique tunique en coton à carreaux roses.
 
 Après, quelques années passées dans le monde du vêtement, je créais mon atelier : __Atelier 7__ en 1992.
 Et c'est en 1996, que j'ai basculé dans le monde magique du chapeau.

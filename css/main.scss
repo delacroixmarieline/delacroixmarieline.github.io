@@ -1040,6 +1040,24 @@ figure{
   font-size: 20px;
 }
 
+.navbar-toggle{
+  // big hack to put menu button out of brand space
+  @media (max-width: 400px) {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.navbar-collapse{
+  // because we need some space for menu button, when lower the collapsible menu
+  @media (max-width: 400px) {
+    margin-top: 30px;
+  }
+}
+
 .site-title{
   font-family: 'La Belle Aurore', cursive;
   white-space: nowrap;
@@ -1084,6 +1102,15 @@ figure{
 
 }
 
+
+.footer{
+  border-top: 1px solid $brand-success;
+  margin: 20px 0;
+  padding: 20px 0;
+
+}
+
+
 .catalog-list{
 
   & > div{
@@ -1094,6 +1121,14 @@ figure{
 
 .category-box{
   text-align: center;
+
+  padding: 0;
+
+  @media (min-width: $screen-xs-min) {
+    padding-right: ($grid-gutter-width/2);
+    padding-left: ($grid-gutter-width/2);
+  }
+
   h3{
     width: 100%;
     margin: 2px auto;
@@ -1109,27 +1144,25 @@ figure{
   }
 }
 
-.casquettes{
-  background: darken($brand-primary, 13.5%);
+// Couleurs Catégories
+.collection-ete{
+  background: lighten($brand-primary, 13.5%);
+}
+.collection-hiver{
+  background: darken($brand-warning, 13.5%);
 }
 .le-saharien{
-  background: darken($brand-success, 13.5%);
+  background: lighten($brand-success, 13.5%);
 }
 .accessoires{
-  background: darken($brand-info, 13.5%);
+  background: lighten($brand-info, 13.5%);
 }
 
+// Spécifique Charte
 .swatches{
   color: white;
 }
 
 .swatch{
   height: 100px;
-}
-
-.footer{
-  border-top: 1px solid $brand-success;
-  margin: 20px 0;
-  padding: 20px 0;
-
 }

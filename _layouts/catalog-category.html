@@ -12,11 +12,11 @@ layout: default
 {% if doDebug == true %}<h3>pathName = {{ pathName|inspect }}</h3>{% endif %}
 
 <div class="row catalog-list">
-{% for c in site.catalog %}
-{% assign itemCategory = c.url | split: "/" %}
+{% for item in site.catalog %}
+{% assign itemCategory = item.url | split: "/" %}
 {% if doDebug == true %}<h3>itemCategory[1] = {{ itemCategory[1] | inspect }}</h3>{% endif %}
 {% if itemCategory[1] == pathName %}
-{% include catalog-list-item.html item=c index=forloop.index %}
+{% include catalog-list-item.html item=item index=forloop.index %}
 {% endif %}
 {% endfor %}
 </div>

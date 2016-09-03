@@ -6,8 +6,6 @@ permalink: /
 ---
 {% assign box-class = "box col-md-3 col-sm-3 col-xs-6" %}
 
-
-
 <div class="row catalog-list">
 
   <div class="{{ box-class }}">
@@ -58,8 +56,9 @@ permalink: /
 
 <div class="row catalog-list">
   <h2>Dernières créations</h2>
-  {% for c in site.catalog limit:4 %}
-  {% include catalog-list-item.html item=c %}
+  {% assign sortedItems = site.catalog | sort: "date" %}
+  {% for c in sortedItems limit:4 %}
+  {% include catalog-list-item.html item=c index=forloop.index %}
   {% endfor %}
   <p>Retrouvez tous les modèles dans <a href="#">le catalogue</a>.</p>
 </div>
