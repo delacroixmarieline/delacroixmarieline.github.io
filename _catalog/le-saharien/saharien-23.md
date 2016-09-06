@@ -1,23 +1,18 @@
 ---
-title: Saharien 23
+title: Saharien Pam
 
 # p = printemps, e = été, a = automne, h = hiver
-saison: p
+saison: e
 
 matieres:
- - coton
+ - coton imprimé dalmatien
 
-taille: 52
+taille: 56,5 cm
 
-prix: 75€
+prix: 112€
 
 images:
-  - sah1-1
-  - sah1-2
-  - sah1-3
-
+  - le-saharien-pam-1
+  - le-saharien-pam-2
+  - le-saharien-pam-3
 ---
-
-More info here More info here More info here More info here More info here More info here More info here More info here More info here
-
-More info here More info here More info here More info here More info here More info here More info here More info here More info here

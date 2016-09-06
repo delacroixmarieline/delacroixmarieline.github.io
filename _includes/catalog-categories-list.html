@@ -3,7 +3,7 @@
   <h4>Catalogue</h4>
   {% for category in site.catalog-categories %}
     {% capture url %}{{ site.baseurl }}/{{ category.name }}/{% endcapture %}
-    <div class="col-xs-6 col-md-3 category-box {{ category.name }}">
+    <div class="col-xs-12 col-md-12 category-box {{ category.name }}">
       <h3 class="btn"><a href="{{ url }}">{% if category.display %}{{ category.display }}{% else %}{{ category.name | capitalize }}{% endif %}</a></h3>
     </div>
 {% endfor %}

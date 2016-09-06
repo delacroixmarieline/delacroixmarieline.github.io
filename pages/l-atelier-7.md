@@ -13,11 +13,44 @@ weight: 30
 J'aime mon atelier, mon antre.
 
 J'y range mes étoffes, mes trésors. Gallons, voilettes, boutons, perles, ...
-Il ont chacun leur boite. Mais ne venez pas lorsque ce n'est pas rangé. D'ailleurs, ne venez pas, tout court !
+Ils ont chacun leur boite.
 
-#### L'acte de création
+Mais ne venez pas lorsque ce n'est pas rangé. D'ailleurs, ne venez pas, tout court !
+
+### Matières
+
+tissus de saison
+
+tissus de créateurs
+
+soie, lin, coton, laine, fausse fourrure, ...
+velours
+paille
+sisal
+
+### Techniques et outils
+
+Coupé cousu
+
+Gabarits
+
+Formage
+
+Repassage
+
+Encollage
+
+conformateur
+mesureur
+ciseaux
+aiguille
+marottes
+
+
+### L'acte de création
 
 Galerie photo d'une fabrication.
 </div>
 
 </div>
+

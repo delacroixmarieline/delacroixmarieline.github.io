@@ -1,0 +1,29 @@
+---
+title: Mini Gibus Mordoré
+
+# e = été, a = automne, m = mi-saison
+saison: m
+
+# date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
+date : 2016/07/28
+
+matieres:
+ - velours
+ - tissu d’ameublement
+
+# tour de tête pour les chapeaux - facultatif
+taille: 54 cm
+
+prix: 60€
+
+# images d'illustration
+# la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
+images:
+  - mini-gibus-mordore-1
+  - mini-gibus-mordore-2
+  - mini-gibus-mordore-3
+---
+{% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              Texte additionnel - facultatif
+              Voir documentation sur la syntaxe Kramdown
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}

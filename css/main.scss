@@ -816,7 +816,7 @@ $thumbnail-border-radius:     $border-radius-base !default;
 //** Custom text color for thumbnail captions
 $thumbnail-caption-color:     $text-color !default;
 //** Padding around the thumbnail caption
-$thumbnail-caption-padding:   9px !default;
+$thumbnail-caption-padding:   12px !default;
 
 
 //== Wells
@@ -1151,8 +1151,14 @@ figure{
 .collection-hiver{
   background: darken($brand-warning, 13.5%);
 }
+.mi-saison{
+  background: lighten($brand-warning, 13.5%);
+}
 .le-saharien{
   background: lighten($brand-success, 13.5%);
+}
+.soiree-ceremonie{
+  background: lighten($brand-danger, 13.5%);
 }
 .accessoires{
   background: lighten($brand-info, 13.5%);

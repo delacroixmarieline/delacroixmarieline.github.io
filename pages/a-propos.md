@@ -16,34 +16,27 @@ weight: 20
 
 <div class="col-sm-5">
 
-> Riaucourt since 1992
+> Depuis vingt ans, je fais tourner les têtes entre mes mains.
 
 C'est dans mon atelier, niché à l’abri des arbres de La Ferme des Quartiers, que je créé mes chapeaux.
 
 J'ai toujours eu la passion des tissus, des matières, des couleurs. Elle guide toujours mon inspiration.
 
-REFERENCE MAITRE DE STAGE ???
-Dominique Pilliard ???
-
 A seize ans, je créais mon premier vêtement, une magnifique tunique en coton à carreaux roses.
 
 Après, quelques années passées dans le monde du vêtement, je créais mon atelier : __Atelier 7__ en 1992.
+
 Et c'est en 1996, que j'ai basculé dans le monde magique du chapeau.
 
+J'ai eu la chance de suivre des cours donnés par Dominique Pilliard, grand maitre en la matière. Ceci m'a permis d'affiner mes compétences techniques et de côtoyer l'excellence.
+
 </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-
-> J'aime mettre de la couleur à la rue.
-{: .blockquote-reverse }
-
-  </div>
 </div>
 
 <div class="row">
 <div class="col-sm-offset-2 col-sm-5">
+
+> J'aime mettre de la couleur à la rue.
 
 Modiste autodidacte, je réalise des pièces que l'on peut porter au quotidien et pour des occasions particulières.
 
@@ -51,12 +44,14 @@ Ma gamme est étendue et accessible : de la casquette à la capeline, en passant
 
 Je travaille également sur commande, et créé pour vous le chapeau qui mettra en valeur votre personnalité.
 
+Je travaille également sur commande, et créé le chapeau qui mettra en valeur chaque personnalité.
+
 </div>
 <div class="col-sm-3">
 <figure class="thumbnail rot0">
-<img src="{{ site.baseurl }}/img/a-propos/clm.jpg/" alt="" class="img-responsive">
+<img src="{{ site.baseurl }}/img/a-propos/dominique-pilliard.jpg" alt="Dominique Pilliard" class="img-responsive">
 <div class="caption">
-<h3>CLM !</h3>
+<h3>Dominique Pilliard pendant un cours de moulage.</h3>
 </div>
 </figure>
 </div>
