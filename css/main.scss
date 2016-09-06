@@ -996,31 +996,68 @@ figure{
   margin-bottom: 0;
   padding: 10px 10px;
   h1, h2{
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 0, 0, 0.8);
     text-shadow: 1px 2px 3px rgba(150,150,150, 0.4);
     display: inline-block;
     padding: 15px 10px 0px;
     margin: 2px;
     white-space: nowrap;
+    font-size: 10px;
+  }
+  h1{
+    font-size: 50px;
   }
   a{
     border-bottom: none;
-  &:hover{
-    text-decoration: none;
-    border-bottom: none;
+    &:hover{
+      text-decoration: none;
+      border-bottom: none;
+    }
   }
 }
 
+.jumbotron.home-jumbo2{
+  @media (max-width: $screen-xs-max) {
+    display: none !important;
+  }
+  font-family: 'La Belle Aurore', cursive;
+  background: transparent;
+  // text-align: center;
+  margin-bottom: 0;
+  padding: 10px 10px;
+
+  h1, h2{
+    text-shadow: 1px 2px 3px rgba(150,150,150, 0.4);
+    padding: 15px 10px 0px;
+    margin: 2px;
+    white-space: nowrap;
+  }
+
+  h1{
+    font-size: 40px;
+  }
+  h2{
+    font-size: 30px;
+  }
+  a{
+    border-bottom: none;
+    color: black;
+    &:hover{
+      text-decoration: none;
+      border-bottom: none;
+      color: $brand-primary;
+    }
+  }
 }
 
 .navbar-default{
   font-family: 'La Belle Aurore', cursive;
   font-size: 24px;
   text-shadow: 1px 2px 3px rgba(150,150,150, 0.4);
-  border-top: none;
+  // border-top: none;
   border-left: none;
   border-right: none;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   a{
     border: none;
     &:hover{
