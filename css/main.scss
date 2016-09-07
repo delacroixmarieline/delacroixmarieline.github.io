@@ -952,7 +952,9 @@ a{
 h1, h2{
   font-family: 'La Belle Aurore', cursive;
   text-shadow: 1px 2px 3px rgba(150,150,150, 0.4);
+  margin: 11px 0;
 }
+
 
 figure{
 
@@ -1026,6 +1028,12 @@ figure{
   margin-bottom: 0;
   padding: 10px 10px;
 
+img{
+  float: left;
+  width: 75px;
+}
+
+
   h1, h2{
     text-shadow: 1px 2px 3px rgba(150,150,150, 0.4);
     padding: 15px 10px 0px;
@@ -1057,7 +1065,7 @@ figure{
   // border-top: none;
   border-left: none;
   border-right: none;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
   a{
     border: none;
     &:hover{
@@ -1071,6 +1079,10 @@ figure{
 .navbar-nav > li > a{
   padding-top: 12px;
   padding-bottom: 5px;
+}
+
+.nav > li > a{
+  padding-right: 10px;
 }
 
 .dropdown-menu{
@@ -1098,21 +1110,21 @@ figure{
 .site-title{
   font-family: 'La Belle Aurore', cursive;
   white-space: nowrap;
+  padding: 10px;
 
   img{
     width: 50px;
-    height: 50px;
     float: left;
   }
 
   h1{
     font-size: 28px;
-    margin: 5px 0 0;
-    padding: 5px 0 5px;
+    margin: 0;
+    padding: 0;
     @media (min-width: $headerCrunch) {
       font-size: 38px;
       margin-top: 10px;
-      padding: 10px 12px 5px;
+      padding: 0;
     }
   }
 
@@ -1123,6 +1135,10 @@ figure{
       font-size: 24px;
       margin-top: 5px;
     }
+  }
+
+  a{
+    color: black;
   }
 
   @media (min-width: $screen-sm-min) {
@@ -1149,6 +1165,10 @@ figure{
 
 
 .catalog-list{
+
+  &.first-row{
+    margin-top: 25px;
+  }
 
   & > div{
     padding: 0 10px;

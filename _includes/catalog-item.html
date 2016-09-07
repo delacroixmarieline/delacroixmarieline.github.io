@@ -2,21 +2,32 @@
 {% if item == "" or item == nil %}{% assign item = page %}{% endif %}
 
 {% assign itemCategory = item.url | split: "/" %}
-<h2>Catalogue : <a href="{{ site.baseurl }}/{{ itemCategory[1] }}">{{ itemCategory[1] | capitalize }}</a></h2>
 
 {% assign pathElements = item.path | split:"/" %}
+
 {% assign imgPath = "" | split:"/" %}
 {% assign imgPath = imgPath | push: "img/catalogue" | push: pathElements[1] %}
 
 <div class="row">
   <div class="col-md-6">
-    <h3>{{ item.title }}</h3>
+
+<h2>Catalogue : <a href="{{ site.baseurl }}/{{ item.type }}">{{ itemCategory[1] | capitalize }}</a></h2>
+
+    <ul class="breadcrumb">
+    {% comment %}
+    <li><a href="{{ site.baseurl }}/catalogue/">Catalogue</a></li>
+    {% endcomment %}
+
+      <li></li>
+      <li class="active"><strong>{{ item.title }}</strong></li>
+    </ul>
+
 
     <ul class="list-unstyled">
-{% if item.saison != nil %}<li><strong>Saison</strong>&nbsp;:&nbsp;{{ site.saisons[item.saison] }}</li>{% endif %}
-{% if item.matieres != nil %}<li><strong>Matières</strong>&nbsp;:&nbsp;{{ item.matieres | join:", " }}</li>{% endif %}
-{% if item.taille != nil %}<li><strong>Taille</strong>&nbsp;:&nbsp;{{ item.taille }}</li>{% endif %}
-{% if item.prix != nil %}<li><strong>Prix</strong>&nbsp;:&nbsp;{{ item.prix }}</li>{% endif %}
+      {% if item.saison != nil %}<li><strong>Saison</strong>&nbsp;:&nbsp;{{ site.saisons[item.saison] }}</li>{% endif %}
+      {% if item.matieres != nil %}<li><strong>Matières</strong>&nbsp;:&nbsp;{{ item.matieres | join:", " }}</li>{% endif %}
+      {% if item.taille != nil %}<li><strong>Taille</strong>&nbsp;:&nbsp;{{ item.taille }}</li>{% endif %}
+      {% if item.prix != nil %}<li><strong>Prix</strong>&nbsp;:&nbsp;{{ item.prix }}</li>{% endif %}
     </ul>
 
     {{ item.content }}

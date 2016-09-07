@@ -1,0 +1,40 @@
+---
+layout: default
+title: Catalogue
+menu: null
+---
+
+<div class="row">
+  <div class="col-sm-12"><h1 class="page-title">{{ page.title }}</h1></div>
+</div>
+
+
+{% assign box-class = "box col-md-6 col-sm-6 col-xs-6" %}
+
+<div class="row catalog-list first-row">
+
+  <div class="{{ box-class }}">
+    <figure class="thumbnail rot1">
+      <a href="{{ site.baseurl }}/catalogue/">
+        <img src="{{ site.baseurl }}/img/home/marie-line-delacroix-by-klaus-roethlisberger-2.jpg" alt="{{ site.title }}" class="img-responsive">
+      </a>
+      <div class="caption">
+        <h3>Marie-Line par Klaus Rhoetlisberger</h3>
+      </div>
+    </figure>
+  </div>
+
+  <div class="{{ box-class }}">
+    <div class="row catalog-list">
+      {% assign sortedItems = site.catalog | sort: "date" %}
+      {% for c in sortedItems limit:8 %}
+      {% include catalog-list-item.html item=c index=forloop.index size="big" %}
+      {% endfor %}
+      <p>Retrouvez tous les modèles dans <a href="{{ site.baseurl }}/catalogue/">le catalogue</a>.</p>
+    </div>
+
+  </div>
+
+
+</div>
+

@@ -1,22 +1,17 @@
 ---
 layout: default
 ---
-{% assign pathName = page.url | remove: "/" %}
-<h1>{{ pathName | capitalize }}</h1>
-
-{{ content }}
-
 {% comment %}++++++++++++ DEBUG +++++++++++++{% endcomment %}
-{% assign doDebug = false %}
+{% assign pathName = page.url | remove: "/" %}
+<h2>Catalogue : {{ pathName | capitalize }}</h2>
+{% comment %}
+{{ content }}
+{% endcomment %}
+{% assign items = site.catalog | where: "type", pathName %}
 
-{% if doDebug == true %}<h3>pathName = {{ pathName|inspect }}</h3>{% endif %}
-
-<div class="row catalog-list">
-{% for item in site.catalog %}
-{% assign itemCategory = item.url | split: "/" %}
-{% if doDebug == true %}<h3>itemCategory[1] = {{ itemCategory[1] | inspect }}</h3>{% endif %}
-{% if itemCategory[1] == pathName %}
-{% include catalog-list-item.html item=item index=forloop.index %}
-{% endif %}
+{% for item in items %}
+    {% assign remain = forloop.index | modulo: 4 %}
+    {% if remain == 1 %}<div class="row catalog-list">{% endif %}
+    {% include catalog-list-item.html item=item index=forloop.index %}
+    {% if remain == 0 %}</div>{% endif %}
 {% endfor %}
-</div>

@@ -7,6 +7,12 @@ Adding a rotation class
 see config : site.rotation-classes
 ========================================================= {% endcomment %}
 {% assign item = include.item %}
+
+{% assign size = include.size %}
+{% if size == "" or size == nil or (size != "normal" and size != "big" %}
+{% assign size = "normal" %}
+{% endif %}
+
 {% assign pathElements = item.path | split:"/" %}
 {% assign imgPath = "" | split:"/" %}
 {% assign imgPath = imgPath | push: "img/catalogue" | push: pathElements[1] %}
@@ -27,7 +33,13 @@ see config : site.rotation-classes
   {% assign additionalClass = classes[random] | prepend: " " %}
 {% endif %}
 
-  <div class="col-md-3 col-sm-3 col-xs-6">
+{% if size == "normal" %}
+{% assign itemClass = "col-md-3 col-sm-3 col-xs-6" %}
+{% else %}
+{% assign itemClass = "col-md-6 col-sm-6 col-xs-6" %}
+{% endif %}
+
+  <div class="{{ itemClass }}">
     <figure class="thumbnail{{additionalClass}}">
       <a href="{{ site.baseurl }}{{ item.url }}">
         <img src="{{ site.baseurl }}/{{ imgPath }}" alt="{{ item.title }}">

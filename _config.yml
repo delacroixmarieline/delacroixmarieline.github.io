@@ -39,16 +39,13 @@ defaults:
     values:
       layout: "catalog-item"
       permalink: /:path/
-  -
-    scope:
-      path: "_catalog/chapeaux"
-    values:
-      type: "chapeau"
-  -
-    scope:
-      path: "_catalog/accessoires"
-    values:
-      type: "accessoire"
+
+  - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoire" } }
+  - { scope: { path: "_catalog/collection-ete" }, values: { type: "collection-ete" } }
+  - { scope: { path: "_catalog/collection-hiver" }, values: { type: "collection-hiver" } }
+  - { scope: { path: "_catalog/le-saharien" }, values: { type: "le-saharien" } }
+  - { scope: { path: "_catalog/mi-saison" }, values: { type: "mi-saison" } }
+  - { scope: { path: "_catalog/soiree-ceremonie" }, values: { type: "soiree-ceremonie" } }
 
 sass:
 
@@ -82,7 +79,7 @@ exclude:
 #                                      Specific setup
 
 # saisons used in items front matter
-saisons : { "p": "Printemps", "e": "Eté", "a": "Automne", "h": "Hiver" }
+saisons : { "e": "Eté", "h": "Hiver", "m": "Mi-saison" }
 
 # Categories du catalogue
 # utilisé pour générer les menus
@@ -157,23 +154,23 @@ admin:
     catalog:
       displayProps:
        - path
-       - id
        - url
-       - collection
        - type
        - title
        - date
-       - matieres
-       - taille
-       - prix
-       - images
        - slug
        - ext
        - tags
 
       noDisplayProps:
+       - id
+       - matieres
+       - taille
+       - prix
+       - images
        - output
        - content
+       - collection
        - excerpt
        - previous
        - next
