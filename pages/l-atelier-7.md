@@ -10,6 +10,7 @@ weight: 30
 </div>
 
 <div class="col-md-6">
+<h1>En travaux ;-)</h1>
 J'aime mon atelier, mon antre.
 
 J'y range mes étoffes, mes trésors. Gallons, voilettes, boutons, perles, ...

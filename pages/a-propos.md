@@ -25,7 +25,7 @@ C'est dans mon atelier, niché à l’abri des arbres de La Ferme des Quartiers,
 
 J'ai toujours eu la passion des tissus, des matières, des couleurs. Elle guide toujours mon inspiration.
 
-A seize ans, je créais mon premier vêtement, une magnifique tunique en coton à carreaux roses.
+A seize ans, je créais mon premier vêtement, une jolie tunique en coton à carreaux roses.
 
 Après, quelques années passées dans le monde du vêtement, je créais mon atelier : __Atelier 7__ en 1992.
 
@@ -45,9 +45,7 @@ Modiste autodidacte, je réalise des pièces que l'on peut porter au quotidien e
 
 Ma gamme est étendue et accessible : de la casquette à la capeline, en passant par le bibi, ...
 
-Je travaille également sur commande, et créé pour vous le chapeau qui mettra en valeur votre personnalité.
-
-Je travaille également sur commande, et créé le chapeau qui mettra en valeur chaque personnalité.
+Je travaille également sur commande, et créé le chapeau qui mettra en valeur votre personnalité.
 
 </div>
 <div class="col-sm-3">
