@@ -10,7 +10,7 @@ weight: 20
 
 <div class="col-sm-4 col-sm-offset-1">
 <figure class="thumbnail rot1">
-<img src="{{ site.baseurl }}/img/a-propos/marie-line-delacroix-atelier-7-2.jpg/" alt="" class="img-responsive">
+<img src="{{ site.baseurl }}/img/a-propos/marie-line-delacroix-atelier-7-2.jpg" alt="" class="img-responsive">
 <div class="caption">
 <h3>L'atelier 7</h3>
 </div>
