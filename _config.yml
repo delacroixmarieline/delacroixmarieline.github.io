@@ -8,6 +8,8 @@ email: david.jacquel@gmail.com
 baseurl: ""
 url: "http://ml-delacroix.fr"
 
+google_analytics_tracking_id: "UA-83807575-1"
+
 timezone: "Europe/Paris"
 
 collections:
@@ -41,11 +43,12 @@ defaults:
       permalink: /:path/
 
   - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoire" } }
-  - { scope: { path: "_catalog/collection-ete" }, values: { type: "collection-ete" } }
-  - { scope: { path: "_catalog/collection-hiver" }, values: { type: "collection-hiver" } }
+  - { scope: { path: "_catalog/ete" }, values: { type: "ete" } }
+  - { scope: { path: "_catalog/hiver" }, values: { type: "hiver" } }
   - { scope: { path: "_catalog/le-saharien" }, values: { type: "le-saharien" } }
   - { scope: { path: "_catalog/mi-saison" }, values: { type: "mi-saison" } }
   - { scope: { path: "_catalog/soiree-ceremonie" }, values: { type: "soiree-ceremonie" } }
+  - { scope: { path: "_catalog/homme" }, values: { type: "homme" } }
 
 sass:
 
@@ -86,25 +89,31 @@ saisons : { "e": "Eté", "h": "Hiver", "m": "Mi-saison" }
 catalog-categories:
   -
     # minuscules, chiffres et tiret
-    name: collection-ete
+    name: ete
 
     # utilisé pour l'affichage dans les pages
     # sans cette valeur, "name" est utilisé avec "Capitalisation" accessoires > Accessoires
     # collection-ete > Collection-Ete n'étant pas très beau, on utilise une valeur "display"
-    display: Collection Eté
+    display: Eté
   -
-    name: collection-hiver
-    display: Collection Hiver
+    name: hiver
+    display: Hiver
   -
     name: mi-saison
+    display: Mi-saison
   -
     name: le-saharien
     display: Le Saharien
   -
     name: soiree-ceremonie
     display: Soirée, Cérémonie, Cocktail
+
+  -
+    name: homme
   -
     name: accessoires
+
+
 
 
 # used to create a menu hierarchy for a type (pages, collection, ...)

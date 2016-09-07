@@ -1,10 +1,10 @@
 
 <div class="row catalog-categories">
   <h4>Catalogue</h4>
+  <ul class="">
   {% for category in site.catalog-categories %}
     {% capture url %}{{ site.baseurl }}/{{ category.name }}/{% endcapture %}
-    <div class="col-xs-12 col-md-12 category-box {{ category.name }}">
-      <h3 class="btn"><a href="{{ url }}">{% if category.display %}{{ category.display }}{% else %}{{ category.name | capitalize }}{% endif %}</a></h3>
-    </div>
-{% endfor %}
+      <li class="category-box {{ category.name }}"><a href="{{ url }}">{% if category.display %}{{ category.display | replace: " ", "&nbsp;" }}{% else %}{{ category.name | capitalize }}{% endif %}</a></li>
+  {% endfor %}
+  </ul>
 </div>

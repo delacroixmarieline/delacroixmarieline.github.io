@@ -1160,7 +1160,10 @@ img{
   border-top: 1px solid $brand-success;
   margin: 20px 0;
   padding: 20px 0;
-
+  ul{
+    list-style: none;
+    padding-left: 0;
+  }
 }
 
 
@@ -1178,34 +1181,33 @@ img{
 
 .category-box{
   text-align: center;
-
-  padding: 0;
+  padding: 6px 8px;
+  line-height: 2;
+  list-style: none;
+  display: inline;
 
   @media (min-width: $screen-xs-min) {
     padding-right: ($grid-gutter-width/2);
     padding-left: ($grid-gutter-width/2);
   }
 
-  h3{
-    width: 100%;
-    margin: 2px auto;
-    padding: 1px;
-    a{
-      color: white;
-      border-color: white;
-      &:hover{
-        border-color: $brand-warning;
-        color: $brand-warning;
-      }
+
+  a{
+    color: white;
+    border-color: white;
+    &:hover{
+      border-color: $brand-warning;
+      color: $brand-warning;
     }
   }
 }
 
+
 // Couleurs Catégories
-.collection-ete{
+.ete{
   background: lighten($brand-primary, 13.5%);
 }
-.collection-hiver{
+.hiver{
   background: darken($brand-warning, 13.5%);
 }
 .mi-saison{
@@ -1217,6 +1219,10 @@ img{
 .soiree-ceremonie{
   background: lighten($brand-danger, 13.5%);
 }
+.homme{
+  background: darken($brand-danger, 13.5%);
+}
+
 .accessoires{
   background: lighten($brand-info, 13.5%);
 }

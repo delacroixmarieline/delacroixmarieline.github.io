@@ -4,6 +4,9 @@ menu: main
 weight: 20
 ---
 <div class="row">
+  <div class="col-sm-10 col-sm-offset-1"><h1 class="page-title">{{ page.title }}</h1></div>
+</div>
+<div class="row">
 
 <div class="col-sm-4 col-sm-offset-1">
 <figure class="thumbnail rot1">
@@ -14,7 +17,7 @@ weight: 20
 </figure>
 </div>
 
-<div class="col-sm-5">
+<div class="col-sm-6">
 
 > Depuis vingt ans, je fais tourner les têtes entre mes mains.
 
@@ -34,7 +37,7 @@ J'ai eu la chance de suivre des cours donnés par Dominique Pilliard, grand mait
 </div>
 
 <div class="row">
-<div class="col-sm-offset-2 col-sm-5">
+<div class="col-sm-offset-1 col-sm-6">
 
 > J'aime mettre de la couleur à la rue.
 

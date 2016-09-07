@@ -8,7 +8,7 @@ weight: 40
 Vous souhaitez :
 
  - commander un chapeau vu sur ce site
- - commander un chapeau sur mesure
+ - commander un chapeau sur mesure (du 50 au 63)
 
 Envoyez moi un mail ou téléphonez moi via la <a href="{{ site.baseurl }}/contact/">page de contact.</a>
 

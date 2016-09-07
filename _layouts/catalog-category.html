@@ -2,8 +2,18 @@
 layout: default
 ---
 {% comment %}++++++++++++ DEBUG +++++++++++++{% endcomment %}
+
 {% assign pathName = page.url | remove: "/" %}
-<h2>Catalogue : {{ pathName | capitalize }}</h2>
+
+{% assign categoryConfig = site.catalog-categories | where: "name", pathName | first %}
+
+{% if categoryConfig.display != nil %}
+{% assign categoryName = categoryConfig.display %}
+{% else %}
+{% assign categoryName = categoryConfig.name | capitalize %}
+{% endif %}
+
+<h2>Catalogue : {{ categoryName | capitalize }}</h2>
 {% comment %}
 {{ content }}
 {% endcomment %}

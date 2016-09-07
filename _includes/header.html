@@ -1,7 +1,13 @@
 <div class="container">
-<div class="jumbotron home-jumbo">
+{% include utils/old_browser.html %}
+{% include utils/noscript.html %}
+{% include utils/cookiewarning.html %}
+<div class="jumbotron home-jumbo2">
+  <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/logo-atelier-7-marie-line-delacroix-bw-plain.svg" alt="Logo Marie-Line Delacroix" class=""></a>
   <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
   <h2><a href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
+</div>
+
 </div>
 {% comment %} >>>>>>>>>>>>>>>>>> Generates a menu Twitter Bootstrap style
 Include with :  {% include header.html navId="main" %}
@@ -21,6 +27,7 @@ Pages are sorted by "weight"
         <span>Menu</span>
       </button>
       <div class="site-title">
+        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/logo-atelier-7-marie-line-delacroix-bw-plain.svg" alt="" class=""></a>
         <h1><a class="" href="{{ site.baseurl }}/">{{ site.title }}</a><small></small></h1>
         <h2><a class="" href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
       </div>
