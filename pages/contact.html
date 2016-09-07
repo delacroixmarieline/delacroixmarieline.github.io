@@ -33,7 +33,7 @@ weight: 100
 
     <h4>Envoyez moi un message !</h4>
     <!-- see http://formspree.io/ -->
-    <form action="//formspree.io/{{ site.email }}" method="POST">
+    <form action="//formspree.io/{{ site.emails[0] }}" method="POST">
         <div class="form-group">
             <label for="name">Votre nom</label>
             <input type="text" id="name" name="name"class="form-control" >
@@ -48,6 +48,7 @@ weight: 100
         </div>
         <input type="text" name="_gotcha" style="display:none">
         <input type="hidden" name="_next" value="{{ site.url }}/contact-thank-you/">
+        <input type="hidden" name="_cc" value="{{ site.emails[1] }}" />
         <input type="submit" value="Envoyer" class="btn btn-primary">
     </form>
   </div>
