@@ -85,7 +85,7 @@ $brand-danger:          #710c34 !default; // casis clair
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               lighten($brand-warning, 93.5%) !default;
+$body-bg:               lighten($brand-warning, 60%) !default;
 //** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
 
@@ -957,8 +957,7 @@ h1, h2{
 
 
 figure{
-
-  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.3);
 
   h3{
     font-size: 18px;
@@ -969,7 +968,9 @@ figure{
       border: none;
     }
   }
-
+  &.thumbnail{
+    background: white;
+  }
   &.rot0{
     transform: rotate(2deg);
   }
