@@ -4,7 +4,7 @@ menu: main
 weight: 40
 ---
 <div class="row">
-<div class="col-md-9">
+<div class="col-md-6 col-xs-offset-1">
 Vous souhaitez :
 
  - commander un chapeau vu sur ce site
@@ -13,7 +13,13 @@ Vous souhaitez :
 Envoyez moi un mail ou téléphonez moi via la <a href="{{ site.baseurl }}/contact/">page de contact.</a>
 
 </div>
-<div class="col-md-3">
-<img src="{{ site.baseurl }}/img/a-propos/marie-line-delacroix-atelier-7-2.jpg" alt="" class="img-responsive">
+<div class="col-sm-4">
+<figure class="thumbnail rot0">
+<img src="{{ site.baseurl }}/img/commander/marie-line-hat.jpg" alt="" class="img-responsive">
+<div class="caption">
+<h3>L'Atelier 7</h3>
 </div>
+</figure>
+</div>
+
 </div>

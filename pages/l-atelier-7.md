@@ -5,9 +5,15 @@ weight: 30
 ---
 <div class="row">
 
-<div class="col-md-3">
-  <img src="{{ site.baseurl }}/img/logo-atelier-7-marie-line-delacroix-bw-plain.svg" alt="" class="img-responsive">
+<div class="col-sm-4 col-sm-offset-1">
+<figure class="thumbnail rot1">
+<img src="{{ site.baseurl }}/img/atelier/punk-attitude.jpg" alt="" class="img-responsive">
+<div class="caption">
+<h3>L'Atelier 7</h3>
 </div>
+</figure>
+</div>
+
 
 <div class="col-md-6">
 <h1>En travaux ;-)</h1>
