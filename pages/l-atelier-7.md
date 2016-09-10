@@ -16,8 +16,6 @@ J'aime mon atelier, mon antre.
 J'y range mes étoffes, mes trésors. Gallons, voilettes, boutons, perles, ...
 Ils ont chacun leur boite.
 
-Mais ne venez pas lorsque ce n'est pas rangé. D'ailleurs, ne venez pas, tout court !
-
 ### Matières
 
 tissus de saison
