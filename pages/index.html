@@ -3,6 +3,7 @@ title: Accueil
 menu: main
 weight: 10
 permalink: /
+layout: default2
 ---
 {% assign box-class = "box col-md-6 col-sm-6 col-xs-6" %}
 
@@ -14,31 +15,18 @@ permalink: /
         <img src="{{ site.baseurl }}/img/home/marie-line-delacroix-by-klaus-roethlisberger-1-500.jpg" alt="{{ site.title }}" class="img-responsive">
       </a>
       <div class="caption">
-        <h3><a href="{{ site.baseurl }}/a-propos/">A propos</a></h3>
+        <h3><a href="{{ site.baseurl }}/a-propos/">Marie-Line par Klaus Roethlisberger</a></h3>
       </div>
     </figure>
   </div>
 
   <div class="{{ box-class }}">
-    <figure class="thumbnail rot0">
-      <a href="{{ site.baseurl }}/l-atelier-7/">
-        <img src="{{ site.baseurl }}/img/home/marie-line-delacroix-by-klaus-roethlisberger-3-500.jpg" alt="{{ site.title }}" class="img-responsive">
-      </a>
-      <div class="caption">
-        <h3><a href="{{ site.baseurl }}/atelier/">L'Atelier 7</a></h3>
-      </div>
-    </figure>
+    <div class="alert alert-warning">
+      <p>Ce site est en cours de réalisation.</p>
+      <p>Il sera officiellement mis en ligne le vendredi 16 septembre.</p>
+      <p>Merci de votre patience et à très bientôt.</p>
+      <p>Marie-Line</p>
+    </div>
   </div>
 
-</div>
-
-<div class="row catalog-list">
-  <h2>Dernières créations</h2>
-  {% assign sortedItems = site.catalog | sort: "date" %}
-  {% for c in sortedItems limit:4 %}
-  {% include catalog-list-item.html item=c index=forloop.index %}
-  {% endfor %}
-  {% comment %}
-  <p>Retrouvez tous les modèles dans <a href="{{ site.baseurl }}/catalogue/">le catalogue</a>.</p>
-  {% endcomment %}
 </div>
