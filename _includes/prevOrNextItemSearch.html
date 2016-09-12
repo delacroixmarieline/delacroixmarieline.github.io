@@ -1,0 +1,55 @@
+{% comment %}
+Look for the next or previous item in a collection based on an item's prop
+
+string propName : name of the prop items are grouped by. Usually with a
+                  {% assign items = site.catalog | where: prop, value %}
+
+string searchFor : "previous" or "next"
+
+return : by assigning previousItem or nextItem variable to an object or null if no prev/next found
+
+{% endcomment %}
+
+{% assign doDebug = false %}
+
+{% assign propName = include.propName %}
+{% assign searchFor = include.searchFor %}
+
+{% if doDebug == true %}<p>propName = {{ propName | inspect }}</p>{% endif %}
+{% if doDebug == true %}<p>searchFor = {{ searchFor | inspect }}</p>{% endif %}
+
+{% assign siblings = site.catalog | where: "type", page.type %}
+
+{% if searchFor == "previous" %}
+  {% assign siblings = siblings | reverse %}
+{% endif %}
+
+{% assign selectedItem = nil %}
+{% assign canSearch = false %}
+
+{% for sibling in siblings %}
+
+  {% if canSearch == true and sibling[propName] == item[propName] %}
+    {% assign selectedItem = sibling %}
+    {% break %}
+  {% endif %}
+
+  {% if doDebug == true %}<p>sibling.path = {{ sibling.path | inspect }}</p>{% endif %}
+  {% if doDebug == true %}<p>item.path = {{ item.path | inspect }}</p>{% endif %}
+  {% if doDebug == true %}<p>canSearch = {{ canSearch | inspect }}</p>{% endif %}
+
+  {% if sibling.path == item.path %}
+    {% if doDebug == true %}<p>EGAL</p>{% endif %}
+    {% assign canSearch = true %}
+  {% endif %}
+
+{% endfor %}
+
+{% if searchFor == "previous" %}
+  {% assign previousItem = selectedItem %}
+{% elsif searchFor == "next" %}
+  {% assign nextItem = selectedItem %}
+{% endif %}
+
+{% if doDebug == true %}<p>final assignement for nextItem = {{ nextItem["title"] | inspect }}</p>{% endif %}
+{% if doDebug == true %}<p>final assignement for previousItem = {{ previousItem["title"] | inspect }}</p>{% endif %}

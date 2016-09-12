@@ -11,20 +11,10 @@
 <div class="row">
   <div class="col-md-6">
 
-<h2>Catalogue : <a href="{{ site.baseurl }}/{{ item.type }}">{{ itemCategory[1] | capitalize }}</a></h2>
+    <h2>Catalogue : <a href="{{ site.baseurl }}/{{ item.type }}">{{ itemCategory[1] | capitalize }}</a></h2>
 
-    <ul class="breadcrumb">
-    {% comment %}
-    <li><a href="{{ site.baseurl }}/catalogue/">Catalogue</a></li>
-    {% endcomment %}
-
-      <li></li>
-      <li class="active"><strong>{{ item.title }}</strong></li>
-    </ul>
-
-
+    <h3>{{ item.title }}</h3>
     <ul class="list-unstyled">
-      {% if item.saison != nil %}<li><strong>Saison</strong>&nbsp;:&nbsp;{{ site.saisons[item.saison] }}</li>{% endif %}
       {% if item.matieres != nil %}<li><strong>Matières</strong>&nbsp;:&nbsp;{{ item.matieres | join:", " }}</li>{% endif %}
       {% if item.taille != nil %}<li><strong>Taille</strong>&nbsp;:&nbsp;{{ item.taille }}</li>{% endif %}
       {% if item.prix != nil %}<li><strong>Prix</strong>&nbsp;:&nbsp;{{ item.prix }}</li>{% endif %}
@@ -46,5 +36,23 @@
       <a href="#carousel-example-generic" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
       <a href="#carousel-example-generic" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
     </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6">
+    {% comment %}Find prev next item with same property{% endcomment %}
+    {% include prevOrNextItemSearch.html propName="type" searchFor="previous" %}
+    {% include prevOrNextItemSearch.html propName="type" searchFor="next" %}
+
+    {% if previousItem != nil %}
+      <h4>&lt;&nbsp;Chapeau précédent = <a href="{{ site.baseurl }}{{ previousItem.url }}">{{ previousItem.title }}</a></h4>
+    {% endif %}
+  </div>
+  <div class="col-xs-6">
+    {% if nextItem != nil %}
+      <h4>Chapeau suivant = <a href="{{ site.baseurl }}{{ nextItem.url }}">{{ nextItem.title }}&nbsp;&gt;</a></h4>
+    {% endif %}
   </div>
 </div>
