@@ -28,6 +28,8 @@ Allowed : {{ types | join: " - " }}</p>
   {% assign documents = site.pages %}
 {% elsif objectType == "catalog" %}
   {% assign documents = site.catalog %}
+{% elsif objectType == "posts" %}
+  {% assign documents = site.posts %}
 {% endif %}
 
 <h3>{{ objectType | capitalize }} (count = {{ documents.size }})</h3>
@@ -47,7 +49,7 @@ Allowed : {{ types | join: " - " }}</p>
   {% endfor %}
   </tr>
   {% endfor %}
-{% elsif objectType == "catalog" %}
+{% elsif objectType == "catalog" or objectType == "posts" %}
   {% for doc in documents %}
   <tr>
   {% for prop in displayProps %}

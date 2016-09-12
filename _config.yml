@@ -43,7 +43,7 @@ defaults:
       layout: "catalog-item"
       permalink: /:path/
 
-  - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoire" } }
+  - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoires" } }
   - { scope: { path: "_catalog/ete" }, values: { type: "ete" } }
   - { scope: { path: "_catalog/hiver" }, values: { type: "hiver" } }
   - { scope: { path: "_catalog/le-saharien" }, values: { type: "le-saharien" } }
@@ -162,6 +162,35 @@ admin:
         - content
 
     catalog:
+      displayProps:
+       - path
+       - url
+       - type
+       - title
+       - date
+       - slug
+       - ext
+       - tags
+
+      noDisplayProps:
+       - id
+       - matieres
+       - taille
+       - prix
+       - images
+       - output
+       - content
+       - collection
+       - excerpt
+       - previous
+       - next
+       - draft
+       - categories
+       - layout
+       - relative_path
+       - permalink
+
+    posts:
       displayProps:
        - path
        - url

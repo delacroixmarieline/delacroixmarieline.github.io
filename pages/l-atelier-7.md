@@ -1,6 +1,6 @@
 ---
 title: L'Atelier 7
-menu: main
+# menu: main
 weight: 30
 ---
 <div class="row">
