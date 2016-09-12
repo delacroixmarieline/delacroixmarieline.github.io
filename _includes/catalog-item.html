@@ -47,12 +47,12 @@
     {% include prevOrNextItemSearch.html propName="type" searchFor="next" %}
 
     {% if previousItem != nil %}
-      <h4>&lt;&nbsp;Chapeau précédent = <a href="{{ site.baseurl }}{{ previousItem.url }}">{{ previousItem.title }}</a></h4>
+      <a class="btn btn-primary btn-lg btn-block" href="{{ site.baseurl }}{{ previousItem.url }}">Article précédent : {{ previousItem.title }}</a>
     {% endif %}
   </div>
   <div class="col-xs-6">
     {% if nextItem != nil %}
-      <h4>Chapeau suivant = <a href="{{ site.baseurl }}{{ nextItem.url }}">{{ nextItem.title }}&nbsp;&gt;</a></h4>
+     <a class="btn btn-primary btn-lg btn-block" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant : {{ nextItem.title }}</a>
     {% endif %}
   </div>
 </div>

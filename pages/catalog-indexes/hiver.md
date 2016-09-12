@@ -1,6 +1,5 @@
 ---
 ### Ne pas effacer ces trois premières ligne
-layout: catalog-category2
 ---
 {% comment %} ####################################################################
 Texte de présentation de la catégorie - optionnel

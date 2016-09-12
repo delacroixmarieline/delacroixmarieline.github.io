@@ -16,11 +16,12 @@ taille: 55 cm
 
 prix: 70€
 
-# images d'illustration
+# images d'illustration (sans extension de fichier)
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
   - cloche-tronquee-tissus-createur-lacroix-1
   - cloche-tronquee-tissus-createur-lacroix-2
+  - cloche-tronquee-tissus-createur-lacroix-3
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif
