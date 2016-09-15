@@ -1,9 +1,6 @@
 ---
 title: Saharien Pam
 
-# p = printemps, e = été, a = automne, h = hiver
-saison: e
-
 matieres:
  - coton imprimé dalmatien
 

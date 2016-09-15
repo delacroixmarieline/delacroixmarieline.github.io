@@ -1,0 +1,30 @@
+---
+title: Bibi Big Bang
+
+# date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
+date : 2016/07/09
+
+matieres:
+ - fausse fourrure
+ - jersey
+ - perles
+
+# tour de tête pour les chapeaux - facultatif
+taille: taille unique
+
+prix: 70 €
+
+# images d'illustration
+# la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
+images:
+  - bibi-big-bang-1
+  - bibi-big-bang-2
+  - bibi-big-bang-3
+  - bibi-big-bang-4
+  - bibi-big-bang-5
+
+---
+{% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              Texte additionnel - facultatif
+              Voir documentation sur la syntaxe Kramdown
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}

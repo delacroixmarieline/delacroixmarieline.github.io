@@ -1,0 +1,26 @@
+---
+title: Casquette Trad Papy Roux Kaki
+
+# date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
+date : 2016/08/09
+
+matieres:
+ - lainage
+
+# tour de tête pour les chapeaux - facultatif
+taille: 57,5 cm
+
+prix: 50 €
+
+# images d'illustration
+# la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
+images:
+  - casquette-trad-papy-roux-kaki-1
+  - casquette-trad-papy-roux-kaki-2
+  - casquette-trad-papy-roux-kaki-3
+
+---
+{% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              Texte additionnel - facultatif
+              Voir documentation sur la syntaxe Kramdown
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
