@@ -868,13 +868,13 @@ $breadcrumb-separator:          "/" !default;
 
 $carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
 
-$carousel-control-color:                      #fff !default;
+$carousel-control-color:                      $brand-primary !default;
 $carousel-control-width:                      15% !default;
 $carousel-control-opacity:                    .5 !default;
 $carousel-control-font-size:                  20px !default;
 
-$carousel-indicator-active-bg:                #fff !default;
-$carousel-indicator-border-color:             #fff !default;
+$carousel-indicator-active-bg:                $brand-primary !default;
+$carousel-indicator-border-color:             $brand-primary !default;
 
 $carousel-caption-color:                      #fff !default;
 
@@ -988,6 +988,9 @@ figure{
   }
 }
 
+.container.main {
+    padding-top: 10px;
+}
 
 .jumbotron.home-jumbo{
   @media (max-width: $screen-xs-max) {
@@ -1173,7 +1176,7 @@ img{
 .catalog-list{
 
   &.first-row{
-    margin-top: 25px;
+//    margin-top: 25px;
   }
 
   & > div{
@@ -1188,6 +1191,7 @@ img{
   line-height: 2;
   list-style: none;
   display: inline;
+  white-space: nowrap;
 
   @media (min-width: $screen-xs-min) {
     padding-right: ($grid-gutter-width/2);
@@ -1203,6 +1207,62 @@ img{
       color: $brand-warning;
     }
   }
+}
+
+.carousel-indicators{
+
+  position: relative;
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+
+  .active{
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    img{
+      border-color: white;
+    }
+  }
+
+  li{
+    text-indent: 30px;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  img{
+    width: 50px;
+    height: 50px;
+    border: 2px solid $brand-primary;
+  }
+}
+
+.nextPrevItem{
+  margin-top: 10px;
+
+  img{
+    width: 50px;
+    height: 50px;
+  }
+
+  .btnPrev{ text-align: left; }
+  .btnNext{ text-align: right; }
 }
 
 

@@ -18,8 +18,8 @@ prix: 68€
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
-  - boby-rouille-1-400
-  - boby-rouille-2-400
+  - boby-rouille-1
+  - boby-rouille-2
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

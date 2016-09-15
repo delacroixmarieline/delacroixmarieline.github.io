@@ -24,35 +24,42 @@
 
   </div>
   <div class="col-md-6">
-    <div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
-      <ol class="carousel-indicators">
-      {% for i in item.images %}<li data-target="#carousel-example-generic" data-slide-to="{{ forloop.index0 }}"{% if forloop.first == true %} class="active"{% endif %}></li>{% endfor %}
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        {% for i in item.images %}<div class="item{% if forloop.first == true %} active{% endif %}">
-          <img alt="First slide [900x500]" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg" data-holder-rendered="true">
-        </div>{% endfor %}
+    <div class="carousel slide" id="item-carousel" data-ride="" data-interval="3000" data-pause="hover">
+       <div class="carousel-inner" role="listbox">
+        {% for i in item.images %}
+        <div class="item{% if forloop.first == true %} active{% endif %}">
+          <img alt="{{ item.title }}" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg" data-holder-rendered="true">
+        </div>
+        {% endfor %}
       </div>
-      <a href="#carousel-example-generic" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-      <a href="#carousel-example-generic" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+     <ol class="carousel-indicators">
+      {% for i in item.images %}<li data-target="#item-carousel" data-slide-to="{{ forloop.index0 }}"{% if forloop.first == true %} class="active"{% endif %}><img alt="{{ item.title }}" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg"></li>{% endfor %}
+      </ol>
+      <a href="#item-carousel" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
+      <a href="#item-carousel" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
     </div>
   </div>
 </div>
 
-
 <div class="row">
-  <div class="col-xs-6">
-    {% comment %}Find prev next item with same property{% endcomment %}
-    {% include prevOrNextItemSearch.html propName="type" searchFor="previous" %}
-    {% include prevOrNextItemSearch.html propName="type" searchFor="next" %}
+  <div class="col-sm-6 col-sm-offset-6">
+    <div class="row nextPrevItem">
+      <div class="col-sm-6">
+        {% comment %}Find prev next item with same property{% endcomment %}
+        {% include prevOrNextItemSearch.html propName="type" searchFor="previous" %}
+        {% include prevOrNextItemSearch.html propName="type" searchFor="next" %}
 
-    {% if previousItem != nil %}
-      <a class="btn btn-primary btn-lg btn-block" href="{{ site.baseurl }}{{ previousItem.url }}">Article précédent : {{ previousItem.title }}</a>
-    {% endif %}
-  </div>
-  <div class="col-xs-6">
-    {% if nextItem != nil %}
-     <a class="btn btn-primary btn-lg btn-block" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant : {{ nextItem.title }}</a>
-    {% endif %}
+        {% if previousItem != nil %}
+          {% assign previousItemImage = previousItem.images | first %}
+          <a class="btn btn-primary btn-sm btn-block btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <img alt="{{ previousItem.title }}" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ previousItemImage }}.jpg"> Article précédent</a>
+        {% endif %}
+      </div>
+      <div class="col-sm-6">
+        {% if nextItem != nil %}
+          {% assign nextItemImage = nextItem.images | first %}
+          <a class="btn btn-primary btn-sm btn-block btnNext" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant <img alt="{{ nextItem.title }}" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ nextItemImage }}.jpg"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>

@@ -36,13 +36,23 @@ see config : site.rotation-classes
 {% if size == "normal" %}
 {% assign itemClass = "col-md-3 col-sm-3 col-xs-6" %}
 {% else %}
-{% assign itemClass = "col-md-6 col-sm-6 col-xs-6" %}
+{% assign itemClass = "col-md-6 col-sm-6 col-xs-12" %}
 {% endif %}
+
 
   <div class="{{ itemClass }}">
     <figure class="thumbnail{{additionalClass}}">
       <a href="{{ site.baseurl }}{{ item.url }}">
-        <img src="{{ site.baseurl }}/{{ imgPath }}" alt="{{ item.title }}">
+{% capture itemImg %}{{ site.baseurl }}/{{ imgPath }}{% endcapture %}
+{% assign itemImg = itemImg | remove_first: "/" %}
+
+{% responsive_image_block %}
+    path: {{ itemImg }}
+    alt: {{ item.title }}
+    title: {{ item.title }}
+    sizes: "(min-width:1200px) 300px, (min-width:992px) 230px, (min-width:768px) 180px, 50vw"
+{% endresponsive_image_block %}
+
       </a>
       <div class="caption">
         <h3>

@@ -1,0 +1,13 @@
+{% assign srcsetArray = "" | split: "/" %}
+{% for i in resized %}
+{% capture srcset %}{{ site.baseurl }}/{{ i.path }} {{ i.width }}w{% endcapture %}
+{% assign srcsetArray = srcsetArray | push: srcset %}
+{% endfor %}
+{% assign defaultRes = resized[3] %}
+{% assign defaultSrc = defaultRes.path %}
+
+<img src="{{ site.baseurl }}/{{ defaultSrc }}"
+ alt="{{ alt }}" title="{{ title }}"
+ class="{{ class }}"
+ srcset="{{ srcsetArray | join: ', ' }}"
+ sizes= "{{ sizes }}" >

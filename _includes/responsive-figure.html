@@ -1,0 +1,35 @@
+{% comment %} ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+List item
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
+
+{% comment %} =========================================================
+Creates a responsive figure
+see config : site.rotation-classes
+========================================================= {% endcomment %}
+{% assign src = include.src %}
+{% assign alt = include.alt %}
+{% assign title = alt %}
+{% assign url = include.url %}
+{% assign model = include.model %}{% if model == "" or model == nil or (model != "normal" and model != "big" %}{% assign model = "normal" %}{% endif %}
+{% assign rot = include.rot %}{% if rot == "" or rot == nil %}{% assign rot = "rot0" %}{% endif %}
+{% assign containerClasses = site.figure[model].classes %}
+
+  <div class="{{ containerClasses }}">
+    <figure class="thumbnail {{rot}}">
+      <a href="{{ site.baseurl }}{{ url }}">
+{% responsive_image_block %}
+    path: {{ src }}
+    alt: {{ alt }}
+    title: {{ title }}
+    sizes: {{ site.figure[model].sizes }}
+{% endresponsive_image_block %}
+      </a>
+      <div class="caption">
+        <h3>
+          <a href="{{ site.baseurl }}{{ url }}">
+          {{ title }}
+          </a>
+        </h3>
+      </div>
+    </figure>
+  </div>

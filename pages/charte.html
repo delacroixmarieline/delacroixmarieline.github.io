@@ -13,17 +13,21 @@ weight: 100
 <div class="col-xs-3 swatch color-complement">$color-complement</div>
 </div>
 
-
 <div class="page-header"><h1>Categorie de produits</h1></div>
-<div class="row">
-{% for c in site.catalog %}
-{% include catalog-list-item.html item=c %}
+{% include utils/responsive-classes.html %}
+{% for item in site.catalog limit: 2 %}
+    {% assign remain = forloop.index | modulo: 4 %}
+    {% if remain == 1 %}<div class="row catalog-list">{% endif %}
+    {% include catalog-list-item.html item=item index=forloop.index %}
+    {% if remain == 0 or forloop.last == true %}</div>{% endif %}
 {% endfor %}
-</div>
-<div class="page-header"><h1>Fiche produit</h1></div>
 
+<div class="page-header"><h1>Fiche produit</h1></div>
+{% comment %}
 {% assign item = site.catalog | first %}
 {% include catalog-item.html item=item %}
+
+{% endcomment %}
 
   <h1>Buttons</h1>
   <p>

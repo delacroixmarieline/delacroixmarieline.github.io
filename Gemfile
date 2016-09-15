@@ -17,3 +17,5 @@ gem 'github-pages'
 
 # here you need to explicitelly call your jekyll plugins like, ...
 # gem 'jekyll-paginate'
+
+gem 'jekyll-responsive_image'

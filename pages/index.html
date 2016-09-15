@@ -4,31 +4,13 @@ menu: main
 weight: 10
 permalink: /
 ---
-{% assign box-class = "box col-md-6 col-sm-6 col-xs-6" %}
+{% assign box-class = "box col-md-6 col-sm-6 col-xs-12" %}
 
 <div class="row catalog-list first-row">
 
-  <div class="{{ box-class }}">
-    <figure class="thumbnail">
-      <a href="{{ site.baseurl }}/a-propos/">
-        <img src="{{ site.baseurl }}/img/home/marie-line-delacroix-by-klaus-roethlisberger-1-500.jpg" alt="{{ site.title }}" class="img-responsive">
-      </a>
-      <div class="caption">
-        <h3><a href="{{ site.baseurl }}/a-propos/">A propos</a></h3>
-      </div>
-    </figure>
-  </div>
+{% include responsive-figure.html src="img/home/marie-line-delacroix-by-klaus-roethlisberger-1-500.jpg" alt="A propos" url="/a-propos/" model="big" rot="rot0" %}
 
-  <div class="{{ box-class }}">
-    <figure class="thumbnail rot0">
-      <a href="{{ site.baseurl }}/l-atelier-7/">
-        <img src="{{ site.baseurl }}/img/home/marie-line-delacroix-by-klaus-roethlisberger-3-500.jpg" alt="{{ site.title }}" class="img-responsive">
-      </a>
-      <div class="caption">
-        <h3><a href="{{ site.baseurl }}/atelier/">L'Atelier 7</a></h3>
-      </div>
-    </figure>
-  </div>
+{% include responsive-figure.html src="img/home/marie-line-delacroix-by-klaus-roethlisberger-3-500.jpg" alt="Catalogue" url="/catalogue/" model="big" rot="rot1" %}
 
 </div>
 

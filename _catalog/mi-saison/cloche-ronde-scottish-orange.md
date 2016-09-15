@@ -19,8 +19,8 @@ prix: 65€
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
-  - cloche-ronde-scottish-orange-1
   - cloche-ronde-scottish-orange-2
+  - cloche-ronde-scottish-orange-1
   - cloche-ronde-scottish-orange-3
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
