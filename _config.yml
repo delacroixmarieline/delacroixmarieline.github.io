@@ -82,6 +82,8 @@ exclude:
   - bower.json
   - Readme.md
   - publish-key.enc
+  - _catalog/hiver
+  - _catalog/mi-saison
 
 gems: [jekyll/responsive_image]
 
@@ -105,6 +107,8 @@ responsive_image:
     - width: 300
     - width: 250
     - width: 150
+    - width: 50
+      quality: 30
 
   # [Optional, Default: assets]
   # The base directory where assets are stored. This is used to determine the
@@ -177,6 +181,12 @@ figure:
   big:
     classes: "col-md-6 col-sm-6 col-xs-12"
     sizes: "(min-width:1200px) 520px, (min-width:992px) 470px, (min-width:768px) 350px, 90vw"
+
+  carousel:
+    classes: ""
+    sizes: "(min-width:1200px) 50vw, (min-width:992px) 470px, (min-width:768px) 350px, 90vw"
+
+
 
 # used to create a menu hierarchy for a type (pages, collection, ...)
 # depending on a starting folder (eg : _mycollection/folder1)
