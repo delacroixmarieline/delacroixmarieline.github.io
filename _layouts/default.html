@@ -5,8 +5,8 @@
     {% include header.html %}
     <div class="container main" role="main">
 
-    {% comment %}{% endcomment %}
-    {% include utils/responsive-classes.html %}
+    {% comment %}{% include utils/responsive-classes.html %}{% endcomment %}
+
     {{ content }}
     </div>
     {% include footer.html %}

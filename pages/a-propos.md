@@ -47,6 +47,8 @@ Ma gamme est étendue et accessible : de la casquette à la capeline, en passant
 
 Je travaille également sur commande, et créé le chapeau qui mettra en valeur votre personnalité.
 
+Et ne manquez pas de visiter ma page <a href="{{ site.baseurl }}/credits/">"Crédits"</a>, pour y découvrir toutes les personnes qui participent à mon bien être personnel et professionnel.
+
 </div>
 <div class="col-sm-3">
 <figure class="thumbnail rot0">

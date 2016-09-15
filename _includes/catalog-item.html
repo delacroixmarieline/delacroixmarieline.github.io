@@ -53,7 +53,7 @@
 path: {{ imagePath }}
 alt: {{ item.title }}
 title: {{ item.title }}
-sizes: "50px"
+sizes: {{ site.figure.carousel-thumbs.sizes }}
 {% endresponsive_image_block %}
 
 </li>{% endfor %}
@@ -73,13 +73,37 @@ sizes: "50px"
 
         {% if previousItem != nil %}
           {% assign previousItemImage = previousItem.images | first %}
-          <a class="btn btn-primary btn-sm btn-block btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <img alt="{{ previousItem.title }}" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ previousItemImage }}.jpg"> Article précédent</a>
+          <a class="btn btn-primary btn-sm btn-block btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+{% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ previousItemImage }}.jpg{% endcapture %}
+{% assign imagePath = imagePath | remove_first: "/" %}
+
+{% responsive_image_block %}
+path: {{ imagePath }}
+alt: {{ previousItem.title }}
+title: {{ previousItem.title }}
+sizes: {{ site.figure.carousel-thumbs.sizes }}
+{% endresponsive_image_block %}
+
+ Article précédent</a>
         {% endif %}
       </div>
       <div class="col-sm-6">
         {% if nextItem != nil %}
           {% assign nextItemImage = nextItem.images | first %}
-          <a class="btn btn-primary btn-sm btn-block btnNext" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant <img alt="{{ nextItem.title }}" src="{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ nextItemImage }}.jpg"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a>
+          <a class="btn btn-primary btn-sm btn-block btnNext" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant
+
+{% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ nextItemImage }}.jpg{% endcapture %}
+{% assign imagePath = imagePath | remove_first: "/" %}
+
+{% responsive_image_block %}
+path: {{ imagePath }}
+alt: {{ nextItem.title }}
+title: {{ nextItem.title }}
+sizes: {{ site.figure.carousel-thumbs.sizes }}
+{% endresponsive_image_block %}
+
+         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a>
         {% endif %}
       </div>
     </div>

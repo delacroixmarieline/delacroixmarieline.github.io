@@ -82,8 +82,8 @@ exclude:
   - bower.json
   - Readme.md
   - publish-key.enc
-  - _catalog/hiver
-  - _catalog/mi-saison
+  # - _catalog/hiver
+  # - _catalog/mi-saison
 
 gems: [jekyll/responsive_image]
 
@@ -186,7 +186,9 @@ figure:
     classes: ""
     sizes: "(min-width:1200px) 50vw, (min-width:992px) 470px, (min-width:768px) 350px, 90vw"
 
-
+  carousel-thumbs:
+    classes: ""
+    sizes: "(min-width:1200px) 50px, 50px"
 
 # used to create a menu hierarchy for a type (pages, collection, ...)
 # depending on a starting folder (eg : _mycollection/folder1)
