@@ -16,13 +16,12 @@ Vous souhaitez :
 Envoyez moi un mail ou téléphonez moi. Toutes mes coordonnées sont sur la <a href="{{ site.baseurl }}/contact/">page de contact.</a>
 
 </div>
-<div class="col-sm-4">
-<figure class="thumbnail rot0">
-<img src="{{ site.baseurl }}/img/commander/marie-line-hat.jpg" alt="" class="img-responsive">
-<div class="caption">
-<h3>L'Atelier 7</h3>
-</div>
-</figure>
-</div>
+
+{% include responsive-figure.html
+src="img/commander/marie-line-hat.jpg"
+alt="Notre service commande au grand complet."
+url=""
+model="normal"
+rot="rot0" %}
 
 </div>

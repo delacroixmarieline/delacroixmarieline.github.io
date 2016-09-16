@@ -15,7 +15,9 @@ prix: 70 €
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
-  - bibi-zebulon
+  - bibi-zebulon-1
+  - bibi-zebulon-2
+  - bibi-zebulon-3
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

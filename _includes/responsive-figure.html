@@ -10,26 +10,27 @@ see config : site.rotation-classes
 {% assign alt = include.alt %}
 {% assign title = alt %}
 {% assign url = include.url %}
-{% assign model = include.model %}{% if model == "" or model == nil or (model != "normal" and model != "big" %}{% assign model = "normal" %}{% endif %}
+{% assign model = include.model %}{% if model == "" or model == nil %}{% assign model = "normal" %}{% endif %}
 {% assign rot = include.rot %}{% if rot == "" or rot == nil %}{% assign rot = "rot0" %}{% endif %}
 {% assign containerClasses = site.figure[model].classes %}
 
-  <div class="{{ containerClasses }}">
-    <figure class="thumbnail {{rot}}">
-      <a href="{{ site.baseurl }}{{ url }}">
+<div class="{{ containerClasses }}">
+<figure class="thumbnail {{rot}}">
+{% if url != "" %}<a href="{{ site.baseurl }}{{ url }}">{% endif %}
 {% responsive_image_block %}
-    path: {{ src }}
-    alt: {{ alt }}
-    title: {{ title }}
-    sizes: {{ site.figure[model].sizes }}
+path: {{ src }}
+alt: {{ alt }}
+title: {{ title }}
+sizes: {{ site.figure[model].sizes }}
 {% endresponsive_image_block %}
-      </a>
-      <div class="caption">
-        <h3>
-          <a href="{{ site.baseurl }}{{ url }}">
-          {{ title }}
-          </a>
-        </h3>
-      </div>
-    </figure>
-  </div>
+{% if url != "" %}</a>{% endif %}
+<div class="caption">
+<h3>
+{% if url != "" %}<a href="{{ site.baseurl }}{{ url }}">{% endif %}
+{{ title }}
+{% if url != "" %}</a>{% endif %}
+</h3>
+
+</div>
+</figure>
+</div>

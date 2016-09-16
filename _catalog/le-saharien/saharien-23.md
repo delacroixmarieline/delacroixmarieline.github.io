@@ -6,7 +6,7 @@ matieres:
 
 taille: 56,5 cm
 
-prix: 112€
+prix: 95€
 
 images:
   - le-saharien-pam-1

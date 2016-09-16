@@ -22,6 +22,8 @@ images:
   - bibi-fleur-excentree-4
   - bibi-fleur-excentree-5
   - bibi-fleur-excentree-6
+  - bibi-fleur-excentree-7
+  - bibi-fleur-excentree-8
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

@@ -73,6 +73,7 @@ kramdown:
   # parse markdown inside block-level HTML tag
   parse_block_html: true
 
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -84,6 +85,12 @@ exclude:
   - publish-key.enc
   # - _catalog/hiver
   # - _catalog/mi-saison
+  # - _catalog/accessoires
+  # - _catalog/hiver
+  # - _catalog/ete
+
+include:
+  - .nojekyll
 
 gems: [jekyll/responsive_image]
 
@@ -94,21 +101,19 @@ responsive_image:
 
   # [Optional, Default: 85]
   # Quality to use when resizing images.
-  default_quality: 50
+  default_quality: 30
 
   # [Optional, Default: []]
   # An array of resize configuration objects. Each object must contain at least
   # a `width` value.
   sizes:
     - width: 550  # [Required] How wide the resized image will be.
-      quality: 50 # [Optional] Overrides default_quality for this size.
+      quality: 40 # [Optional] Overrides default_quality for this size.
     - width: 470
     - width: 350
-    - width: 300
     - width: 250
     - width: 150
     - width: 50
-      quality: 30
 
   # [Optional, Default: assets]
   # The base directory where assets are stored. This is used to determine the
@@ -127,7 +132,7 @@ responsive_image:
   #   %{width}       Width of the resized image
   #   %{height}      Height of the resized image
   #
-  output_path_format: img/resized/%{width}/%{basename}
+  output_path_format: img/resized/%{dirname}/%{width}/%{basename}
 
   # By default, only images referenced by the responsive_image and responsive_image_block
   # tags are resized. Here you can set a list of paths or path globs to resize other
@@ -177,6 +182,14 @@ figure:
   normal:
     classes: "col-md-3 col-sm-3 col-xs-6"
     sizes: "(min-width:1200px) 300px, (min-width:992px) 230px, (min-width:768px) 180px, 50vw"
+
+  creditsLeft:
+    classes: "col-sm-4 col-sm-offset-1"
+    sizes: "(min-width:1200px) 50vw, (min-width:992px) 470px, (min-width:768px) 350px, 90vw"
+
+  creditsRight:
+    classes: "col-sm-4"
+    sizes: "(min-width:1200px) 50vw, (min-width:992px) 470px, (min-width:768px) 350px, 90vw"
 
   big:
     classes: "col-md-6 col-sm-6 col-xs-12"
@@ -236,14 +249,8 @@ admin:
 
     catalog:
       displayProps:
-       - path
-       - url
-       - type
        - title
-       - date
-       - slug
-       - ext
-       - tags
+       - prix
 
       noDisplayProps:
        - id

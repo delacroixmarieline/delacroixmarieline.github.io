@@ -20,8 +20,6 @@ images:
   - bibi-big-bang-1
   - bibi-big-bang-2
   - bibi-big-bang-3
-  - bibi-big-bang-4
-  - bibi-big-bang-5
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

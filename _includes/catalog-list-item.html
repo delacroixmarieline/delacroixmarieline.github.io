@@ -44,12 +44,13 @@ see config : site.rotation-classes
     <figure class="thumbnail{{additionalClass}}">
       <a href="{{ site.baseurl }}{{ item.url }}">
 {% capture itemImg %}{{ site.baseurl }}/{{ imgPath }}{% endcapture %}
+{% capture titleStr %}{{ item.title }}{% endcapture %}
 {% assign itemImg = itemImg | remove_first: "/" %}
 
 {% responsive_image_block %}
     path: {{ itemImg }}
-    alt: {{ item.title }}
-    title: {{ item.title }}
+    alt: {{ titleStr }}
+    title: {{ titleStr }}
     sizes: "(min-width:1200px) 300px, (min-width:992px) 230px, (min-width:768px) 180px, 50vw"
 {% endresponsive_image_block %}
 
@@ -57,7 +58,7 @@ see config : site.rotation-classes
       <div class="caption">
         <h3>
           <a href="{{ site.baseurl }}{{ item.url }}">
-          {{ item.title }}
+          {{ titleStr }}
           </a>
         </h3>
       </div>
