@@ -5915,6 +5915,30 @@ figure {
       border-bottom: none;
       color: #AA3939; }
 
+blockquote {
+  position: relative;
+  font-style: italic;
+  padding: 10px 10px 10px 40px;
+  background: #f8eaea;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  margin: 5px;
+  text-indent: 23px; }
+  blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a; }
+  blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px; }
+
 .navbar-default {
   font-family: 'La Belle Aurore', cursive;
   font-size: 24px;
@@ -6057,6 +6081,11 @@ figure {
     text-align: left; }
   .nextPrevItem .btnNext {
     text-align: right; }
+  .nextPrevItem .btn {
+    background: transparent;
+    color: #AA3939;
+    border: 1px solid #AA3939;
+    overflow: hidden; }
 
 .ete {
   background: #c95f5f; }
