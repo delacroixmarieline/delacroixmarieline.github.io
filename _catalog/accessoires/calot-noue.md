@@ -7,9 +7,9 @@ date : 2016/06/11
 matieres:
  - sisal
 # tour de tête pour les chapeaux - facultatif
-taille: taille unique
+taille: unique
 
-prix: 38 €
+prix: 38
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

@@ -8,9 +8,9 @@ matieres:
  - coton
 
 # tour de tête pour les chapeaux - facultatif
-taille: 56,5 cm
+taille: 56.5
 
-prix: 65 €
+prix: 65
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

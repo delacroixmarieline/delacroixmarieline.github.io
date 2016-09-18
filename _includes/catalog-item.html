@@ -16,8 +16,8 @@
     <h3>{{ item.title }}</h3>
     <ul class="list-unstyled">
       {% if item.matieres != nil %}<li><strong>Matières</strong>&nbsp;:&nbsp;{{ item.matieres | join:", " }}</li>{% endif %}
-      {% if item.taille != nil %}<li><strong>Taille</strong>&nbsp;:&nbsp;{{ item.taille }}</li>{% endif %}
-      {% if item.prix != nil %}<li><strong>Prix</strong>&nbsp;:&nbsp;{{ item.prix }}</li>{% endif %}
+      {% if item.taille != nil %}<li><strong>Taille</strong>&nbsp;:&nbsp;{% if item.taille contains "unique" %}unique{% else %}{{ item.taille | append: " cm"}}{% endif %}</li>{% endif %}
+      {% if item.prix != nil %}<li><strong>Prix</strong>&nbsp;:&nbsp;{{ item.prix | append: " €"}}</li>{% endif %}
     </ul>
 
     {{ item.content }}
@@ -73,7 +73,7 @@ sizes: {{ site.figure.carousel-thumbs.sizes }}
 
         {% if previousItem != nil %}
           {% assign previousItemImage = previousItem.images | first %}
-          <a class="btn btn-primary btn-sm btn-block btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <a class="btn btn-primary btn-sm btn-block btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}#item-carousel"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 
 {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ previousItemImage }}.jpg{% endcapture %}
 {% assign imagePath = imagePath | remove_first: "/" %}
@@ -91,7 +91,7 @@ sizes: {{ site.figure.carousel-thumbs.sizes }}
       <div class="col-sm-6">
         {% if nextItem != nil %}
           {% assign nextItemImage = nextItem.images | first %}
-          <a class="btn btn-primary btn-sm btn-block btnNext" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant
+          <a class="btn btn-primary btn-sm btn-block btnNext" href="{{ site.baseurl }}{{ nextItem.url }}#item-carousel">Article suivant
 
 {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ nextItemImage }}.jpg{% endcapture %}
 {% assign imagePath = imagePath | remove_first: "/" %}

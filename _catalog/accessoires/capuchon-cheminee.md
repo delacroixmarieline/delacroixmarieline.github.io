@@ -9,9 +9,9 @@ matieres:
  - matelassé
 
 # tour de tête pour les chapeaux - facultatif
-taille: taille unique
+taille: unique
 
-prix: 40 €
+prix: 40
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

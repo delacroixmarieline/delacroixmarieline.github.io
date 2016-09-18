@@ -8,9 +8,9 @@ matieres:
  - velours motifs
 
 # tour de tête pour les chapeaux - facultatif
-taille: 63 cm
+taille: 63
 
-prix: 55 €
+prix: 55
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

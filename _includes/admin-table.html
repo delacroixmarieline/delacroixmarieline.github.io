@@ -1,3 +1,7 @@
+{% comment %}
+This code is crap ! Need a good refactor.
+{% endcomment %}
+
 {% assign objectType = include.objectType %}
 
 {% comment %} +++++ Verifies that 'objectType' is a valid type +++++ {% endcomment %}
@@ -27,7 +31,7 @@ Allowed : {{ types | join: " - " }}</p>
 {% if  objectType == "pages" %}
   {% assign documents = site.pages %}
 {% elsif objectType == "catalog" %}
-  {% assign documents = site.catalog %}
+  {% assign documents = site.catalog | sort: "title" %}
 {% elsif objectType == "posts" %}
   {% assign documents = site.posts %}
 {% endif %}

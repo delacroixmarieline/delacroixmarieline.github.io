@@ -9,16 +9,15 @@ matieres:
  - Lurex
 
 # tour de tête pour les chapeaux - facultatif
-taille: 55 cm
+taille: 55
 
-prix: 65 €
+prix: 65
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
   - toque-moulee-vieux-rose-argent-1
   - toque-moulee-vieux-rose-argent-2
-  - toque-moulee-vieux-rose-argent-3
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

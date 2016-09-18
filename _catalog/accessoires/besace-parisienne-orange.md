@@ -8,9 +8,9 @@ matieres:
  - tissu d'ameublement
 
 # tour de tête pour les chapeaux - facultatif
-taille: taille unique
+taille: unique
 
-prix: 45 €
+prix: 45
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

@@ -1063,6 +1063,35 @@ img{
   }
 }
 
+blockquote{
+  position: relative;
+  font-style: italic;
+  padding: 10px 10px 10px 40px;
+  background: lighten($brand-primary, 50%);
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  margin: 5px;
+  text-indent: 23px;
+
+  &:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+  }
+
+  cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
 .navbar-default{
   font-family: 'La Belle Aurore', cursive;
   font-size: 24px;
@@ -1268,6 +1297,12 @@ img{
 
   .btnPrev{ text-align: left; }
   .btnNext{ text-align: right; }
+  .btn{
+    background: transparent;
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
+    overflow: hidden;
+  }
 }
 
 

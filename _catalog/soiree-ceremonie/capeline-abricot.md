@@ -8,9 +8,9 @@ matieres:
  - coton mélangé
 
 # tour de tête pour les chapeaux - facultatif
-taille: 53,5 cm
+taille: 53.5
 
-prix: 75€
+prix: 75
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

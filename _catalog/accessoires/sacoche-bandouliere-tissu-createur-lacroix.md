@@ -11,7 +11,7 @@ matieres:
 # tour de tête pour les chapeaux - facultatif
 taille:
 
-prix: 30€
+prix: 30
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

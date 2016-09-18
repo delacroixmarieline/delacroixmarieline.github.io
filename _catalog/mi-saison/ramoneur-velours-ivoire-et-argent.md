@@ -9,9 +9,9 @@ matieres:
  - laine mélangée
 
 # tour de tête pour les chapeaux - facultatif
-taille: 53,5 cm
+taille: 53.5
 
-prix: 70€
+prix: 70
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

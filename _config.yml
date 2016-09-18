@@ -88,6 +88,7 @@ exclude:
   # - _catalog/accessoires
   # - _catalog/hiver
   # - _catalog/ete
+  # - _catalog/homme
 
 include:
   - .nojekyll
@@ -114,6 +115,7 @@ responsive_image:
     - width: 250
     - width: 150
     - width: 50
+      quality: 20
 
   # [Optional, Default: assets]
   # The base directory where assets are stored. This is used to determine the

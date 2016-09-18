@@ -8,9 +8,9 @@ matieres:
  - bache relief
 
 # tour de tête pour les chapeaux - facultatif
-taille: 56 cm
+taille: 56
 
-prix: 69€
+prix: 69
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

@@ -25,7 +25,7 @@ rot="rot0" %}
 
 <div class="row catalog-list">
   <h2>Dernières créations</h2>
-  {% assign sortedItems = site.catalog | sort: "date" %}
+  {% assign sortedItems = site.catalog | where: "home", true %}
   {% for c in sortedItems limit:4 %}
   {% include catalog-list-item.html item=c index=forloop.index %}
   {% endfor %}

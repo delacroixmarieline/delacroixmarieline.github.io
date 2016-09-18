@@ -8,9 +8,9 @@ matieres:
  - lainage
 
 # tour de tête pour les chapeaux - facultatif
-taille: 53 cm
+taille: 53
 
-prix: 59€
+prix: 59
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.

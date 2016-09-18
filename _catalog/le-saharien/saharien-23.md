@@ -4,9 +4,9 @@ title: Saharien Pam
 matieres:
  - coton imprimé dalmatien
 
-taille: 56,5 cm
+taille: 56.5
 
-prix: 95€
+prix: 95
 
 images:
   - le-saharien-pam-1

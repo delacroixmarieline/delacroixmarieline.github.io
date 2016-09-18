@@ -2,16 +2,19 @@
 title: Cloche ronde Scottish Orange
 
 # date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
-date : 2016/07/25
+date : 2015/07/25
+
+# si l'article doit être en page d'accueil
+home: true
 
 matieres:
  - laine
  - velours
 
 # tour de tête pour les chapeaux - facultatif
-taille: 53,5 cm
+taille: 53.5
 
-prix: 65€
+prix: 65
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
