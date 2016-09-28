@@ -1,15 +1,14 @@
 ---
-title: Ramoneur Gris Soie et Laine
+title: Ramoneur Velours Ivoire et Argent
 
 # date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
 date : 2016/09/13
 
 matieres:
- - soie
- - laine mélangée
+ - velours argent
 
 # tour de tête pour les chapeaux - facultatif
-taille: 53.5
+taille: 52
 
 prix: 70
 

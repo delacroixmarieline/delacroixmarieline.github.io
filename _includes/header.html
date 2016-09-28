@@ -1,3 +1,5 @@
+<a id="skippy" class="sr-only sr-only-focusable" href="#navigation"><div class="container"><span class="skiplink-text">Skip to main menu</span></div></a>
+<a id="skippy" class="sr-only sr-only-focusable" href="#main"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
 <div class="container">
 {% include utils/old_browser.html %}
 {% include utils/noscript.html %}
@@ -22,7 +24,7 @@ Pages are sorted by "weight"
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span>Menu</span>
       </button>
@@ -34,7 +36,7 @@ Pages are sorted by "weight"
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right"{% if navbarId == 'main' %} id="navigation"{% endif %}>
 
 {% comment %}

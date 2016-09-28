@@ -5,7 +5,7 @@ title: Calot Noué
 date : 2016/06/11
 
 matieres:
- - sisal
+ - cotonnades
 # tour de tête pour les chapeaux - facultatif
 taille: unique
 

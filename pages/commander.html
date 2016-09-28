@@ -1,0 +1,80 @@
+---
+title: Commander
+menu: main
+weight: 40
+
+
+mesures:
+ - title: Chapeau classique légèrement incliné
+   img: prise-mesure-chapeau-classique.svg
+   figureSize: 1
+ - title: Casquette et Béret inclinés (plus pour demi-saison)
+   img: prise-mesure-casquette-et-beret-incline.svg
+   figureSize: 3
+ - title: Capeline droite légèrement en avant
+   img: prise-mesure-capeline.svg
+   figureSize: 2
+ - title: Style Borsalino au dessus des sourcils et chapeau Homme
+   img: prise-mesure-style-borsalino-au-dessus-sourcils.svg
+   figureSize: 2
+ - title: Béret, Toque et Casquette hiver enfoncés sur les oreilles
+   img: prise-mesure-beret-hiver-enfonce.svg
+   figureSize: 2
+ - title: Toque tambourin au dessus des oreilles
+   img: prise-mesure-toque-tambourin-au-dessus-des-oreilles.svg
+   figureSize: 2
+
+---
+<div class="row">
+<div class="col-sm-10 col-sm-offset-1"><h1 class="page-title">{{ page.title }}</h1></div>
+</div>
+
+<div class="row">
+<div class="col-md-6 col-xs-offset-1">
+<p>Mes chapeaux sont des pièces uniques.</p>
+<p>Si un modèle vous plait dans le catalogue, envoyez moi un mail ou téléphonez moi. Toutes mes coordonnées sont sur la <a href="{{ site.baseurl }}/contact/">page Contact.</a></p>
+<p>Mais vous pouvez aussi le commander, dans une autre taille et/ou dans les matières qui vous siéront.</p>
+<p>Je peux réaliser la plupart de mes modèles de la taille 50, jusqu'à la taille 63.</p>
+<p>En ce qui concerne le choix des matières, je dispose d'un large éventail de tissus, depuis le tissu de créateur (Lacroix, Nina Ricci et d'autres) jusqu'aux chatoyants tissus de tapissier, en passant par les sisal, soies, velours, il y en a tant !</p>
+</div>
+
+{% include responsive-figure.html
+src="img/commander/marie-line-hat.jpg"
+alt="Notre service commande au grand complet."
+url=""
+model="creditsLeft"
+rot="rot0" %}
+
+</div>
+
+<div class="row">
+  <div class="col-sm-12 col-xs-offset-1">
+    <h3>Prise de mesures</h3>
+    <p>Voici quelques conseils pour prendre votre tour de tête en fonction du modèle qui vous plait.
+    <ul>
+      <li>prenez votre tour de tête avec un mètre à ruban.</li>
+      <li>mesurez selon la façon dont vous porterez le chapeau.</li>
+    </ul>
+    </p>
+  </div>
+
+  {% assign unit = 2 %}
+  {% for mesure in page.mesures %}
+
+    {% assign classNum = unit | times: mesure.figureSize %}
+    {% capture class %}col-sm-{{classNum}}{% endcapture %}
+    {% assign remain = forloop.index | modulo: 2 %}
+    {% assign offsetClass = "" %}
+    {% if remain == 1 %}<div class="row catalog-list">{% assign offsetClass = " col-sm-offset-1" %}{% endif %}
+    <div class="{{ class }}{{ offsetClass }}">
+      <figure class="thumbnail">
+        <img src="{{ site.baseurl }}/img/commander/{{ mesure.img }}" alt="Prise de mesure {{ mesure.title }}" class="img-responsive" >
+        <div class="caption">
+          <h3>{{ mesure.title }}</h3>
+        </div>
+      </figure>
+    </div>
+    {% if remain == 0 or forloop.last == true %}</div>{% endif %}
+  {% endfor %}
+
+</div>
