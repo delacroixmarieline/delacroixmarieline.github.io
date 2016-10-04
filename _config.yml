@@ -1,3 +1,7 @@
+
+noResposiveImage: false
+
+
 # Site settings
 title: "Marie-Line Delacroix"
 description: "Modiste - Création de chapeaux couture"
@@ -46,6 +50,8 @@ defaults:
     values:
       layout: "catalog-item"
       permalink: /:path/
+      sold: false
+      publish: true
 
   - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoires" } }
   - { scope: { path: "_catalog/ete" }, values: { type: "ete" } }
@@ -259,7 +265,10 @@ admin:
     catalog:
       displayProps:
        - title
+       - last-modified-date
        - prix
+       - sold
+       - publish
 
       noDisplayProps:
        - id

@@ -15,22 +15,27 @@ see config : site.rotation-classes
 {% assign containerClasses = site.figure[model].classes %}
 
 <div class="{{ containerClasses }}">
-<figure class="thumbnail {{rot}}">
-{% if url != "" %}<a href="{{ site.baseurl }}{{ url }}">{% endif %}
-{% responsive_image_block %}
-path: {{ src }}
-alt: {{ alt }}
-title: {{ title }}
-sizes: {{ site.figure[model].sizes }}
-{% endresponsive_image_block %}
-{% if url != "" %}</a>{% endif %}
-<div class="caption">
-<h3>
-{% if url != "" %}<a href="{{ site.baseurl }}{{ url }}">{% endif %}
-{{ title }}
-{% if url != "" %}</a>{% endif %}
-</h3>
+  <figure class="thumbnail {{rot}}">
+    {% if url != "" %}<a href="{{ site.baseurl }}{{ url }}">{% endif %}
+    {% if site.noResposiveImage == true %}
+        <img src="{{ site.baseurl }}/{{ src }}" alt="{{ alt }}">
+    {% else %}
+        {% responsive_image_block %}
+        path: {{ src }}
+        alt: {{ alt }}
+        title: {{ title }}
+        sizes: {{ site.figure[model].sizes }}
+        {% endresponsive_image_block %}
+    {% endif %}
 
-</div>
-</figure>
+    {% if url != "" %}</a>{% endif %}
+    <div class="caption">
+    <h3>
+    {% if url != "" %}<a href="{{ site.baseurl }}{{ url }}">{% endif %}
+    {{ title }}
+    {% if url != "" %}</a>{% endif %}
+    </h3>
+
+    </div>
+  </figure>
 </div>

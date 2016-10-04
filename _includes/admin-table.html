@@ -2,6 +2,15 @@
 This code is crap ! Need a good refactor.
 {% endcomment %}
 
+
+{% comment %} ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Generating a table from pages or collection's document
+
+include in document with
+{% include admin-table.html objectType="pages" %}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
+
 {% assign objectType = include.objectType %}
 
 {% comment %} +++++ Verifies that 'objectType' is a valid type +++++ {% endcomment %}

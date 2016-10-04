@@ -19,6 +19,16 @@ images:
   - casquette-trad-papy-ecossais-2
   - casquette-trad-papy-ecossais-3
 
+# article vendu -> true
+# l'article est alors signalé comme vendu sur le site
+# valeur par defaut : false
+sold: true
+
+
+# article à retirer de la publication -> false
+# l'article reste visible dans la page admin
+# valeur par defaut : true
+publish: true
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif
