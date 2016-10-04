@@ -5956,7 +5956,9 @@ blockquote {
 .homeQuote {
   text-align: center; }
   .homeQuote blockquote {
-    margin: 5px auto; }
+    margin: 5px auto;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 34px; }
 
 .navbar-default {
   font-family: 'La Belle Aurore', cursive;
