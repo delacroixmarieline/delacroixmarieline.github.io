@@ -18,6 +18,9 @@
 .color-complement {
   background: #2D882D; }
 
+.color-danger {
+  background: #710c34; }
+
 /** redefine glyphicon path **/
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -1127,7 +1130,7 @@ img {
   border-radius: 3px; }
 
 .img-thumbnail {
-  padding: 4px;
+  padding: 8px;
   line-height: 1.42857;
   background-color: #eef9ee;
   border: 1px solid #ddd;
@@ -4344,7 +4347,7 @@ a.badge:hover, a.badge:focus {
 
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 8px;
   margin-bottom: 22px;
   line-height: 1.42857;
   background-color: #eef9ee;
@@ -5849,7 +5852,8 @@ figure {
     figure h3 a, figure h3:hover {
       border: none; }
   figure.thumbnail {
-    background: white; }
+    background: white;
+    position: relative; }
   figure.rot0 {
     transform: rotate(2deg); }
   figure.rot1 {
@@ -5858,6 +5862,14 @@ figure {
     transform: rotate(4deg); }
   figure.rot3 {
     transform: rotate(-4deg); }
+
+.sold {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #AA3939;
+  color: white;
+  padding: 2px 5px; }
 
 .container.main {
   padding-top: 10px; }
@@ -5886,6 +5898,7 @@ figure {
       border-bottom: none; }
 
 .jumbotron.home-jumbo2 {
+  position: relative;
   font-family: 'La Belle Aurore', cursive;
   background: transparent;
   margin-bottom: 0;
@@ -5916,27 +5929,34 @@ figure {
 
 blockquote {
   position: relative;
-  font-style: italic;
-  padding: 10px 10px 10px 40px;
-  background: #f8eaea;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-left: none;
+  font-size: 24px;
+  padding: 10px 30px;
+  background: #e2f5e2;
+  color: #2D882D;
+  border: none;
   margin: 5px;
-  text-indent: 23px; }
-  blockquote:before {
-    display: block;
-    content: "\201C";
-    font-size: 80px;
+  text-shadow: 1px 2px 3px rgba(150, 150, 150, 0.4); }
+  blockquote:before, blockquote:after {
     position: absolute;
-    left: -20px;
-    top: -20px;
-    color: #7a7a7a; }
+    display: block;
+    font-size: 50px;
+    top: 3px; }
+  blockquote:before {
+    content: "\201C";
+    left: 3px; }
+  blockquote:after {
+    content: "\201D";
+    right: 3px; }
   blockquote cite {
-    color: #999999;
+    color: #444444;
     font-size: 14px;
     display: block;
     margin-top: 5px; }
+
+.homeQuote {
+  text-align: center; }
+  .homeQuote blockquote {
+    margin: 5px auto; }
 
 .navbar-default {
   font-family: 'La Belle Aurore', cursive;
@@ -6039,7 +6059,8 @@ blockquote {
       color: #2D882D; }
 
 .carousel {
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  position: relative; }
 
 .carousel-indicators {
   position: absolute;
@@ -6112,3 +6133,16 @@ blockquote {
 
 .swatch {
   height: 100px; }
+
+a.l {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: default; }
+  a.l span {
+    position: relative;
+    display: block;
+    width: 3px;
+    height: 10px;
+    margin: 5px;
+    background: #ff4063; }
