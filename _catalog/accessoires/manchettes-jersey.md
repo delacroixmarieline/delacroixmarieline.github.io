@@ -1,7 +1,7 @@
 ---
 title: Manchettes Jersey
 
-# date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
+# date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
 date : 2016/08/11
 
 # si l'article doit être en page d'accueil

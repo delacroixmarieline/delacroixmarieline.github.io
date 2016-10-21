@@ -1,8 +1,8 @@
 ---
 title: Casquette Brasseur Tranches
 
-# date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
-date : 2016/09/08
+# date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
+date : 2016/10/15
 
 matieres:
  - lainage
@@ -15,6 +15,7 @@ prix: 59
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
+  - daniel-guichard-by-klaus
   - casquette-brasseur-tranches-1
   - casquette-brasseur-tranches-2
   - casquette-brasseur-tranches-3

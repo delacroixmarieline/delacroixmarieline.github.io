@@ -1,7 +1,7 @@
 ---
 title: ChickAndGo Gris Grège
 
-# date au format americain YYYY/MM/DD - 2009/12/31 = 31 dec 2009
+# date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
 date : 2016/07/28
 
 matieres:

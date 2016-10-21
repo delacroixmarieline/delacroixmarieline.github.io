@@ -1,6 +1,8 @@
 ---
 title: Saharien Pam
 
+date: 2016-01-01
+
 matieres:
  - coton imprimé dalmatien
 

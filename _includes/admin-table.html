@@ -40,7 +40,7 @@ Allowed : {{ types | join: " - " }}</p>
 {% if  objectType == "pages" %}
   {% assign documents = site.pages %}
 {% elsif objectType == "catalog" %}
-  {% assign documents = site.catalog | sort: "title" %}
+  {% assign documents = site.catalog | sort: "date" | reverse %}
 {% elsif objectType == "posts" %}
   {% assign documents = site.posts %}
 {% endif %}

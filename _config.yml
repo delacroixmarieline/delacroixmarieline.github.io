@@ -237,10 +237,9 @@ rotation-classes:
   - rot4
   - rot0
   - rot2
-  - tor3
+  - rot3
 
 # ++++++++++++++++++++++ admin view page setup +++++++++++++++++++++++
-
 
 admin:
 
@@ -265,16 +264,15 @@ admin:
     catalog:
       displayProps:
        - title
-       - last-modified-date
        - prix
-       - sold
+       - taille
+       - date
        - publish
+       - sold
 
       noDisplayProps:
        - id
        - matieres
-       - taille
-       - prix
        - images
        - output
        - content
@@ -287,6 +285,8 @@ admin:
        - layout
        - relative_path
        - permalink
+       - last-modified-date
+
 
     posts:
       displayProps:
