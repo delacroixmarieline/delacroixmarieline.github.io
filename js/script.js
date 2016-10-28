@@ -34,3 +34,13 @@ $(function() {
   ga('create', 'UA-83807575-1', 'auto');
   ga('send', 'pageview');
 
+
+
+// sorting admin tables if necessary
+  $(document).ready(function() {
+    if ($("#catalog").length) {
+      console.log("Sorting tables")
+      $("#catalog").tablesorter();
+    }
+  });
+
