@@ -2,7 +2,7 @@
 title: Casquette Brasseur Tranches
 
 # date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
-date : 2016/10/15
+date : 2016-10-15
 
 matieres:
  - lainage
@@ -19,6 +19,11 @@ images:
   - casquette-brasseur-tranches-1
   - casquette-brasseur-tranches-2
   - casquette-brasseur-tranches-3
+
+imagesDatas:
+  - name: daniel-guichard-by-klaus
+    photoBy: kr
+    model: dg
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

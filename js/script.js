@@ -37,3 +37,13 @@ $(function() {
   ga('create', '{{ site.google_analytics_tracking_id }}', 'auto');
   ga('send', 'pageview');
 {% endif %}
+
+
+// sorting admin tables if necessary
+  $(document).ready(function() {
+    if ($("#catalog").length) {
+      console.log("Sorting tables")
+      $("#catalog").tablesorter();
+    }
+  });
+

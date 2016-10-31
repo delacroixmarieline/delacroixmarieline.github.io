@@ -1,12 +1,19 @@
 {% comment %}
-Look for the next or previous item in a collection based on an item's prop
+Look for the next or previous item in a collection extract.
 
-string propName : name of the prop items are grouped by. Usually with a
-                  {% assign items = site.catalog | where: prop, value %}
+Extract can be made like this : {% assign items = site.catalog | where: prop, value %}
+Or reversed : {% assign items = site.catalog | where: "type", pathName | reverse %}
+
+Use :
+{% include prevOrNextItemSearch.html propName="type" searchFor="previous" reverse="true" %}
+
+string propName : name of the prop items are grouped by
 
 string searchFor : "previous" or "next"
 
-return : by assigning previousItem or nextItem variable to an object or null if no prev/next found
+string reverse : do we reverse the array
+
+return : item object or null if no prev/next found
 
 {% endcomment %}
 
@@ -14,11 +21,17 @@ return : by assigning previousItem or nextItem variable to an object or null if 
 
 {% assign propName = include.propName %}
 {% assign searchFor = include.searchFor %}
+{% assign reverse = include.reverse %}
 
 {% if doDebug == true %}<p>propName = {{ propName | inspect }}</p>{% endif %}
 {% if doDebug == true %}<p>searchFor = {{ searchFor | inspect }}</p>{% endif %}
+{% if doDebug == true %}<p>reverse = {{ reverse | inspect }}</p>{% endif %}
 
 {% assign siblings = site.catalog | where: "type", page.type %}
+
+{% if reverse == "true" %}
+  {% assign siblings = siblings | reverse %}
+{% endif %}
 
 {% if searchFor == "previous" %}
   {% assign siblings = siblings | reverse %}

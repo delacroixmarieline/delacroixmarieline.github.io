@@ -20,6 +20,8 @@ prix: 15
 images:
   - manchettes-1
   - manchettes-2
+  - manchettes-3
+  - manchettes-4
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

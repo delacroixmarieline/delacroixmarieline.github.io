@@ -28,6 +28,7 @@ sold: true
 # l'article reste visible dans la page admin
 # valeur par defaut : true
 publish: true
+
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

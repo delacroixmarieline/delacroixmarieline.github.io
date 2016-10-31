@@ -8,16 +8,17 @@ layout: default
 {% assign categoryConfig = site.catalog-categories | where: "name", pathName | first %}
 
 {% if categoryConfig.display != nil %}
-{% assign categoryName = categoryConfig.display %}
+  {% assign categoryName = categoryConfig.display %}
 {% else %}
-{% assign categoryName = categoryConfig.name | capitalize %}
+  {% assign categoryName = categoryConfig.name | capitalize %}
 {% endif %}
 
 <h2>Catalogue : {{ categoryName | capitalize }}</h2>
 {% comment %}
 {{ content }}
 {% endcomment %}
-{% assign items = site.catalog | where: "type", pathName %}
+
+{% assign items = site.catalog | where: "type", pathName | reverse %}
 
 {% for item in items %}
     {% assign remain = forloop.index | modulo: 4 %}

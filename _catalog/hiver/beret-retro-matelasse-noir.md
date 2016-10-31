@@ -18,6 +18,17 @@ images:
   - beret-retro-matelasse-noir-1
   - beret-retro-matelasse-noir-2
 
+# article vendu -> true
+# l'article est alors signalé comme vendu sur le site
+# valeur par defaut : false
+sold: false
+
+
+# article à retirer de la publication -> false
+# l'article reste visible dans la page admin
+# valeur par defaut : true
+publish: true
+
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

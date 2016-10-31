@@ -9,7 +9,7 @@ matieres:
  - velours mélangé
 
 # tour de tête pour les chapeaux - facultatif
-taille: 53,5
+taille: 53.5
 
 prix: 68
 

@@ -75,8 +75,8 @@ sizes: {{ site.figure.carousel-thumbs.sizes }}
     <div class="row nextPrevItem">
       <div class="col-sm-6">
         {% comment %}Find prev next item with same property{% endcomment %}
-        {% include prevOrNextItemSearch.html propName="type" searchFor="previous" %}
-        {% include prevOrNextItemSearch.html propName="type" searchFor="next" %}
+        {% include prevOrNextItemSearch.html propName="type" searchFor="previous" reverse="true" %}
+        {% include prevOrNextItemSearch.html propName="type" searchFor="next" reverse="true" %}
 
         {% if previousItem != nil %}
           {% assign previousItemImage = previousItem.images | first %}

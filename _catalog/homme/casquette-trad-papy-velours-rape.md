@@ -17,6 +17,11 @@ prix: 55
 images:
   - david-zella-by-klaus
 
+imagesDatas:
+  - name: david-zella-by-klaus
+    photoBy: kr
+    model: dz
+
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif
