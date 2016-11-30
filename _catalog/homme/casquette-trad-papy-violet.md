@@ -1,31 +1,33 @@
 ---
-title: Casquette Brasseur Tranches
+title: Casquette Trad Papy Violet
 
 # date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
-date : 2016/10/15
+date : 2016/11/30
 
 matieres:
- - lainage
+ - laine mélangée
 
 # tour de tête pour les chapeaux - facultatif
-taille: 63
+taille: 58
 
-prix: 59
+prix: 55
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
-  - daniel-guichard-by-klaus
-  - casquette-brasseur-tranches-1
-  - casquette-brasseur-tranches-2
-  - casquette-brasseur-tranches-3
+  - casquette-trad-papy-violet-1
+  - casquette-trad-papy-violet-2
 
-imagesDatas:
-  - name: daniel-guichard-by-klaus
-    photoBy: kr
-    model: dg
+# article vendu -> true
+# l'article est alors signalé comme vendu sur le site
+# valeur par defaut : false
+sold: false
 
-showOnHome : true
+
+# article à retirer de la publication -> false
+# l'article reste visible dans la page admin
+# valeur par defaut : true
+publish: true
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

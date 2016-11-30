@@ -22,6 +22,8 @@ imagesDatas:
     photoBy: kr
     model: dz
 
+showOnHome : true
+
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

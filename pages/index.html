@@ -40,11 +40,22 @@ permalink: /
 
 <div class="row catalog-list">
   <h2>Dernières créations</h2>
+
+{% assign maxDisplay = 4 %}
+{% assign counter = 0 %}
+{% assign pinned = site.catalog | where: "showOnHome", true %}
+
+{% for article in pinned limit: maxDisplay %}
+  {% include catalog-list-item.html item=article index=forloop.index %}
+  {% assign counter = counter | plus: 1 %}
+{% endfor %}
+
+{% assign remainder = maxDisplay | minus: counter %}
+
+{% if remainder > 0 %}
   {% assign sortedItems = site.catalog | sort: "date" | reverse %}
-  {% for c in sortedItems limit:4 %}
+  {% for c in sortedItems limit: remainder %}
   {% include catalog-list-item.html item=c index=forloop.index %}
   {% endfor %}
-  {% comment %}
-  <p>Retrouvez tous les modèles dans <a href="{{ site.baseurl }}/catalogue/">le catalogue</a>.</p>
-  {% endcomment %}
+{% endif %}
 </div>
