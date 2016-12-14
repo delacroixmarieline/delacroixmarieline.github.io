@@ -6033,11 +6033,15 @@ blockquote {
 
 .footer {
   border-top: 1px solid #AA6C39;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   padding: 20px 0; }
   .footer ul {
     list-style: none;
     padding-left: 0; }
+
+.footerMenu {
+  margin-top: 20px;
+  font-size: small; }
 
 .catalog-list > div {
   padding: 0 10px; }
