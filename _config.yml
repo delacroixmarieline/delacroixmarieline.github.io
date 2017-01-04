@@ -6,6 +6,9 @@ noResposiveImage: false
 title: "Marie-Line Delacroix"
 description: "Modiste - Création de chapeaux couture"
 
+# used by jekyll-seo
+logo: /img/logo-atelier-7-marie-line-delacroix-200x491.gif
+
 emails:
   - atelier7@ml-delacroix.fr
   - ml-delacroix@pygmeeweb.com
@@ -79,7 +82,6 @@ kramdown:
   # parse markdown inside block-level HTML tag
   parse_block_html: true
 
-
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -98,7 +100,9 @@ exclude:
 include:
   - .nojekyll
 
-gems: [jekyll/responsive_image]
+gems:
+  - jekyll-seo-tag
+  - jekyll/responsive_image
 
 responsive_image:
   # [Required]
@@ -267,12 +271,12 @@ admin:
        - title
        - prix
        - taille
-       - date
-       - sold
        - images
+       - sold
 
       noDisplayProps:
        - id
+       - date
        - matieres
        - images
        - output

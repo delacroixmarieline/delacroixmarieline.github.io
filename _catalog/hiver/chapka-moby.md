@@ -18,6 +18,16 @@ images:
   - chapka-moby-1
   - chapka-moby-2
 
+# article vendu -> true
+# l'article est alors signalé comme vendu sur le site
+# valeur par defaut : false
+sold: true
+
+
+# article à retirer du catalogue -> mettre à true
+# l'article reste visible dans la page archives
+# valeur par defaut : false
+archive: true
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

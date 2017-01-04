@@ -25,10 +25,10 @@ images:
 sold: true
 
 
-# article à retirer de la publication -> false
-# l'article reste visible dans la page admin
-# valeur par defaut : true
-publish: true
+# article à retirer du catalogue -> mettre à true
+# l'article reste visible dans la page archives
+# valeur par defaut : false
+archive: true
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

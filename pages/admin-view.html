@@ -6,17 +6,17 @@ permalink: /l/
 tablesort: true
 ---
 <div class="row">
-{% comment %}
- <div class="col-md-12">
-{% include admin-table.html objectType="pages" %}
-  </div>
-  <div class="col-md-12">
-{% include admin-table.html objectType="posts" %}
- </div>
-{% endcomment %}
 
   <div class="col-md-12">
-{% include admin-table.html objectType="catalog" %}
- </div>
+    {% include admin-table.html objectType="catalog" %}
+  </div>
+
+  <div class="col-md-12">
+    {% include admin-table.html objectType="pages" %}
+  </div>
+
+  <div class="col-md-12">
+    {% include admin-table.html objectType="posts" %}
+  </div>
 
 </div>

@@ -18,7 +18,7 @@ layout: default
 {{ content }}
 {% endcomment %}
 
-{% assign items = site.catalog | where: "type", pathName | reverse %}
+{% assign items = site.catalog | where: "type", pathName | where: "archive", false | reverse %}
 
 {% for item in items %}
     {% assign remain = forloop.index | modulo: 4 %}

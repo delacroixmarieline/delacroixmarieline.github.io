@@ -43,7 +43,7 @@ permalink: /
 
 {% assign maxDisplay = 4 %}
 {% assign counter = 0 %}
-{% assign pinned = site.catalog | where: "showOnHome", true %}
+{% assign pinned = site.catalog | where: "showOnHome", true | where: "archive", false %}
 
 {% for article in pinned limit: maxDisplay %}
   {% include catalog-list-item.html item=article index=forloop.index %}

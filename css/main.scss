@@ -1190,7 +1190,7 @@ blockquote{
 
 .footer{
   border-top: 1px solid $brand-success;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
   padding: 20px 0;
   ul{
     list-style: none;
@@ -1198,6 +1198,10 @@ blockquote{
   }
 }
 
+.footerMenu{
+  margin-top: 20px;
+  font-size: small;
+}
 
 .catalog-list{
 
@@ -1362,3 +1366,5 @@ table#catalog > tbody > tr > td{
 table.tablesorter {
   font-size: inherit;
 }
+
+

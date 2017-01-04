@@ -23,12 +23,14 @@ images:
 
 # article vendu -> true
 # l'article est alors signalé comme vendu sur le site
+# valeur par defaut : false
 sold: false
 
 
-# article à retirer de la publication -> false
-# l'article reste visible dans la page admin
-publish: false
+# article à retirer du catalogue -> false
+# l'article reste visible dans la page archives
+# valeur par defaut : true
+archive: false
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

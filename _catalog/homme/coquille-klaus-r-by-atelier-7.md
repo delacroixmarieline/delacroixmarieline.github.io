@@ -23,6 +23,10 @@ images:
 # valeur par defaut : false
 sold: true
 
+# article à retirer du catalogue -> mettre à true
+# l'article reste visible dans la page archives
+# valeur par defaut : false
+archive: false
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

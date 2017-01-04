@@ -1,0 +1,19 @@
+---
+layout: default
+title: Archives
+menu: footer
+weight: 120
+---
+
+<h2>Archives</h2>
+
+<p class="alert alert-primary">NB : Cette page présente des anciennes création qui ne sont plus en vente.</p>
+
+{% assign items = site.catalog | where: "archive", true | reverse %}
+
+{% for item in items %}
+    {% assign remain = forloop.index | modulo: 4 %}
+    {% if remain == 1 %}<div class="row catalog-list">{% endif %}
+    {% include catalog-list-item-archive.html item=item index=forloop.index %}
+    {% if remain == 0 or forloop.last == true %}</div>{% endif %}
+{% endfor %}

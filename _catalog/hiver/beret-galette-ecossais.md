@@ -11,7 +11,7 @@ matieres:
 # tour de tête pour les chapeaux - facultatif
 taille: unique
 
-prix: 50
+prix: 58
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
@@ -22,13 +22,12 @@ images:
 # article vendu -> true
 # l'article est alors signalé comme vendu sur le site
 # valeur par defaut : false
-sold: false
+sold: true
 
-
-# article à retirer de la publication -> false
-# l'article reste visible dans la page admin
-# valeur par defaut : true
-publish: true
+# article à retirer du catalogue -> mettre à true
+# l'article reste visible dans la page archives
+# valeur par defaut : false
+archive: true
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

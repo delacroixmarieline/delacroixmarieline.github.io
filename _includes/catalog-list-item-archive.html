@@ -1,0 +1,63 @@
+{% comment %} ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+List item
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
+
+{% comment %} =========================================================
+Adding a rotation class
+see config : site.rotation-classes
+========================================================= {% endcomment %}
+{% assign item = include.item %}
+
+{% assign size = include.size %}
+{% if size == "" or size == nil or (size != "normal" and size != "big" %}
+{% assign size = "normal" %}
+{% endif %}
+
+{% assign pathElements = item.path | split:"/" %}
+{% assign imgPath = "" | split:"/" %}
+{% assign imgPath = imgPath | push: "img/catalogue" | push: pathElements[1] %}
+{% assign firstImg = item.images | first %}
+{% assign imgPath = imgPath | join:'/' | append: "/" | append: firstImg | append:".jpg" %}
+
+{% comment %} =========================================================
+Adding a rotation class
+see config : site.rotation-classes
+========================================================= {% endcomment %}
+{% assign index = include.index %}
+{% assign additionalClass = "" %}
+
+{% if index != "" and index != nil %}
+  {% assign classesNum = site.rotation-classes | size %}
+  {% assign random = classesNum | modulo: index %}
+  {% assign classes = site.rotation-classes %}
+  {% assign additionalClass = classes[random] | prepend: " " %}
+{% endif %}
+
+{% if size == "normal" %}
+{% assign itemClass = "col-sm-3 col-xs-12" %}
+{% else %}
+{% assign itemClass = "col-sm-6 col-xs-12" %}
+{% endif %}
+
+
+  <div class="{{ itemClass }}">
+    <figure class="thumbnail{{additionalClass}}">
+        {% capture itemImg %}{{ site.baseurl }}/{{ imgPath }}{% endcapture %}
+        {% capture titleStr %}{{ item.title }}{% endcapture %}
+        {% assign itemImg = itemImg | remove_first: "/" %}
+
+        {% if site.noResposiveImage == true %}
+          <img src="{{ itemImg }}" alt="{{ alt }}">
+        {% else %}
+          {% responsive_image_block %}
+            path: {{ itemImg }}
+            alt: {{ titleStr }}
+            title: {{ titleStr }}
+            sizes: "(min-width:1200px) 300px, (min-width:992px) 230px, (min-width:768px) 180px, 50vw"
+          {% endresponsive_image_block %}
+        {% endif %}
+      <div class="caption">
+        <h3>{{ titleStr }}</h3>
+      </div>
+    </figure>
+  </div>

@@ -18,6 +18,17 @@ images:
   - casquette-brasseur-gris-chevrons-1
   - casquette-brasseur-gris-chevrons-2
 
+
+# article vendu -> true
+# l'article est alors signalé comme vendu sur le site
+# valeur par defaut : false
+sold: false
+
+# article à retirer du catalogue -> mettre à true
+# l'article reste visible dans la page archives
+# valeur par defaut : false
+archive: false
+
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif
