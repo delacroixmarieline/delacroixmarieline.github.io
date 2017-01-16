@@ -39,8 +39,8 @@ Allowed : {{ types | join: " - " }}</p>
 
 {% if  objectType == "pages" %}
   {% assign documents = site.pages %}
-{% elsif objectType == "catalog" %}
-  {% assign documents = site.catalog | sort: "date" | reverse %}
+{% elsif objectType == "catalogue" %}
+  {% assign documents = site.catalogue | sort: "date" | reverse %}
 {% elsif objectType == "posts" %}
   {% assign documents = site.posts %}
 {% endif %}
@@ -62,7 +62,7 @@ Allowed : {{ types | join: " - " }}</p>
   {% endfor %}
   </tr>
   {% endfor %}
-{% elsif objectType == "catalog" or objectType == "posts" %}
+{% elsif objectType == "catalogue" or objectType == "posts" %}
   {% for doc in documents %}
   <tr>
   {% for prop in displayProps %}

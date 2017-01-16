@@ -1,8 +1,8 @@
 {% comment %}
 Look for the next or previous item in a collection extract.
 
-Extract can be made like this : {% assign items = site.catalog | where: prop, value %}
-Or reversed : {% assign items = site.catalog | where: "type", pathName | reverse %}
+Extract can be made like this : {% assign items = site.catalogue | where: prop, value %}
+Or reversed : {% assign items = site.catalogue | where: "type", pathName | reverse %}
 
 Use :
 {% include prevOrNextItemSearch.html propName="type" searchFor="previous" reverse="true" %}
@@ -27,7 +27,7 @@ return : item object or null if no prev/next found
 {% if doDebug == true %}<p>searchFor = {{ searchFor | inspect }}</p>{% endif %}
 {% if doDebug == true %}<p>reverse = {{ reverse | inspect }}</p>{% endif %}
 
-{% assign siblings = site.catalog | where: "type", page.type %}
+{% assign siblings = site.catalogue | where: "type", page.type %}
 
 {% if reverse == "true" %}
   {% assign siblings = siblings | reverse %}

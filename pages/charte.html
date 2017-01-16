@@ -19,7 +19,7 @@ weight: 100
 
 <div class="page-header"><h1>Categorie de produits</h1></div>
 {% include utils/responsive-classes.html %}
-{% for item in site.catalog limit: 2 %}
+{% for item in site.catalogue limit: 2 %}
     {% assign remain = forloop.index | modulo: 4 %}
     {% if remain == 1 %}<div class="row catalog-list">{% endif %}
     {% include catalog-list-item.html item=item index=forloop.index %}
@@ -28,7 +28,7 @@ weight: 100
 
 <div class="page-header"><h1>Fiche produit</h1></div>
 {% comment %}
-{% assign item = site.catalog | first %}
+{% assign item = site.catalogue | first %}
 {% include catalog-item.html item=item %}
 
 {% endcomment %}
@@ -398,16 +398,16 @@ weight: 100
     <h1>Alerts</h1>
   </div>
   <div class="alert alert-success" role="alert">
-    <strong>Well done!</strong> You successfully read this important alert message.
+    <strong>alert alert-success</strong> You successfully read this important alert message.
   </div>
   <div class="alert alert-info" role="alert">
-    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+    <strong>alert alert-info</strong> This alert needs your attention, but it's not super important.
   </div>
   <div class="alert alert-warning" role="alert">
-    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+    <strong>alert alert-warning</strong> Best check yo self, you're not looking too good.
   </div>
   <div class="alert alert-danger" role="alert">
-    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    <strong>alert alert-danger</strong> Change a few things up and try submitting again.
   </div>
 
 

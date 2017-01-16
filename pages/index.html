@@ -43,7 +43,7 @@ permalink: /
 
 {% assign maxDisplay = 4 %}
 {% assign counter = 0 %}
-{% assign pinned = site.catalog | where: "showOnHome", true | where: "archive", false %}
+{% assign pinned = site.catalogue | where: "showOnHome", true | where: "archive", false %}
 
 {% for article in pinned limit: maxDisplay %}
   {% include catalog-list-item.html item=article index=forloop.index %}
@@ -53,7 +53,7 @@ permalink: /
 {% assign remainder = maxDisplay | minus: counter %}
 
 {% if remainder > 0 %}
-  {% assign sortedItems = site.catalog | sort: "date" | reverse %}
+  {% assign sortedItems = site.catalogue | sort: "date" | reverse %}
   {% for c in sortedItems limit: remainder %}
   {% include catalog-list-item.html item=c index=forloop.index %}
   {% endfor %}

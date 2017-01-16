@@ -7,9 +7,9 @@ weight: 120
 
 <h2>Archives</h2>
 
-<p class="alert alert-primary">NB : Cette page présente des anciennes création qui ne sont plus en vente.</p>
+<p class="alert alert-info">NB : Cette page présente des créations qui ne sont plus en vente.</p>
 
-{% assign items = site.catalog | where: "archive", true | reverse %}
+{% assign items = site.catalogue | where: "archive", true | reverse %}
 
 {% for item in items %}
     {% assign remain = forloop.index | modulo: 4 %}

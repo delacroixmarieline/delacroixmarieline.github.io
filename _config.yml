@@ -26,7 +26,7 @@ timezone: "Europe/Paris"
 
 collections:
 
-  catalog:
+  catalogue:
     output: true
   values:
     layout: item
@@ -49,13 +49,14 @@ defaults:
 
   -
     scope:
-      type: catalog
+      type: catalogue
     values:
       layout: "catalog-item"
       permalink: /:path/
       sold: false
-      publish: true
+      archive: false
 
+  # default type depending on the containinf folder
   - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoires" } }
   - { scope: { path: "_catalog/ete" }, values: { type: "ete" } }
   - { scope: { path: "_catalog/hiver" }, values: { type: "hiver" } }
@@ -63,6 +64,15 @@ defaults:
   - { scope: { path: "_catalog/mi-saison" }, values: { type: "mi-saison" } }
   - { scope: { path: "_catalog/soiree-ceremonie" }, values: { type: "soiree-ceremonie" } }
   - { scope: { path: "_catalog/homme" }, values: { type: "homme" } }
+
+  # Si l'article vendu doit rester affichés dans le catalogue
+  # -> mettre la variable "sold: true" dans la fiche du produit
+  #
+  # Si l'article vendu doit passer en archive
+  # -> mettre la fiche de l'article dans le répertoire "sold"
+  #    de la catégorie de l'article (ex : _catalogue/hiver/sold/)
+  - { scope: { path: _catalog/hiver/sold }, values: { sold: true, archive: true } }
+
 
 sass:
 
@@ -90,12 +100,13 @@ exclude:
   - scripts/*
   - bower.json
   - Readme.md
+  - _catalog/accessoires
+  - _catalog/ete
   # - _catalog/hiver
-  # - _catalog/mi-saison
-  # - _catalog/accessoires
-  # - _catalog/hiver
-  # - _catalog/ete
-  # - _catalog/homme
+  - _catalog/homme
+  - _catalog/le-saharien
+  - _catalog/mi-saison
+  - _catalog/soiree-ceremonie
 
 include:
   - .nojekyll
@@ -228,7 +239,7 @@ figure:
 main-menu-dropdowns:
 
   -
-    label: catalog
+    label: catalogue
     weight: 32
 
 rotation-classes:
@@ -265,7 +276,7 @@ admin:
       noDisplayProps:
         - content
 
-    catalog:
+    catalogue:
       displayProps:
        - type
        - title
