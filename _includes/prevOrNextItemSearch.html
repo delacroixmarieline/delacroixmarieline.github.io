@@ -1,4 +1,4 @@
-{% comment %}
+{% comment %}++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Look for the next or previous item in a collection extract.
 
 Extract can be made like this : {% assign items = site.catalogue | where: prop, value %}
@@ -15,7 +15,7 @@ string reverse : do we reverse the array
 
 return : item object or null if no prev/next found
 
-{% endcomment %}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++{% endcomment %}
 
 {% assign doDebug = false %}
 
@@ -28,6 +28,8 @@ return : item object or null if no prev/next found
 {% if doDebug == true %}<p>reverse = {{ reverse | inspect }}</p>{% endif %}
 
 {% assign siblings = site.catalogue | where: "type", page.type %}
+
+{% assign siblings = siblings | where: "archive", false %}
 
 {% if reverse == "true" %}
   {% assign siblings = siblings | reverse %}
