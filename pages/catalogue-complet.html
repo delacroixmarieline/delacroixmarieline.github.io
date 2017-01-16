@@ -1,0 +1,46 @@
+---
+title: Catalogue complet
+menu: footer
+weight: 10
+---
+
+<div class="row">
+  <div class="col-sm-12"><h1 class="page-title">{{ page.title }}</h1></div>
+</div>
+
+{% for category in site.catalog-categories %}
+
+  {% assign articles = site.catalogue | where: "type", category.name | reverse %}
+
+  {% assign articles = articles | where: "sold", false %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>{{ category.display }} <small>({{ articles.size }})</small></h3>
+    </div>
+
+    {% for article in articles %}
+
+      {% assign i = article["images"] | first %}
+      {% assign pathElements = article.path | split:"/" %}
+      {% assign imgPath = "" | split:"/" %}
+      {% assign imgPath = imgPath | push: "img/resized/catalogue" | push: pathElements[1] | push: "150" %}
+      {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg{% endcapture %}
+
+      {% assign remain = forloop.index | modulo: 4 %}
+      {% if remain == 1 %}<div class="row articlesRow">{% endif %}
+
+      <div class="col-sm-3 article">
+        <img src="{{ imagePath }}" alt="{{ article.title }}">
+        <p><a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a> -
+        {% if taille %}taille : {{ article.taille }} - {% endif %}
+        {{ article.prix }}&nbsp;€</p>
+      </div>
+
+      {% if remain == 0 or forloop.last == true %}</div>{% endif %}
+
+    {% endfor %}
+
+  </div>
+
+{% endfor %}
