@@ -1,0 +1,25 @@
+---
+title: Ramoneur Gris Pois Roses
+
+# date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
+date : 2016/09/14
+
+matieres:
+ - laine mélangée
+
+# tour de tête pour les chapeaux - facultatif
+taille: 56.5
+
+prix: 68
+
+# images d'illustration
+# la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
+images:
+  - ramoneur-gris-a-pois-rose-1
+  - ramoneur-gris-a-pois-rose-2
+
+---
+{% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+              Texte additionnel - facultatif
+              Voir documentation sur la syntaxe Kramdown
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ {% endcomment %}
