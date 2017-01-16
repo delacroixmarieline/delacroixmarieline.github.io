@@ -8,7 +8,7 @@ matieres:
  - tissu d'ameublement
 
 # tour de tête pour les chapeaux - facultatif
-taille: unique
+taille:
 
 prix: 45
 
