@@ -32,8 +32,12 @@ weight: 10
 
       <div class="col-sm-3 article">
         <img src="{{ imagePath }}" alt="{{ article.title }}">
-        <p><a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a> -
-        {% if taille %}taille : {{ article.taille }} - {% endif %}
+        <p><a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a>
+        {% if article.taille %}
+          </p><p>taille : {{ article.taille }} -
+        {% else %}
+          -
+        {% endif %}
         {{ article.prix }}&nbsp;€</p>
       </div>
 
