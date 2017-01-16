@@ -25,13 +25,3 @@ $(function() {
     );
   }
 });
-
-
-// sorting admin tables if necessary
-  $(document).ready(function() {
-    if ($("#catalog").length) {
-      console.log("Sorting tables")
-      $("#catalog").tablesorter();
-    }
-  });
-
