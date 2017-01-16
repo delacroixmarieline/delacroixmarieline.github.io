@@ -25,11 +25,8 @@ google_analytics_tracking_id: "UA-83807575-1"
 timezone: "Europe/Paris"
 
 collections:
-
   catalogue:
     output: true
-  values:
-    layout: item
 
 defaults:
   -
@@ -56,23 +53,42 @@ defaults:
       sold: false
       archive: false
 
-  # default type depending on the containinf folder
-  - { scope: { path: "_catalog/accessoires" }, values: { type: "accessoires" } }
-  - { scope: { path: "_catalog/ete" }, values: { type: "ete" } }
-  - { scope: { path: "_catalog/hiver" }, values: { type: "hiver" } }
-  - { scope: { path: "_catalog/le-saharien" }, values: { type: "le-saharien" } }
-  - { scope: { path: "_catalog/mi-saison" }, values: { type: "mi-saison" } }
-  - { scope: { path: "_catalog/soiree-ceremonie" }, values: { type: "soiree-ceremonie" } }
-  - { scope: { path: "_catalog/homme" }, values: { type: "homme" } }
+  # default type depending on the containing folder
+  - { scope: { path: "_catalogue/accessoires" }, values: { type: "accessoires" } }
+  - { scope: { path: "_catalogue/ete" }, values: { type: "ete" } }
+  - { scope: { path: "_catalogue/hiver" }, values: { type: "hiver" } }
+  - { scope: { path: "_catalogue/homme" }, values: { type: "homme" } }
+  - { scope: { path: "_catalogue/le-saharien" }, values: { type: "le-saharien" } }
+  - { scope: { path: "_catalogue/mi-saison" }, values: { type: "mi-saison" } }
+  - { scope: { path: "_catalogue/soiree-ceremonie" }, values: { type: "soiree-ceremonie" } }
 
   # Si l'article vendu doit rester affichés dans le catalogue
-  # -> mettre la variable "sold: true" dans la fiche du produit
-  #
-  # Si l'article vendu doit passer en archive
   # -> mettre la fiche de l'article dans le répertoire "sold"
   #    de la catégorie de l'article (ex : _catalogue/hiver/sold/)
-  - { scope: { path: _catalog/hiver/sold }, values: { sold: true, archive: true } }
+  # Si l'article vendu doit passer en archive
+  # -> mettre la fiche de l'article dans le répertoire "archive"
+  #    de la catégorie de l'article (ex : _catalogue/hiver/archive/)
 
+  - { scope: { path: "_catalogue/accessoires/sold" }, values: { sold: true, archive: false } }
+  - { scope: { path: "_catalogue/accessoires/archive" }, values: { sold: true, archive: true } }
+
+  - { scope: { path: "_catalogue/ete/sold" }, values: { sold: true, archive: false } }
+  - { scope: { path: "_catalogue/ete/archive" }, values: { sold: true, archive: true } }
+
+  - { scope: { path: _catalogue/hiver/sold }, values: { sold: true, archive: false } }
+  - { scope: { path: _catalogue/hiver/archive }, values: { sold: true, archive: true } }
+
+  - { scope: { path: "_catalogue/homme/sold" }, values: { sold: true, archive: false } }
+  - { scope: { path: "_catalogue/homme/archive" }, values: { sold: true, archive: true } }
+
+  - { scope: { path: "_catalogue/le-saharien/sold" }, values: { sold: true, archive: false } }
+  - { scope: { path: "_catalogue/le-saharien/archive" }, values: { sold: true, archive: true } }
+
+  - { scope: { path: _catalogue/mi-saison/sold }, values: { sold: true, archive: false } }
+  - { scope: { path: _catalogue/mi-saison/archive }, values: { sold: true, archive: true } }
+
+  - { scope: { path: _catalogue/soiree-ceremonie/sold }, values: { sold: true, archive: false } }
+  - { scope: { path: _catalogue/soiree-ceremonie/archive }, values: { sold: true, archive: true } }
 
 sass:
 
@@ -100,13 +116,13 @@ exclude:
   - scripts/*
   - bower.json
   - Readme.md
-  - _catalog/accessoires
-  - _catalog/ete
-  # - _catalog/hiver
-  - _catalog/homme
-  - _catalog/le-saharien
-  - _catalog/mi-saison
-  - _catalog/soiree-ceremonie
+  # - _catalogue/accessoires
+  # - _catalogue/ete
+  # - _catalogue/hiver
+  # - _catalogue/homme
+  # - _catalogue/le-saharien
+  # - _catalogue/mi-saison
+  # - _catalogue/soiree-ceremonie
 
 include:
   - .nojekyll
@@ -167,37 +183,23 @@ responsive_image:
 # ++++++++++++++++++++++++++++++++++++ Marie-Line Delacroix +++++++++++++++++++++++++++++++++++++++
 #                                      Specific setup
 
-# saisons used in items front matter
-saisons : { "e": "Eté", "h": "Hiver", "m": "Mi-saison" }
-
 # Categories du catalogue
 # utilisé pour générer les menus
 catalog-categories:
   -
     # minuscules, chiffres et tiret
     name: ete
-
     # utilisé pour l'affichage dans les pages
     # sans cette valeur, "name" est utilisé avec "Capitalisation" accessoires > Accessoires
     # collection-ete > Collection-Ete n'étant pas très beau, on utilise une valeur "display"
     display: Eté
-  -
-    name: hiver
-    display: Hiver
-  -
-    name: mi-saison
-    display: Mi-saison
-  -
-    name: le-saharien
-    display: Le Saharien
-  -
-    name: soiree-ceremonie
-    display: Soirée, Cérémonie, Cocktail
 
-  -
-    name: homme
-  -
-    name: accessoires
+  - { name: hiver, display: "Hiver" }
+  - { name: mi-saison, display: "Mi-saison" }
+  - { name: le-saharien, display: "Le Saharien" }
+  - { name: soiree-ceremonie, display: "Soirée, Cérémonie, Cocktail" }
+  - { name: homme, display: "Hommes" }
+  - { name: accessoires, display: "Accessoires" }
 
 figure:
 
@@ -284,6 +286,8 @@ admin:
        - taille
        - images
        - sold
+       - archive
+       - type
 
       noDisplayProps:
        - id
