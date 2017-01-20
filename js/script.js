@@ -25,3 +25,15 @@ $(function() {
     );
   }
 });
+
+
+// bxslider
+
+  $(document).ready(function() {
+    if ($('.bxslider').length) {
+      $('.bxslider').bxSlider({
+        pagerCustom: '#bx-pager',
+        mode: "fade",
+      });
+    }
+  });

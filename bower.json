@@ -16,8 +16,9 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "^1",
     "bootstrap-sass": "^3.3.7",
     "jquery.cookie": "^1.4.1",
-    "tablesorter": "christianbach/tablesorter"
+    "bxslider-4": "stevenwanderski/bxslider-4#^4.2.5"
   }
 }

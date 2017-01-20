@@ -4,15 +4,14 @@
   <body role="document">
     {% include header.html %}
     <div class="container main" role="main" id="main">
-
     {% comment %}{% include utils/responsive-classes.html %}{% endcomment %}
-
     {{ content }}
     </div>
     {% include footer.html %}
   <script src="{{site.baseurl}}/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="{{site.baseurl}}/bower_components/jquery.cookie/jquery.cookie.js"></script>
   <script src="{{site.baseurl}}/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" async></script>
+  <script src="{{site.baseurl}}/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
   <script src="{{ site.baseurl }}/js/script.js"></script>
   </body>
 </html>
