@@ -19,3 +19,6 @@ gem 'github-pages', '>=105'
 # gem 'jekyll-paginate'
 
 gem 'jekyll-responsive_image'
+
+
+gem'html-proofer'
