@@ -1,0 +1,111 @@
+{% assign item = include.item %}
+{% if item == "" or item == nil %}{% assign item = page %}{% endif %}
+
+{% assign itemCategory = item.url | split: "/" %}
+
+{% assign pathElements = item.path | split:"/" %}
+
+{% assign imgPath = "" | split:"/" %}
+{% assign imgPath = imgPath | push: "img/catalogue" | push: pathElements[1] %}
+
+<div class="row">
+  <div class="col-sm-12"><h1 class="page-title">Catalogue : <a href="{{ site.baseurl }}/{{ item.type }}">{{ itemCategory[1] | capitalize }}</a></h1></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 item-datas">
+    <h3>{{ item.title }}</h3>
+    <p>
+      {% if item.matieres != nil %}<span>Matières&nbsp;:&nbsp;{{ item.matieres | join:", " }}</span>{% endif %}
+      {% if item.taille != nil %}<span>Taille&nbsp;:&nbsp;{% if item.taille contains "unique" %}unique{% else %}{{ item.taille | append: " cm"}}{% endif %}</span>{% endif %}
+      <span>Prix&nbsp;:&nbsp;{{ item.prix | append: " €"}}</span>
+    </p>
+
+    {{ item.content }}
+
+    {% if item.sold == true %}
+    <div class="alert alert-info">
+      <p>Cet article a été vendu. Heureusement, je peux toujours le réaliser dans une autre taille et/ou dans les matières qui vous siéront.</p>
+      <p>Voir la <a href="{{ site.baseurl }}/commander/">page Commander</a> pour plus d'informations.</p>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <div class="col-sm-6">
+
+    <ul class="bxslider" id="bxslider">
+      {% for i in item.images %}
+        {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg{% endcapture %}
+        {% assign imagePath = imagePath | remove_first: "/" %}
+        <li>{% responsive_image_block %}
+            path: {{ imagePath }}
+            alt: {{ item.title }}
+            title: {{ item.title }}
+            sizes: {{ site.figure.carousel.sizes }}
+        {% endresponsive_image_block %}</li>
+      {% endfor %}
+    </ul>
+    {% if item.sold == true %}<p class="sold">Vendu</p>{% endif %}
+
+    {% if item.images.size > 1 %}
+      <div id="bx-pager">
+        {% for i in item.images %}
+          <a data-slide-index="{{ forloop.index0 }}" href="">
+            {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg{% endcapture %}
+            {% assign imagePath = imagePath | remove_first: "/" %}
+            {% responsive_image_block %}
+              path: {{ imagePath }}
+              alt: {{ item.title }}
+              title: {{ item.title }}
+              sizes: {{ site.figure.carousel-thumbs.sizes }}
+            {% endresponsive_image_block %}
+          </a>{% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="row nextPrevItem">
+      <div class="col-sm-6">
+        {% comment %}Find prev next item with same property{% endcomment %}
+        {% include prevOrNextItemSearch.html propName="type" searchFor="previous" reverse="true" %}
+        {% include prevOrNextItemSearch.html propName="type" searchFor="next" reverse="true" %}
+
+        {% if previousItem != nil %}
+          {% assign previousItemImage = previousItem.images | first %}
+          <a class="btn btn-default btn-sm btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+{% comment %}
+          {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ previousItemImage }}.jpg{% endcapture %}
+          {% assign imagePath = imagePath | remove_first: "/" %}
+
+          {% responsive_image_block %}
+          path: {{ imagePath }}
+          alt: {{ previousItem.title }}
+          title: {{ previousItem.title }}
+          sizes: {{ site.figure.carousel-thumbs.sizes }}
+          {% endresponsive_image_block %}
+{% endcomment %}
+           Article précédent</a>
+        {% endif %}
+      </div>
+      <div class="col-sm-6">
+        {% if nextItem != nil %}
+          {% assign nextItemImage = nextItem.images | first %}
+          <a class="btn btn-default btn-sm btnNext" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant
+{% comment %}
+          {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ nextItemImage }}.jpg{% endcapture %}
+          {% assign imagePath = imagePath | remove_first: "/" %}
+
+          {% responsive_image_block %}
+          path: {{ imagePath }}
+          alt: {{ nextItem.title }}
+          title: {{ nextItem.title }}
+          sizes: {{ site.figure.carousel-thumbs.sizes }}
+          {% endresponsive_image_block %}
+{% endcomment %}
+         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
