@@ -1,15 +1,14 @@
 <a id="skippy" class="sr-only sr-only-focusable" href="#navigation"><div class="container"><span class="skiplink-text">Skip to main menu</span></div></a>
 <a id="skippy" class="sr-only sr-only-focusable" href="#main"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
 <div class="container">
-{% include utils/old_browser.html %}
-{% include utils/noscript.html %}
-{% include utils/cookiewarning.html %}
-<div class="jumbotron home-jumbo2">
-  <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/{{ site.logoImage }}" alt="Logo Marie-Line Delacroix" class=""></a>
-  <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-  <h2><a href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
-</div>
-
+  {% include utils/old_browser.html %}
+  {% include utils/noscript.html %}
+  {% include utils/cookiewarning.html %}
+  <div class="jumbotron home-jumbo2">
+    <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/{{ site.logoImage }}" alt="Logo {{ site.title }}" class=""></a>
+    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <h2><a href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
+  </div>
 </div>
 {% comment %} >>>>>>>>>>>>>>>>>> Generates a menu Twitter Bootstrap style
 Include with :  {% include header.html navId="main" %}
@@ -29,7 +28,9 @@ Pages are sorted by "weight"
         <span>Menu</span>
       </button>
       <div class="site-title">
-        <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/{{ site.logoImage }}" alt="" class=""></a>
+        <a href="{{ site.baseurl }}/">
+          <img src="{{ site.baseurl }}/img/{{ site.logoImage }}" alt="Logo {{ site.title }}" class="">
+        </a>
         <h1><a class="" href="{{ site.baseurl }}/">{{ site.title }}</a><small></small></h1>
         <h2><a class="" href="{{ site.baseurl }}/">{{ site.description }}</a></h2>
       </div>
