@@ -32,7 +32,7 @@
 
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-6" id="sliderContainer">
 
     <ul class="bxslider" id="bxslider">
       {% for i in item.images %}
@@ -72,7 +72,7 @@
 
         {% if previousItem != nil %}
           {% assign previousItemImage = previousItem.images | first %}
-          <a class="btn btn-default btn-sm btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <a class="btn btn-default btn-sm btnPrev" href="{{ site.baseurl }}{{ previousItem.url }}#sliderContainer"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 {% comment %}
           {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ previousItemImage }}.jpg{% endcapture %}
           {% assign imagePath = imagePath | remove_first: "/" %}
@@ -90,7 +90,7 @@
       <div class="col-sm-6">
         {% if nextItem != nil %}
           {% assign nextItemImage = nextItem.images | first %}
-          <a class="btn btn-default btn-sm btnNext" href="{{ site.baseurl }}{{ nextItem.url }}">Article suivant
+          <a class="btn btn-default btn-sm btnNext" href="{{ site.baseurl }}{{ nextItem.url }}#sliderContainer">Article suivant
 {% comment %}
           {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ nextItemImage }}.jpg{% endcapture %}
           {% assign imagePath = imagePath | remove_first: "/" %}
