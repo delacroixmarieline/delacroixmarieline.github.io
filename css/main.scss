@@ -130,7 +130,7 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        2px !default;
+$border-radius-base:        0 !default;
 $border-radius-large:       3px !default;
 $border-radius-small:       3px !default;
 
@@ -394,7 +394,7 @@ $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             #333 !default;
 $navbar-default-bg:                #fff !default;
-$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-border:            #eee !default;
 
 // Navbar links
 $navbar-default-link-color:                #333 !default;
@@ -912,6 +912,7 @@ a{
     text-decoration: none;
     border-bottom: 1px dotted darken($brand-warning, 20%);
   }
+
 }
 
 h1, h2{
@@ -920,9 +921,21 @@ h1, h2{
   margin: 11px 0;
 }
 
+.page-title{
+  @media (max-width: $screen-xs-max) {
+    font-size: 30px;
+    margin: 0 0 10px 0;
+  }
+
+  a{
+    border: none;
+  }
+
+}
+
 
 figure{
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.3);
 
   h3{
     font-size: 18px;
@@ -1004,22 +1017,22 @@ figure{
   }
 
   position: relative;
+  z-index: 2;
   font-family: 'La Belle Aurore', cursive;
   background: transparent;
   // text-align: center;
   margin-bottom: 0;
   padding: 10px 10px;
 
-img{
-  float: left;
-  width: 56px;
-  margin-right: 20px;
-}
-
+  img{
+    float: left;
+    width: 56px;
+    margin-right: 20px;
+  }
 
   h1, h2{
     text-shadow: 1px 2px 3px rgba(150,150,150, 0.4);
-    padding: 15px 10px 0px;
+    padding: 10px 10px 0px;
     margin: 2px;
     white-space: nowrap;
   }
@@ -1105,15 +1118,17 @@ blockquote{
       border: none;
     }
   }
-}
 
-.navbar-nav > li > a{
-  padding-top: 12px;
-  padding-bottom: 5px;
-}
+  .navbar-nav > li > a{
+    padding: 12px 4px 5px;
+    background: $navbar-default-bg;
 
-.nav > li > a{
-  padding-right: 10px;
+    @media (min-width: $screen-sm-max) {
+      padding: 12px 20px 5px;
+    }
+
+  }
+
 }
 
 .dropdown-menu{
@@ -1130,6 +1145,17 @@ blockquote{
     padding: 0;
   }
 }
+.navbar-nav{
+
+  li{
+    border-left: 1px solid lighten($brand-primary, 50%);
+  }
+
+  // big hack to put menu button out of brand space
+  @media (max-width: 400px) {
+    //height: 100px;
+  }
+}
 
 .navbar-collapse{
   // because we need some space for menu button, when lower the collapsible menu
@@ -1142,16 +1168,19 @@ blockquote{
   font-family: 'La Belle Aurore', cursive;
   white-space: nowrap;
   padding: 10px;
+  height: 100px;
 
   img{
+    position: absolute;
+    top: 0;
+    left: 5px;
     width: 34px;
     margin-right: 10px;
-    float: left;
   }
 
   h1{
     font-size: 28px;
-    margin: 0;
+    margin: 0 0 0 40px;
     padding: 0;
     @media (min-width: $headerCrunch) {
       font-size: 38px;
@@ -1162,7 +1191,7 @@ blockquote{
 
   h2{
     font-size: 16px;
-    margin: 0;
+    margin: 0 0 0 40px;
     @media (min-width: $headerCrunch) {
       font-size: 24px;
       margin-top: 5px;
@@ -1239,74 +1268,57 @@ blockquote{
   }
 }
 
-.carousel{
-  padding-bottom: 50px;
-  position: relative;
-}
-.carousel-indicators{
+.item-datas{
 
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-
-  .active{
-    width: 50px;
-    height: 50px;
-    background: transparent;
-
-    img{
-      border-color: $brand-primary;
-    }
-  }
-
-  li{
-    text-indent: 1px;
-    float: left;
-    width: 50px;
-    height: 50px;
-    padding: 0;
+  h3{
     margin: 0;
-    border: none;
-
-    img{
-      border: 2px solid white;
-    }
-
-    &:hover{
-      cursor: pointer;
+    @media (max-width: $screen-xs-max) {
+      font-size: 22px;
     }
   }
 
-  img{
-    width: 50px;
-    height: 50px;
+  p{
+    @media (max-width: $screen-xs-max) {
+      font-size: 12px;
+    }
+  }
 
+  span{
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+// bx slider
+.bx-wrapper{
+  margin-bottom: 2px;
+  .bx-controls-direction a{ border: none; }
+}
+
+#bx-pager{
+  margin-top: 0;
+  margin-bottom: 10px;
+  a{
+    border: none;
+    img{ border: 2px solid white; }
+    &.active img, &:hover img{ border: 2px solid lighten($brand-primary, 13.5%); }
   }
 }
 
 .nextPrevItem{
-  margin-top: 10px;
-
-  img{
-    width: 50px;
-    height: 50px;
-  }
-
-  .btnPrev{ text-align: left; }
-  .btnNext{ text-align: right; }
+  border-radius: $border-radius-base;
   .btn{
-    background: transparent;
-    color: $brand-primary;
-    border: 1px solid $brand-primary;
-    overflow: hidden;
+    background: lighten($brand-success, 25%);
+    max-height: 40px;
+
+    &:hover{
+      background: lighten($brand-success, 15%);
+    }
   }
 }
 
+.btnPrev{ float: left; }
+.btnNext{ float: right; }
 
 // Couleurs Catégories
 .ete{
@@ -1354,6 +1366,15 @@ blockquote{
     max-height: 150px;
   }
 }
+
+
+
+
+
+
+
+
+
 
 @media print {
 
