@@ -22,7 +22,7 @@ imagesDatas:
     photoBy: kr
     model: dz
 
-showOnHome : true
+showOnHome : false
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

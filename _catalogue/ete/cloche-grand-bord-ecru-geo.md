@@ -1,23 +1,26 @@
 ---
-title: Casquette Trad Papy Vert
+title: Cloche Grand Bord Ecru Geo
 
 # date au format americain YYYY-MM-DD - 2009-12-31 = 31 dec 2009
-date : 2016-10-14
+date : 2017-04-28
 
 matieres:
- - laine
+ - coton
+ - polyester
 
 # tour de tête pour les chapeaux - facultatif
-taille: 59
+taille: 57.5
 
-prix: 55
+prix: 80
 
 # images d'illustration
 # la première image de la liste est utilisée comme illustration de l'article dans les pages de listing.
 images:
-  - casquette-trad-papy-gris-vert-1
-  - casquette-trad-papy-gris-vert-2
+  - cloche-grand-bord-ecru-1
+  - cloche-grand-bord-ecru-2
+  - cloche-grand-bord-ecru-3
 
+showOnHome : true
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
               Texte additionnel - facultatif

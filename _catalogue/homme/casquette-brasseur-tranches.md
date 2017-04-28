@@ -25,7 +25,7 @@ imagesDatas:
     photoBy: kr
     model: dg
 
-showOnHome : true
+showOnHome : false
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

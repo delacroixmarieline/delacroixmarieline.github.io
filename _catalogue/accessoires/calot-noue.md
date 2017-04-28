@@ -19,7 +19,12 @@ images:
   - calot-noue-3
   - calot-noue-4
   - calot-noue-5
-  - calot-noue-6
+  - calot-noue-pois-bleu-1
+  - calot-noue-rose-blanc-1
+  - calot-noue-trefle-rose-1
+  - calot-noue-vert-orange-1
+  - calot-noue-vert-orange-2
+
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -19,6 +19,7 @@ images:
   - manchettes-2
   - manchettes-3
   - manchettes-4
+  - manchettes-5
 
 ---
 {% comment %} +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
