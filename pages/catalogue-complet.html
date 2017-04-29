@@ -1,7 +1,7 @@
 ---
-title: Catalogue complet
+title: Catalogue
 menu: footer
-weight: 10
+weight: 12
 ---
 
 <div class="row">
@@ -18,6 +18,9 @@ weight: 10
     <div class="col-md-12">
       <h3>{{ category.display }} <small>({{ articles.size }})</small></h3>
     </div>
+<ul>
+    {% comment %}## SET THIS to change number of items by row{% endcomment %}
+    {% assign itemsByRow = 3 %}
 
     {% for article in articles %}
 
@@ -27,10 +30,10 @@ weight: 10
       {% assign imgPath = imgPath | push: "img/resized/catalogue" | push: pathElements[1] | push: "150" %}
       {% capture imagePath %}{{ site.baseurl }}/{{ imgPath | join:'/'}}/{{ i }}.jpg{% endcapture %}
 
-      {% assign remain = forloop.index | modulo: 4 %}
+      {% assign remain = forloop.index | modulo: itemsByRow %}
       {% if remain == 1 %}<div class="row articlesRow">{% endif %}
 
-      <div class="col-sm-3 article">
+      <li>
         <img src="{{ imagePath }}" alt="{{ article.title }}">
         <p><a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a>
         {% if article.taille %}
@@ -39,12 +42,12 @@ weight: 10
           -
         {% endif %}
         {{ article.prix }}&nbsp;€</p>
-      </div>
+      </li>
 
       {% if remain == 0 or forloop.last == true %}</div>{% endif %}
 
     {% endfor %}
-
+</ul>
   </div>
 
 {% endfor %}

@@ -1357,6 +1357,12 @@ blockquote{
 
 .articlesRow{
   border-top: 1px dotted lighten($brand-info, 13.5%);
+
+  li{
+    width: 30%;
+    display: inline-block;
+    float: left;
+  }
 }
 
 .article{
