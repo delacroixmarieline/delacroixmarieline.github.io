@@ -6147,6 +6147,10 @@ blockquote {
 
 .articlesRow {
   border-top: 1px dotted #339a9a; }
+  .articlesRow li {
+    width: 30%;
+    display: inline-block;
+    float: left; }
 
 .article {
   text-align: center; }
