@@ -24,11 +24,13 @@ $(function() {
 });
 
 
-// sorting admin tables if necessary
+// bxslider
+
   $(document).ready(function() {
-    if ($("#catalog").length) {
-      console.log("Sorting tables")
-      $("#catalog").tablesorter();
+    if ($('.bxslider').length) {
+      $('.bxslider').bxSlider({
+        pagerCustom: '#bx-pager',
+        mode: "fade",
+      });
     }
   });
-

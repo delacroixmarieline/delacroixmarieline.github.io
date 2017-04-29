@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marie-Line Delacroix - Sac Pagode Prune</title>
   <meta name="description" content="">
-  <link rel="stylesheet" href="/bower_components/tablesorter/themes/blue/style.css">
+  <link rel="stylesheet" href="/bower_components/bxslider-4/dist/jquery.bxslider.css">
   <link rel="stylesheet" href="/css/main.css">
 
   <link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore" rel="stylesheet">
@@ -51,11 +51,11 @@
     <a id="skippy" class="sr-only sr-only-focusable" href="#navigation"><div class="container"><span class="skiplink-text">Skip to main menu</span></div></a>
 <a id="skippy" class="sr-only sr-only-focusable" href="#main"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
 <div class="container">
-<!--[if lt IE 8]>
+  <!--[if lt IE 8]>
   <p class="alert alert-warning">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<noscript>
+  <noscript>
     <div class="alert alert-danger">
         Ce site fonctionne mieux avec javascript activé.
 
@@ -64,7 +64,7 @@
     </div>
 </noscript>
 
-<div class="alert alert-warning cookiesAgreement" style="display:none;">
+  <div class="alert alert-warning cookiesAgreement" style="display:none;">
     <p>
         Afin de vous offrir une meilleure expérience de navigation, ce site utilise des cookies.
         <a class="btn btn-success btn-xs agreeCockies" href="#">OK</a>
@@ -72,13 +72,11 @@
     </p>
 </div>
 
-<div class="jumbotron home-jumbo2">
-  <a href="/"><img src="/img/logo-atelier-7-marie-line-delacroix-rose-optim.svg" alt="Logo Marie-Line Delacroix" class=""></a>
-  <h1><a href="/">Marie-Line Delacroix</a></h1>
-  <h2><a href="/">Modiste - Création de chapeaux couture</a></h2>
-  <a class="l" href="/l/"><span></span></a>
-</div>
-
+  <div class="jumbotron home-jumbo2">
+    <a href="/"><img src="/img/logo-atelier-7-marie-line-delacroix-rose-optim.svg" alt="Logo Marie-Line Delacroix" class=""></a>
+    <h1><a href="/">Marie-Line Delacroix</a></h1>
+    <h2><a href="/">Modiste - Création de chapeaux couture</a></h2>
+  </div>
 </div>
 
 
@@ -94,7 +92,9 @@
         <span>Menu</span>
       </button>
       <div class="site-title">
-        <a href="/"><img src="/img/logo-atelier-7-marie-line-delacroix-rose-optim.svg" alt="" class=""></a>
+        <a href="/">
+          <img src="/img/logo-atelier-7-marie-line-delacroix-rose-optim.svg" alt="Logo Marie-Line Delacroix" class="">
+        </a>
         <h1><a class="" href="/">Marie-Line Delacroix</a><small></small></h1>
         <h2><a class="" href="/">Modiste - Création de chapeaux couture</a></h2>
       </div>
@@ -117,6 +117,10 @@
 
 
 
+
+  
+
+  
 
   
 
@@ -205,7 +209,7 @@
 <li><a href=/soiree-ceremonie/>Soirée, Cérémonie, Cocktail</a></li>
 
 
-<li><a href=/homme/>Homme</a></li>
+<li><a href=/homme/>Hommes</a></li>
 
 
 <li><a href=/accessoires/>Accessoires</a></li>
@@ -221,8 +225,6 @@
 
 
     <li><a href="/commander/">Commander</a></li>
-  
-
   
 
   
@@ -249,17 +251,13 @@
 
   
 
-  
-
 </ul>
     </div>
 </nav>
 </div>
 
     <div class="container main" role="main" id="main">
-
     
-
     
 
 
@@ -271,30 +269,32 @@
 
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-12"><h1 class="page-title">Catalogue : <a href="/accessoires">Accessoires</a></h1></div>
+</div>
 
-    <h2>Catalogue : <a href="/accessoires">Accessoires</a></h2>
-
+<div class="row">
+  <div class="col-sm-6 item-datas">
     <h3>Sac Pagode Prune</h3>
-    <ul class="list-unstyled">
-      <li><strong>Matières</strong>&nbsp;:&nbsp;paille</li>
+    <p>
+      <span>Matières&nbsp;:&nbsp;paille</span>
       
-      <li><strong>Prix</strong>&nbsp;:&nbsp;40 €</li>
-    </ul>
+      <span>Prix&nbsp;:&nbsp;40 €</span>
+    </p>
 
     
 
 
+    
 
   </div>
-  <div class="col-sm-6">
-    <div class="carousel slide" id="item-carousel" data-ride="" data-interval="3000" data-pause="hover">
-       <div class="carousel-inner" role="listbox">
+
+  <div class="col-sm-6" id="sliderContainer">
+
+    <ul class="bxslider" id="bxslider">
+      
         
-        <div class="item active">
-          
-          
-          
+        
+        <li>
 
 
 
@@ -304,41 +304,13 @@
  class=""
  srcset="/img/resized/catalogue/accessoires/550/sac-pagode-paille-prune-1.jpg 550w, /img/resized/catalogue/accessoires/470/sac-pagode-paille-prune-1.jpg 470w, /img/resized/catalogue/accessoires/350/sac-pagode-paille-prune-1.jpg 350w, /img/resized/catalogue/accessoires/250/sac-pagode-paille-prune-1.jpg 250w, /img/resized/catalogue/accessoires/150/sac-pagode-paille-prune-1.jpg 150w, /img/resized/catalogue/accessoires/50/sac-pagode-paille-prune-1.jpg 50w"
  sizes= "(min-width:1200px) 50vw, (min-width:992px) 470px, (min-width:768px) 350px, 90vw" >
-
-        </div>
-        
-      </div>
-      
-      <a href="#item-carousel" class="left carousel-control" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Précédent</span> </a>
-      <a href="#item-carousel" class="right carousel-control" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Suivant</span> </a>
-
-<ol class="carousel-indicators">
-
-<li data-target="#item-carousel" data-slide-to="0" class="active">
-
-
-
-
-
-
-
-
-<img src="/img/resized/catalogue/accessoires/250/sac-pagode-paille-prune-1.jpg"
- alt="Sac Pagode Prune" title="Sac Pagode Prune"
- class=""
- srcset="/img/resized/catalogue/accessoires/550/sac-pagode-paille-prune-1.jpg 550w, /img/resized/catalogue/accessoires/470/sac-pagode-paille-prune-1.jpg 470w, /img/resized/catalogue/accessoires/350/sac-pagode-paille-prune-1.jpg 350w, /img/resized/catalogue/accessoires/250/sac-pagode-paille-prune-1.jpg 250w, /img/resized/catalogue/accessoires/150/sac-pagode-paille-prune-1.jpg 150w, /img/resized/catalogue/accessoires/50/sac-pagode-paille-prune-1.jpg 50w"
- sizes= "(min-width:1200px) 50px, 50px" >
-
-
 </li>
-</ol>
+      
+    </ul>
+    
 
-    </div>
-  </div>
-</div>
+    
 
-<div class="row">
-  <div class="col-sm-6 col-sm-offset-6">
     <div class="row nextPrevItem">
       <div class="col-sm-6">
         
@@ -365,24 +337,6 @@
 
 
 
-  
-
-  
-  
-  
-
-  
-
-
-
-  
-
-  
-  
-  
-
-  
-
 
 
   
@@ -478,6 +432,8 @@
 
 
         
+
+
 
 
 
@@ -555,50 +511,21 @@
 
         
           
-          <a class="btn btn-primary btn-sm btn-block btnPrev" href="/accessoires/porte-monnaie-tissu-createur-lacroix/#item-carousel"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <a class="btn btn-default btn-sm btnPrev" href="/accessoires/sold/capuchons-middle-age/#sliderContainer"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 
-
-
-
-
-
-
-
-
-<img src="/img/resized/catalogue/accessoires/250/porte-monnaie-tissu-lacroix-1.jpg"
- alt="Porte monnaie tissu créateur Lacroix" title="Porte monnaie tissu créateur Lacroix"
- class=""
- srcset="/img/resized/catalogue/accessoires/550/porte-monnaie-tissu-lacroix-1.jpg 550w, /img/resized/catalogue/accessoires/470/porte-monnaie-tissu-lacroix-1.jpg 470w, /img/resized/catalogue/accessoires/350/porte-monnaie-tissu-lacroix-1.jpg 350w, /img/resized/catalogue/accessoires/250/porte-monnaie-tissu-lacroix-1.jpg 250w, /img/resized/catalogue/accessoires/150/porte-monnaie-tissu-lacroix-1.jpg 150w, /img/resized/catalogue/accessoires/50/porte-monnaie-tissu-lacroix-1.jpg 50w"
- sizes= "(min-width:1200px) 50px, 50px" >
-
-
- Article précédent</a>
+           Article précédent</a>
         
       </div>
       <div class="col-sm-6">
         
           
-          <a class="btn btn-primary btn-sm btn-block btnNext" href="/accessoires/sac-cabas/#item-carousel">Article suivant
-
-
-
-
-
-
-
-
-
-<img src="/img/resized/catalogue/accessoires/250/sac-cabas.jpg"
- alt="Sac Cabas" title="Sac Cabas"
- class=""
- srcset="/img/resized/catalogue/accessoires/550/sac-cabas.jpg 550w, /img/resized/catalogue/accessoires/470/sac-cabas.jpg 470w, /img/resized/catalogue/accessoires/350/sac-cabas.jpg 350w, /img/resized/catalogue/accessoires/250/sac-cabas.jpg 250w, /img/resized/catalogue/accessoires/150/sac-cabas.jpg 150w, /img/resized/catalogue/accessoires/50/sac-cabas.jpg 50w"
- sizes= "(min-width:1200px) 50px, 50px" >
-
+          <a class="btn btn-default btn-sm btnNext" href="/accessoires/sac-cabas/#sliderContainer">Article suivant
 
          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a>
         
       </div>
     </div>
+
   </div>
 </div>
 
@@ -636,7 +563,7 @@
       <li class="category-box soiree-ceremonie"><a href="/soiree-ceremonie/">Soirée,&nbsp;Cérémonie,&nbsp;Cocktail</a></li>
   
     
-      <li class="category-box homme"><a href="/homme/">Homme</a></li>
+      <li class="category-box homme"><a href="/homme/">Hommes</a></li>
   
     
       <li class="category-box accessoires"><a href="/accessoires/">Accessoires</a></li>
@@ -650,6 +577,10 @@
         <h4>Menu</h4>
         
         <ul>
+        
+          
+        
+          
         
           
         
@@ -692,8 +623,6 @@
           
         
           
-        
-          
         <li><a href="/credits/">Crédits</a></li>
           
         
@@ -701,8 +630,6 @@
         
           
         <li><a href="/contact/">Contact</a></li>
-          
-        
           
         
           
@@ -758,6 +685,8 @@ var $mcj = jQuery.noConflict(true);</script>
         
           <li><a href="/archives/">Archives</a></li>
         
+          <li><a href="/catalogue-complet/">Catalogue complet</a></li>
+        
           <li><a href="/conditions-generales-de-vente-cgv/">Conditions générales de vente (cgv)</a></li>
         
           <li><a href="/mentions-legales/">Mentions légales</a></li>
@@ -778,7 +707,7 @@ var $mcj = jQuery.noConflict(true);</script>
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/jquery.cookie/jquery.cookie.js"></script>
   <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" async></script>
-  
+  <script src="/bower_components/bxslider-4/dist/jquery.bxslider.js"></script>
   <script src="/js/script.js"></script>
   </body>
 </html>
